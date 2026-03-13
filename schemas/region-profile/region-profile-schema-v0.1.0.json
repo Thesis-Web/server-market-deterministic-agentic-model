@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Region Profile Schema v0.1.0",
+  "type": "object",
+  "required": [
+    "regionId",
+    "regionName",
+    "regionType",
+    "effectiveDate",
+    "evidenceRefs",
+    "constraints",
+    "deploymentRealities",
+    "complianceAndCertifications",
+    "unresolvedItems"
+  ],
+  "properties": {
+    "regionId": { "type": "string" },
+    "regionName": { "type": "string" },
+    "regionType": {
+      "type": "string",
+      "enum": ["country", "bloc", "subregion", "state-province", "metro"]
+    },
+    "effectiveDate": { "type": "string" },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "object" },
+    "deploymentRealities": { "type": "object" },
+    "complianceAndCertifications": { "type": "array", "items": { "type": "string" } },
+    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

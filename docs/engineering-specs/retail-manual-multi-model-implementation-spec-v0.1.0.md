@@ -249,6 +249,15 @@ Each run manifest must define at least:
 - `input_bundle_refs`
 - `prompt_pack_version`
 - `schema_pack_version`
+
+Additional canonical schema families (v0.1.0 scaffold):
+
+- region profile
+- vendor landscape
+- customer pain-point
+- feature opportunity
+- shift signal
+
 - `artifact_refs`
 - `gate_results`
 - `unresolved_items`

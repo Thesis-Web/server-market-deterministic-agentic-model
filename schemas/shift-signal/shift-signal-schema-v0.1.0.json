@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shift Signal Schema v0.1.0",
+  "type": "object",
+  "required": ["signalSetId", "scope", "signals", "evidenceRefs", "unresolvedItems"],
+  "properties": {
+    "signalSetId": { "type": "string" },
+    "scope": { "type": "object" },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "category",
+          "description",
+          "directionality",
+          "confidence",
+          "timeHorizon",
+          "potentialImpacts",
+          "evidenceRefs"
+        ],
+        "properties": {
+          "label": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "market",
+              "regulatory",
+              "supply-chain",
+              "silicon",
+              "power",
+              "cooling",
+              "software",
+              "competitive"
+            ]
+          },
+          "description": { "type": "string" },
+          "directionality": { "type": "string", "enum": ["tailwind", "headwind", "ambiguous"] },
+          "confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+          "timeHorizon": { "type": "string", "enum": ["near", "mid", "long"] },
+          "potentialImpacts": { "type": "array", "items": { "type": "string" } },
+          "evidenceRefs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

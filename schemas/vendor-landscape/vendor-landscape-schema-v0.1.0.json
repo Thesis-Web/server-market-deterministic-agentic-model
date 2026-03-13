@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vendor Landscape Schema v0.1.0",
+  "type": "object",
+  "required": ["landscapeId", "scope", "vendors", "evidenceRefs", "unresolvedItems"],
+  "properties": {
+    "landscapeId": { "type": "string" },
+    "scope": { "type": "object" },
+    "vendors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "vendorName",
+          "vendorType",
+          "offeringsSummary",
+          "positioningSummary",
+          "differentiators",
+          "weaknesses",
+          "riskFlags",
+          "evidenceRefs"
+        ],
+        "properties": {
+          "vendorName": { "type": "string" },
+          "vendorType": {
+            "type": "string",
+            "enum": ["oem", "odm", "cloud", "integrator", "component", "reseller"]
+          },
+          "offeringsSummary": { "type": "string" },
+          "positioningSummary": { "type": "string" },
+          "differentiators": { "type": "array", "items": { "type": "string" } },
+          "weaknesses": { "type": "array", "items": { "type": "string" } },
+          "riskFlags": { "type": "array", "items": { "type": "string" } },
+          "evidenceRefs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Feature Opportunity Schema v0.1.0",
+  "type": "object",
+  "required": ["opportunitySetId", "scope", "opportunities", "evidenceRefs", "unresolvedItems"],
+  "properties": {
+    "opportunitySetId": { "type": "string" },
+    "scope": { "type": "object" },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "featureLabel",
+          "description",
+          "mappedPainPoints",
+          "expectedValue",
+          "feasibility",
+          "timeHorizon",
+          "designTraits",
+          "risks",
+          "evidenceRefs"
+        ],
+        "properties": {
+          "featureLabel": { "type": "string" },
+          "description": { "type": "string" },
+          "mappedPainPoints": { "type": "array", "items": { "type": "string" } },
+          "expectedValue": { "type": "string", "enum": ["low", "medium", "high"] },
+          "feasibility": { "type": "string", "enum": ["low", "medium", "high"] },
+          "timeHorizon": { "type": "string", "enum": ["near", "mid", "long"] },
+          "designTraits": { "type": "array", "items": { "type": "string" } },
+          "risks": { "type": "array", "items": { "type": "string" } },
+          "evidenceRefs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
