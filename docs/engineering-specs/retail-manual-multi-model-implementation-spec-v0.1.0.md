@@ -691,6 +691,14 @@ Immediate implementation priorities after this spec:
 6. add operator guides for supported model environments
 7. add helper scripts for manifest and checksum generation
 
+Helper scripts (Stage 0 / Phase 0 closure):
+
+- `scripts/validate-schemas.mjs` (`npm run validate:schemas`)
+- `scripts/generate-run-manifest.mjs` (`npm run generate:run-manifest`)
+- `scripts/compute-checksum.mjs` (`npm run compute:checksums`)
+
+These scripts are intentionally minimal and must remain deterministic (no network access, no non-pinned dependencies).
+
 ## 12. Open issues
 
 Open issues for the next spec and implementation pass:
