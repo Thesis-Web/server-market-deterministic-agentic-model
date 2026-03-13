@@ -1,0 +1,22 @@
+{
+  "signalSetId": "SS-EXAMPLE-0001",
+  "scope": {
+    "segmentId": "SEG-EXAMPLE",
+    "regionId": "REG-US",
+    "timeWindow": "2026H1"
+  },
+  "signals": [
+    {
+      "label": "Power constraints tightening",
+      "category": "power",
+      "description": "example placeholder",
+      "directionality": "headwind",
+      "confidence": "low",
+      "timeHorizon": "mid",
+      "potentialImpacts": ["example placeholder"],
+      "evidenceRefs": ["EVID-EXAMPLE-0001"]
+    }
+  ],
+  "evidenceRefs": ["EVID-EXAMPLE-0001"],
+  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+}

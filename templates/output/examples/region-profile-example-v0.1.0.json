@@ -1,0 +1,26 @@
+{
+  "regionId": "REG-US",
+  "regionName": "United States",
+  "regionType": "country",
+  "effectiveDate": "2026-03-13",
+  "evidenceRefs": ["EVID-EXAMPLE-0001"],
+  "constraints": {
+    "exportControls": "example placeholder",
+    "importDuties": "example placeholder",
+    "dataSovereignty": "example placeholder",
+    "encryptionRestrictions": "example placeholder",
+    "radioEmissionsStandards": "example placeholder",
+    "safetyStandards": "example placeholder",
+    "environmentalStandards": "example placeholder"
+  },
+  "deploymentRealities": {
+    "gridStability": "example placeholder",
+    "typicalPowerDensity": "example placeholder",
+    "coolingAssumptions": "example placeholder",
+    "ambientTempBands": "example placeholder",
+    "logisticsNotes": "example placeholder",
+    "serviceabilityNotes": "example placeholder"
+  },
+  "complianceAndCertifications": ["example placeholder"],
+  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+}
