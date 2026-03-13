@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Deterministic AI-first market research operating system for server product strategy.",
-  "license": "UNLICENSED",
+  "license": "All Rights Reserved",
   "packageManager": "npm@10.8.2",
   "engines": {
     "node": ">=20 <21"
@@ -11,7 +11,7 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint:md": "markdownlint-cli2 \"**/*.md\"",
+    "lint:md": "markdownlint-cli2 \"README.md\" \"docs/**/*.md\" \"prompts/**/*.md\" \"schemas/**/*.md\" \"templates/**/*.md\" \"manifests/**/*.md\" \"scripts/**/*.md\" \"src/**/*.md\" \"!node_modules/**\" \"!logs/**\" \"!runs/**\" \"!outputs/**\" \"!.git/**\"",
     "typecheck": "tsc --noEmit",
     "validate:json-yaml": "node ./scripts/validate-json-yaml.mjs",
     "validate:structure": "node ./scripts/validate-repo-structure.mjs",
