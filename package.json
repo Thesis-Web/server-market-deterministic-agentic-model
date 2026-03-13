@@ -1,0 +1,26 @@
+{
+  "name": "server-market-deterministic-agentic-model",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic AI-first market research operating system for server product strategy.",
+  "license": "UNLICENSED",
+  "packageManager": "npm@10.8.2",
+  "engines": {
+    "node": ">=20 <21"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:md": "markdownlint-cli2 \"**/*.md\"",
+    "typecheck": "tsc --noEmit",
+    "validate:json-yaml": "node ./scripts/validate-json-yaml.mjs",
+    "validate:structure": "node ./scripts/validate-repo-structure.mjs",
+    "ci:gate": "npm run format:check && npm run lint:md && npm run validate:json-yaml && npm run validate:structure && npm run typecheck"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.18.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "yaml": "^2.7.0"
+  }
+}

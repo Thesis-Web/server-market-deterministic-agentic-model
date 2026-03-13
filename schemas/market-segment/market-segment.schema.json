@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MarketSegment",
+  "type": "object",
+  "required": ["schemaVersion", "artifactType", "segmentId", "segmentName"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "artifactType": { "type": "string", "const": "market-segment" },
+    "segmentId": { "type": "string" },
+    "segmentName": { "type": "string" },
+    "summary": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RecommendationBrief",
+  "type": "object",
+  "required": ["schemaVersion", "artifactType", "recommendationId", "title"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "artifactType": { "type": "string", "const": "recommendation-brief" },
+    "recommendationId": { "type": "string" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" }
+  },
+  "additionalProperties": true
+}

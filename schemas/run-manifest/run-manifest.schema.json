@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RunManifest",
+  "type": "object",
+  "required": ["schemaVersion", "artifactType", "runId", "objective"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "artifactType": { "type": "string", "const": "run-manifest" },
+    "runId": { "type": "string" },
+    "objective": { "type": "string" },
+    "modelsUsed": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "0.1.0",
+  "artifactType": "run-manifest",
+  "runId": "RUN-YYYYMMDD-0001",
+  "objective": "",
+  "modelsUsed": [],
+  "inputBundle": [],
+  "artifactOutputs": [],
+  "gateResults": [],
+  "timestamps": {
+    "start": "",
+    "end": ""
+  }
+}

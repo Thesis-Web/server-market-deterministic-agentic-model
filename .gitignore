@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+.npm/
+outputs/**
+!outputs/.gitkeep
+logs/**
+!logs/.gitkeep
+runs/**
+!runs/.gitkeep
+.manifests-cache/
