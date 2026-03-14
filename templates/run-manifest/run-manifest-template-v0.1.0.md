@@ -42,10 +42,8 @@ Artifact type: run-manifest
 
 - overlap_required:
 - reason:
-- task_classes:
-  -
-- target_models:
-  -
+- ## task_classes:
+- ## target_models:
 - expected_outcome:
 
 ## Input Bundle Refs

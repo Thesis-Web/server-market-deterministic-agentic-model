@@ -1522,7 +1522,7 @@ cat > schemas/run-manifest/run-manifest.schema.json <<'EOT'
 }
 EOT
 
-cat > templates/run-control/run-manifest-template.json <<'EOT'
+cat > templates/run-manifest/run-manifest-template.json <<'EOT'
 {
   "schemaVersion": "0.1.0",
   "artifactType": "run-manifest",
