@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "evidence-ledger",
+  "ledger_id": "evidence-ledger-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "evidence_id": "evidence-0001",
+      "source_title": "",
+      "source_type": "",
+      "source_tier": "tier1",
+      "source_locator": "",
+      "retrieved_at": "",
+      "retrieved_by_model": "",
+      "retrieved_in_environment": "",
+      "claim_class": "observed_fact",
+      "fact_status": "captured",
+      "used_in_artifacts": [],
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}

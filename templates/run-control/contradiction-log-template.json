@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "contradiction-log",
+  "contradiction_log_id": "contradiction-log-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "contradiction_id": "contradiction-0001",
+      "related_evidence_ids": ["evidence-0001", "evidence-0002"],
+      "conflicting_claims": ["", ""],
+      "contradiction_type": "source_conflict",
+      "severity": "medium",
+      "disposition": "unresolved",
+      "impacted_artifacts": [],
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}
