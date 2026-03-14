@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "checksum-ledger",
+  "checksum_ledger_id": "checksum-ledger-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "artifact_id": "artifact-0001",
+      "artifact_path": "",
+      "artifact_type": "",
+      "checksum_algorithm": "sha256",
+      "checksum_value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "generated_at": "",
+      "generated_by": "",
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}
