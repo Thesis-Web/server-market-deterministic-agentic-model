@@ -61,7 +61,19 @@
     },
     "status": {
       "type": "string",
-      "enum": ["initialized", "in_progress", "blocked", "failed", "completed", "published"]
+      "enum": [
+        "initialized",
+        "acquiring",
+        "normalizing",
+        "synthesizing",
+        "validating",
+        "packaging",
+        "review-pending",
+        "validated",
+        "blocked",
+        "published",
+        "archived"
+      ]
     },
     "execution_mode": {
       "type": "string",
@@ -118,7 +130,7 @@
       "items": {
         "$ref": "#/$defs/governing_doc"
       },
-      "minItems": 1
+      "minItems": 7
     },
     "artifact_outputs": {
       "type": "array",
@@ -286,16 +298,35 @@
       "required": ["doc_id", "path", "version", "status"],
       "properties": {
         "doc_id": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "project-constitution",
+            "project-instructions",
+            "project-outline",
+            "blueprint-outline",
+            "engineering-specs-outline",
+            "current-blueprint",
+            "current-engineering-spec"
+          ]
         },
         "path": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "docs/project-constitution/server-market-project-constitution-v0.1.0.md",
+            "docs/project-constitution/server-market-project-instructions-v0.1.0.md",
+            "docs/project-constitution/project-outline-v0.1.0.md",
+            "docs/blueprints/blueprint-outline-v0.1.0.md",
+            "docs/engineering-specs/engineering-specs-outline-v0.1.0.md",
+            "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md",
+            "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md"
+          ]
         },
         "version": {
           "type": "string"
         },
         "status": {
-          "type": "string"
+          "type": "string",
+          "enum": ["loaded"]
         }
       }
     },
@@ -428,5 +459,182 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "project-constitution"
+              },
+              "path": {
+                "const": "docs/project-constitution/server-market-project-constitution-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "project-instructions"
+              },
+              "path": {
+                "const": "docs/project-constitution/server-market-project-instructions-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "project-outline"
+              },
+              "path": {
+                "const": "docs/project-constitution/project-outline-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "blueprint-outline"
+              },
+              "path": {
+                "const": "docs/blueprints/blueprint-outline-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "engineering-specs-outline"
+              },
+              "path": {
+                "const": "docs/engineering-specs/engineering-specs-outline-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "current-blueprint"
+              },
+              "path": {
+                "const": "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "governing_docs_loaded": {
+          "type": "array",
+          "contains": {
+            "type": "object",
+            "required": ["doc_id", "path", "version", "status"],
+            "properties": {
+              "doc_id": {
+                "const": "current-engineering-spec"
+              },
+              "path": {
+                "const": "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md"
+              },
+              "version": {
+                "const": "v0.1.0"
+              },
+              "status": {
+                "const": "loaded"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

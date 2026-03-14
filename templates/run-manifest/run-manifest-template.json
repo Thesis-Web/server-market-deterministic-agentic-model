@@ -29,7 +29,50 @@
   },
   "prompt_pack_version": "0.1.0",
   "schema_pack_version": "0.1.0",
-  "governing_docs_loaded": [],
+  "governing_docs_loaded": [
+    {
+      "doc_id": "project-constitution",
+      "path": "docs/project-constitution/server-market-project-constitution-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "project-instructions",
+      "path": "docs/project-constitution/server-market-project-instructions-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "project-outline",
+      "path": "docs/project-constitution/project-outline-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "blueprint-outline",
+      "path": "docs/blueprints/blueprint-outline-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "engineering-specs-outline",
+      "path": "docs/engineering-specs/engineering-specs-outline-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "current-blueprint",
+      "path": "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    },
+    {
+      "doc_id": "current-engineering-spec",
+      "path": "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md",
+      "version": "v0.1.0",
+      "status": "loaded"
+    }
+  ],
   "artifact_outputs": [],
   "gate_results": [
     {

@@ -32,14 +32,43 @@ Artifact type: run-manifest
 - handoff_ref
 - unresolved_items
 
-## Recommended Run Directory Placement
+## Allowed Run Lifecycle States
 
-- runs/<run-id>/manifest.json
-- runs/<run-id>/artifacts/
-- runs/<run-id>/evidence/
-- runs/<run-id>/reviews/
-- runs/<run-id>/logs/
-- runs/<run-id>/handoff/
+- initialized
+- acquiring
+- normalizing
+- synthesizing
+- validating
+- packaging
+- review-pending
+- validated
+- blocked
+- published
+- archived
+
+## Operator Start Sequence
+
+1. open SSH session to droplet
+2. attach or create tmux session
+3. return to repo root
+4. confirm clean or intentional git state
+5. open or continue logging
+6. load governing documents
+7. assign or continue run ID
+8. set execution mode
+9. set route policy
+10. declare artifact targets
+11. begin at the correct gate
+
+## Governing Files Required Before Meaningful Work
+
+- docs/project-constitution/server-market-project-constitution-v0.1.0.md
+- docs/project-constitution/server-market-project-instructions-v0.1.0.md
+- docs/project-constitution/project-outline-v0.1.0.md
+- docs/blueprints/blueprint-outline-v0.1.0.md
+- docs/engineering-specs/engineering-specs-outline-v0.1.0.md
+- docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md
+- docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md
 
 ## Core Identity
 
@@ -48,7 +77,7 @@ Artifact type: run-manifest
 - operator:
 - project:
 - system_stage: stage-0-manual-deterministic
-- status:
+- status: initialized
 - execution_mode:
 - route_policy_id:
 
@@ -111,10 +140,40 @@ Artifact type: run-manifest
 ## Governing Docs Loaded
 
 - governing_doc:
-  - doc_id:
-  - path:
-  - version:
-  - status:
+  - doc_id: project-constitution
+  - path: docs/project-constitution/server-market-project-constitution-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: project-instructions
+  - path: docs/project-constitution/server-market-project-instructions-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: project-outline
+  - path: docs/project-constitution/project-outline-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: blueprint-outline
+  - path: docs/blueprints/blueprint-outline-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: engineering-specs-outline
+  - path: docs/engineering-specs/engineering-specs-outline-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: current-blueprint
+  - path: docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
+- governing_doc:
+  - doc_id: current-engineering-spec
+  - path: docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md
+  - version: v0.1.0
+  - status: loaded
 
 ## Artifact Outputs
 
@@ -144,8 +203,8 @@ Artifact type: run-manifest
 ## Gate Results
 
 - gate_result:
-  - gate_name:
-  - outcome:
+  - gate_name: input-gate
+  - outcome: pending
   - timestamp:
   - reviewer:
   - notes:
