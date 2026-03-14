@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FailureLog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "failure_log_id",
+    "run_id",
+    "project",
+    "entries",
+    "review_state",
+    "unresolved_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "failure-log"
+    },
+    "failure_log_id": {
+      "type": "string",
+      "pattern": "^failure-log-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/failure_entry"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "failure_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "failure_entry_id",
+        "event_timestamp",
+        "failure_stage",
+        "failure_type",
+        "severity",
+        "affected_object_id",
+        "affected_object_type",
+        "disposition",
+        "retry_allowed",
+        "escalation_required",
+        "invalidated_artifacts",
+        "notes"
+      ],
+      "properties": {
+        "failure_entry_id": {
+          "type": "string"
+        },
+        "event_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "failure_stage": {
+          "type": "string",
+          "enum": [
+            "input",
+            "acquisition",
+            "normalization",
+            "synthesis",
+            "validation",
+            "compilation",
+            "review",
+            "publication",
+            "recovery"
+          ]
+        },
+        "failure_type": {
+          "type": "string",
+          "enum": [
+            "input_error",
+            "source_unavailable",
+            "schema_validation_failure",
+            "contradiction_unresolved",
+            "routing_failure",
+            "model_failure",
+            "timeout",
+            "gate_failure",
+            "publication_block",
+            "operator_stop"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"]
+        },
+        "affected_object_id": {
+          "type": "string"
+        },
+        "affected_object_type": {
+          "type": "string",
+          "enum": ["run", "artifact", "schema", "template", "prompt-pack", "output", "source"]
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "logged",
+            "retry_scheduled",
+            "escalated",
+            "invalidated",
+            "recovered",
+            "abandoned"
+          ]
+        },
+        "retry_allowed": {
+          "type": "boolean"
+        },
+        "escalation_required": {
+          "type": "boolean"
+        },
+        "invalidated_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

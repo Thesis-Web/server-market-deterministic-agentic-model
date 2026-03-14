@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "failure-log",
+  "failure_log_id": "failure-log-20260314-demo-0001",
+  "run_id": "run-20260314-demo-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "failure_entry_id": "failure-entry-0001",
+      "event_timestamp": "2026-03-14T12:00:00Z",
+      "failure_stage": "validation",
+      "failure_type": "schema_validation_failure",
+      "severity": "medium",
+      "affected_object_id": "artifact-market-segment-demo-0001",
+      "affected_object_type": "artifact",
+      "disposition": "retry_scheduled",
+      "retry_allowed": true,
+      "escalation_required": false,
+      "invalidated_artifacts": ["artifact-market-segment-demo-0001"],
+      "notes": "Minimal example failure entry."
+    }
+  ],
+  "notes": "Example failure log.",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}
