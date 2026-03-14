@@ -3,12 +3,28 @@
 version: 0.1.0
 status: draft
 
+## Canonical Artifact Class
+
+- vendor-landscape
+
+## Allowed Artifact Status Values
+
+- draft
+- in-review
+- validated
+- blocked
+- invalidated
+- published
+
 ## Purpose
 
 Normalize competitive landscape for a defined scope (segment + region + time window): vendors, positions, product lines, differentiators, constraints, risks.
 
-## Required Fields
+## Required Root Fields
 
+- schema_version
+- artifact_type
+- status
 - landscape_id
 - scope (object: segment_id, region_id, timeWindow)
 - vendors (array)

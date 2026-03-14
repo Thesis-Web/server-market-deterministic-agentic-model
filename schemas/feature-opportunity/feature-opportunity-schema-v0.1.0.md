@@ -3,12 +3,28 @@
 version: 0.1.0
 status: draft
 
+## Canonical Artifact Class
+
+- feature-opportunity
+
+## Allowed Artifact Status Values
+
+- draft
+- in-review
+- validated
+- blocked
+- invalidated
+- published
+
 ## Purpose
 
 Translate pain points and market constraints into a structured feature/opportunity map that informs server design recommendations.
 
-## Required Fields
+## Required Root Fields
 
+- schema_version
+- artifact_type
+- status
 - opportunity_set_id
 - scope (object: segment_id, optional region_id, timeWindow)
 - opportunities (array)

@@ -1,11 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Feature Opportunity Schema v0.1.0",
+  "title": "FeatureOpportunity",
   "type": "object",
-  "required": ["opportunity_set_id", "scope", "opportunities", "evidence_refs", "unresolved_items"],
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "status",
+    "opportunity_set_id",
+    "scope",
+    "opportunities",
+    "evidence_refs",
+    "unresolved_items"
+  ],
   "properties": {
-    "opportunity_set_id": { "type": "string" },
-    "scope": { "type": "object" },
+    "opportunity_set_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
     "opportunities": {
       "type": "array",
       "items": {
@@ -22,21 +35,76 @@
           "evidence_refs"
         ],
         "properties": {
-          "featureLabel": { "type": "string" },
-          "description": { "type": "string" },
-          "mapped_pain_points": { "type": "array", "items": { "type": "string" } },
-          "expected_value": { "type": "string", "enum": ["low", "medium", "high"] },
-          "feasibility": { "type": "string", "enum": ["low", "medium", "high"] },
-          "time_horizon": { "type": "string", "enum": ["near", "mid", "long"] },
-          "design_traits": { "type": "array", "items": { "type": "string" } },
-          "risks": { "type": "array", "items": { "type": "string" } },
-          "evidence_refs": { "type": "array", "items": { "type": "string" } }
+          "featureLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "mapped_pain_points": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected_value": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "feasibility": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "time_horizon": {
+            "type": "string",
+            "enum": ["near", "mid", "long"]
+          },
+          "design_traits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         },
         "additionalProperties": false
       }
     },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } },
-    "unresolved_items": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "feature-opportunity"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "validated", "blocked", "invalidated", "published"]
+    }
   },
   "additionalProperties": false
 }

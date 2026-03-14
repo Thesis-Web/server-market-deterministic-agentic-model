@@ -1,14 +1,30 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "MarketSegment",
+  "title": "MarketSegmentDefinition",
   "type": "object",
-  "required": ["schema_version", "artifact_type", "segment_id", "segment_name"],
+  "required": ["schema_version", "artifact_type", "status", "segment_id", "segment_name"],
   "properties": {
-    "schema_version": { "type": "string" },
-    "artifact_type": { "type": "string", "const": "market-segment" },
-    "segment_id": { "type": "string" },
-    "segment_name": { "type": "string" },
-    "summary": { "type": "string" }
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "market-segment-definition"
+    },
+    "segment_id": {
+      "type": "string"
+    },
+    "segment_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "validated", "blocked", "invalidated", "published"]
+    }
   },
   "additionalProperties": true
 }

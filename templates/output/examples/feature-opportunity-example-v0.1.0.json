@@ -1,4 +1,7 @@
 {
+  "schema_version": "0.1.0",
+  "artifact_type": "feature-opportunity",
+  "status": "draft",
   "opportunity_set_id": "FO-EXAMPLE-0001",
   "scope": {
     "segment_id": "SEG-EXAMPLE",
@@ -19,5 +22,5 @@
     }
   ],
   "evidence_refs": ["EVID-EXAMPLE-0001"],
-  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "unresolved_items": ["Replace placeholders with Tier 1\u20134 evidence bundles."]
 }

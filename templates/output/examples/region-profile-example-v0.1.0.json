@@ -1,4 +1,7 @@
 {
+  "schema_version": "0.1.0",
+  "artifact_type": "region-profile",
+  "status": "draft",
   "region_id": "REG-US",
   "region_name": "United States",
   "region_type": "country",
@@ -22,5 +25,5 @@
     "serviceability_notes": "example placeholder"
   },
   "compliance_and_certifications": ["example placeholder"],
-  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "unresolved_items": ["Replace placeholders with Tier 1\u20134 evidence bundles."]
 }

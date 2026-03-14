@@ -3,12 +3,28 @@
 version: 0.1.0
 status: draft
 
+## Canonical Artifact Class
+
+- region-profile
+
+## Allowed Artifact Status Values
+
+- draft
+- in-review
+- validated
+- blocked
+- invalidated
+- published
+
 ## Purpose
 
 Define a normalized regional constraint and deployment profile used to condition server recommendations (compliance, power, import/export, certifications, environment, logistics).
 
-## Required Fields
+## Required Root Fields
 
+- schema_version
+- artifact_type
+- status
 - region_id
 - region_name
 - region_type (country | bloc | subregion | state-province | metro)

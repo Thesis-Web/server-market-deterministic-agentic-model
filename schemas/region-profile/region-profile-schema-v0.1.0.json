@@ -1,8 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Region Profile Schema v0.1.0",
+  "title": "RegionProfile",
   "type": "object",
   "required": [
+    "schema_version",
+    "artifact_type",
+    "status",
     "region_id",
     "region_name",
     "region_type",
@@ -14,18 +17,55 @@
     "unresolved_items"
   ],
   "properties": {
-    "region_id": { "type": "string" },
-    "region_name": { "type": "string" },
+    "region_id": {
+      "type": "string"
+    },
+    "region_name": {
+      "type": "string"
+    },
     "region_type": {
       "type": "string",
       "enum": ["country", "bloc", "subregion", "state-province", "metro"]
     },
-    "effective_date": { "type": "string" },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } },
-    "constraints": { "type": "object" },
-    "deployment_realities": { "type": "object" },
-    "compliance_and_certifications": { "type": "array", "items": { "type": "string" } },
-    "unresolved_items": { "type": "array", "items": { "type": "string" } }
+    "effective_date": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "deployment_realities": {
+      "type": "object"
+    },
+    "compliance_and_certifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "region-profile"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "validated", "blocked", "invalidated", "published"]
+    }
   },
   "additionalProperties": false
 }

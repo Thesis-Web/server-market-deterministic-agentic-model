@@ -2,13 +2,29 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "RecommendationBrief",
   "type": "object",
-  "required": ["schema_version", "artifact_type", "recommendation_id", "title"],
+  "required": ["schema_version", "artifact_type", "status", "recommendation_id", "title"],
   "properties": {
-    "schema_version": { "type": "string" },
-    "artifact_type": { "type": "string", "const": "recommendation-brief" },
-    "recommendation_id": { "type": "string" },
-    "title": { "type": "string" },
-    "summary": { "type": "string" }
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "recommendation-brief"
+    },
+    "recommendation_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "validated", "blocked", "invalidated", "published"]
+    }
   },
   "additionalProperties": true
 }

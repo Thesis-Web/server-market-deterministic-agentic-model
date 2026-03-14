@@ -3,12 +3,28 @@
 version: 0.1.0
 status: draft
 
+## Canonical Artifact Class
+
+- customer-pain-point
+
+## Allowed Artifact Status Values
+
+- draft
+- in-review
+- validated
+- blocked
+- invalidated
+- published
+
 ## Purpose
 
 Normalize customer pain points for a segment and optionally a region, connecting pain → drivers → buying criteria → design implications.
 
-## Required Fields
+## Required Root Fields
 
+- schema_version
+- artifact_type
+- status
 - pain_point_set_id
 - scope (object: segment_id, optional region_id, timeWindow)
 - pain_points (array)

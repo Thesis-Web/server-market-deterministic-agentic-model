@@ -1,11 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Vendor Landscape Schema v0.1.0",
+  "title": "VendorLandscape",
   "type": "object",
-  "required": ["landscape_id", "scope", "vendors", "evidence_refs", "unresolved_items"],
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "status",
+    "landscape_id",
+    "scope",
+    "vendors",
+    "evidence_refs",
+    "unresolved_items"
+  ],
   "properties": {
-    "landscape_id": { "type": "string" },
-    "scope": { "type": "object" },
+    "landscape_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
     "vendors": {
       "type": "array",
       "items": {
@@ -21,23 +34,71 @@
           "evidence_refs"
         ],
         "properties": {
-          "vendor_name": { "type": "string" },
+          "vendor_name": {
+            "type": "string"
+          },
           "vendor_type": {
             "type": "string",
             "enum": ["oem", "odm", "cloud", "integrator", "component", "reseller"]
           },
-          "offerings_summary": { "type": "string" },
-          "positioning_summary": { "type": "string" },
-          "differentiators": { "type": "array", "items": { "type": "string" } },
-          "weaknesses": { "type": "array", "items": { "type": "string" } },
-          "risk_flags": { "type": "array", "items": { "type": "string" } },
-          "evidence_refs": { "type": "array", "items": { "type": "string" } }
+          "offerings_summary": {
+            "type": "string"
+          },
+          "positioning_summary": {
+            "type": "string"
+          },
+          "differentiators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weaknesses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risk_flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         },
         "additionalProperties": false
       }
     },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } },
-    "unresolved_items": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "vendor-landscape"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "validated", "blocked", "invalidated", "published"]
+    }
   },
   "additionalProperties": false
 }
