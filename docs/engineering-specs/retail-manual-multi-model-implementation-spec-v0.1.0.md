@@ -666,3 +666,102 @@ This spec must remain aligned with:
 - prompts and schema outline
 - agentic architecture outline
 - repo bootstrap outline
+
+## 12.1 Track-A Operator Execution Alignment
+
+The following operator-layer artifacts are canonical dependencies of this implementation spec:
+
+- docs/operator-guides/track-a-ai-use-cases-and-model-routing-guide-v0.1.0.md
+- docs/operator-guides/track-a-multi-model-environment-execution-guide-v0.1.0.md
+
+These guides do not override this engineering spec. They operationalize it. If drift appears between these files and this spec, this spec must be updated or the derived operator guides must be corrected so the implementation layer remains canonical.
+
+### 12.1.1 Approved Track-A environment roles
+
+The approved Track-A environment role assignments are:
+
+- Perplexity Pro: citation-first acquisition and source validation
+- Grok Premium / SuperGrok: social, Reddit, ecosystem, and emerging-signal extraction
+- Claude Pro: deep synthesis, contradiction review, and long-document reasoning
+- ChatGPT Plus: compiler, normalizer, repository packaging, and handoff generation
+
+### 12.1.2 Approved Track-A execution modes
+
+The approved Track-A execution modes are:
+
+- Mode A: single model / single chat
+- Mode B: single model / multi chat
+- Mode C: multi model / multi environment
+
+### 12.1.3 Minimum transfer-packet contract
+
+Any environment-to-environment transfer must include at minimum:
+
+- run_id
+- execution_mode
+- source_environment
+- target_environment
+- objective
+- artifact_target
+- completed_so_far
+- evidence_refs
+- prior_output_refs
+- unresolved_items
+- next_environment_ask
+- expected_output_class
+
+No cross-environment continuation is valid if it depends only on implicit chat memory.
+
+### 12.1.4 Minimum restart-state contract
+
+A valid restart point must reload at minimum:
+
+- current governing docs
+- current run_id
+- current execution_mode
+- current artifact targets
+- latest transfer packet or handoff
+- latest accepted upstream outputs
+- unresolved items
+- last valid gate state
+
+Restart must occur from the last valid gate rather than ad hoc conversational memory.
+
+### 12.1.5 Contradiction disposition classes
+
+Until replaced by a later schema version, contradiction records must use one of these disposition classes:
+
+- unresolved
+- source-conflict
+- weak-signal-not-confirmed
+- evidence-gap
+- resolved-in-favor-of-primary-source
+- resolved-in-favor-of-cross-validated-source
+- compiler-overreach-corrected
+
+### 12.1.6 Environment handoff minimum fields
+
+A valid end-of-session or cross-chat handoff must include:
+
+- completed_work
+- pending_work
+- next_files_to_modify
+- current_version_references
+- unresolved_risks_and_questions
+- repo_state
+- active_execution_mode
+- next_recommended_route
+
+### 12.1.7 Post-guide artifact sequence
+
+After operator-guide completion, the next deterministic artifact families are created in this order:
+
+1. schemas/run-manifest
+2. schemas/evidence-ledger
+3. schemas/contradiction-log
+4. prompts/acquisition
+5. prompts/synthesis
+6. prompts/validation
+7. prompts/compiler
+
+This order is part of the current Track-A implementation sequence and must not be changed silently.
