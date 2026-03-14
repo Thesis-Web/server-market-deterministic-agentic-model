@@ -1,14 +1,48 @@
 {
-  "schemaVersion": "0.1.0",
-  "artifactType": "run-manifest",
-  "runId": "RUN-YYYYMMDD-0001",
+  "schema_version": "0.1.0",
+  "artifact_type": "run-manifest",
+  "run_id": "run-YYYYMMDD-scope-0001",
   "objective": "",
-  "modelsUsed": [],
-  "inputBundle": [],
-  "artifactOutputs": [],
-  "gateResults": [],
-  "timestamps": {
-    "start": "",
-    "end": ""
-  }
+  "operator": "",
+  "project": "server-market-deterministic-agentic-model",
+  "system_stage": "track-a-manual",
+  "status": "initialized",
+  "execution_mode": "manual",
+  "route_policy_id": "",
+  "start_timestamp": "",
+  "end_timestamp": "",
+  "models_used": [],
+  "model_assignments": [],
+  "overlap_plan": {
+    "overlap_required": false,
+    "reason": "",
+    "task_classes": [],
+    "target_models": [],
+    "expected_outcome": ""
+  },
+  "input_bundle_refs": [],
+  "source_window": {
+    "window_label": "",
+    "start_date": "",
+    "end_date": "",
+    "notes": ""
+  },
+  "prompt_pack_version": "0.1.0",
+  "schema_pack_version": "0.1.0",
+  "governing_docs_loaded": [],
+  "artifact_outputs": [],
+  "gate_results": [
+    {
+      "gate_name": "input-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
+    }
+  ],
+  "review_state": "not_reviewed",
+  "handoff_ref": "",
+  "checksum_ledger_refs": [],
+  "notes": "",
+  "unresolved_items": []
 }
