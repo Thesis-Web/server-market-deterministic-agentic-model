@@ -1,48 +1,45 @@
-# Track A Multi-Model Environment Execution Guide
+# Track-A Multi-Model Environment Execution Guide
 
-Version: v0.1.0  
-Status: draft canonical realignment  
-Date: 2026-03-14  
-Author: OpenAI ChatGPT with human operator James
+Version: v0.1.0
+Status: draft canonical operator guide
+Date: 2026-03-14
 
 ## 1. Purpose
 
-This operator guide defines how Track A work is executed across the approved commercial model environments used by the server-market-deterministic-agentic-model project.
+This document defines the exact operator procedure for running the Track-A manual deterministic system across the approved commercial AI environments.
 
-This guide operationalizes the manual execution layer already defined in the canonical blueprint, implementation spec, and model-routing guide.
+This guide operationalizes the already-approved Track-A architecture and routing model. It does not introduce new architecture. It translates existing canonical rules into environment execution procedure.
 
-It defines:
+This guide defines:
 
 - how each approved environment is used
 - how work is divided across environments
-- how continuity is preserved across chats and platforms
-- how transfer packets are formed
-- how restart is performed without relying on vague memory
-- how contradiction handling is routed across environments
-- how the human operator executes from repository root without becoming the primary analytical processor
-
-This guide does not change architecture. It applies the existing Track A architecture to the actual operating surfaces.
+- how transfer between environments is performed
+- how continuity is preserved across chats and sessions
+- how restart works without relying on vague chat memory
+- how contradiction handling is routed
+- how the operator maintains deterministic control while remaining the interface rather than the primary analytical engine
 
 ## 2. Scope
 
-This guide applies only to Track A manual deterministic execution.
+This guide applies only to Track-A manual deterministic execution.
 
-It covers these approved environments:
+It governs work executed through:
 
 - ChatGPT Projects
 - Claude Projects
 - Perplexity Spaces or equivalent research threads
-- Grok workspace, project, or prompt-pack operating pattern
+- Grok workspaces, collections, or structured prompt-pack operating pattern
 
-It applies to all three approved Track A execution modes:
+It applies to all currently defined Track-A execution modes:
 
-- Mode A — single-model / single-chat
-- Mode B — single-model / multi-chat
-- Mode C — multi-model / multi-environment
+- Mode A — single model / single chat
+- Mode B — single model / multi chat
+- Mode C — multi model / multi environment
 
-It does not define Track B orchestration runtime behavior.
+This guide does not define Track-B API orchestration behavior.
 
-## 3. Governing alignment
+## 3. Governing Alignment
 
 This guide must remain aligned with:
 
@@ -53,71 +50,69 @@ This guide must remain aligned with:
 - docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md
 - docs/operator-guides/track-a-ai-use-cases-and-model-routing-guide-v0.1.0.md
 
-If any environment procedure in this guide conflicts with the blueprint or implementation spec, the canonical governance documents win and this guide must be updated.
+If this guide conflicts with blueprint or engineering spec behavior, the canonical governance and implementation documents win and this guide must be updated.
 
-## 4. Core operating stance
+## 4. Core Operating Stance
 
-The operating stance remains fixed:
+Track-A execution remains governed by these fixed principles:
 
-- the models perform the primary analytical work
-- the human acts as operator, reviewer, and escalation authority
+- AI performs the primary analytical work
+- the human acts as operator, reviewer, escalation authority, and file interface
 - repository files outrank chat memory when conflicts appear
-- every transfer between environments must be explicit
+- every cross-environment transfer must be explicit
 - every meaningful run must preserve restartability
-- overlap between models is allowed only when it strengthens evidence, synthesis, contradiction review, or compiler quality
-- no environment is treated as universally interchangeable with another
+- overlap between models is allowed only when it improves evidence quality, contradiction review, synthesis quality, or compiler quality
+- no environment is treated as fully interchangeable with another
 
-The operator must preserve route clarity rather than prompt improvisation.
+The operator must maintain route clarity and artifact discipline rather than prompt improvisation.
 
-## 5. Approved environment roles
+## 5. Approved Environment Roles
 
-### 5.1 Environment role summary
+### 5.1 Environment Role Summary
 
-| Environment                           | Primary function                                                           | Secondary function                        | Avoid as primary                           |
-| ------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------ |
-| Perplexity Spaces or research threads | citation-first acquisition, source mapping, first-pass research bundles    | contradiction support, current-event scan | final compiler                             |
-| Grok workspace or prompt-pack pattern | social, Reddit, emerging-signal, discourse pulse                           | supplemental current-signal scan          | canonical normalization or final packaging |
-| Claude Projects                       | long-document synthesis, comparison, contradiction review                  | reasoning drafts, recommendation logic    | primary live acquisition                   |
-| ChatGPT Projects                      | normalization, compilation, packaging, repository-shaped artifact drafting | synthesis support, schema shaping         | primary live social signal monitor         |
+| Environment              | Primary function                                                | Secondary function                                       | Avoid as primary                           |
+| ------------------------ | --------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------ |
+| Perplexity Pro           | citation-first acquisition and source mapping                   | fast contradiction support and current-source validation | final compiler                             |
+| Grok Premium / SuperGrok | social, Reddit, ecosystem, and emerging-signal extraction       | weak-signal scouting and public-signal escalation        | canonical normalization or final packaging |
+| Claude Pro               | deep synthesis, long-document reasoning, contradiction analysis | recommendation logic drafting and structured comparison  | primary live acquisition                   |
+| ChatGPT Plus             | compiler, normalizer, repository-ready packaging                | synthesis support, schema shaping, handoff drafting      | primary social-signal monitor              |
 
-### 5.2 Default high-confidence flow
+### 5.2 Standard High-Confidence Flow
 
-The default high-confidence flow is:
+Default high-confidence route:
 
-Perplexity
-downstream to Claude
-downstream to ChatGPT
+- Perplexity
+- Claude
+- ChatGPT
 
-### 5.3 Default signal-escalation flow
+### 5.3 Signal Escalation Flow
 
-The default signal-escalation flow is:
+Default signal-escalation route:
 
-Grok
-downstream to Perplexity
-downstream to Claude
-downstream to ChatGPT
+- Grok
+- Perplexity
+- Claude
+- ChatGPT
 
-### 5.4 Approved execution posture
+### 5.4 Routing Discipline
 
-The current practical posture is:
+Per environment, one environment owns one primary task class at a time.
 
-- Perplexity-led acquisition
-- Grok-assisted weak-signal detection
-- Claude-led synthesis and contradiction review
-- ChatGPT-led compilation and normalization
+Do not assign the same primary responsibility to multiple environments in the same run slice unless contradiction review or explicit overlap is required.
 
-## 6. Environment structure requirements
+## 6. Environment Structure Requirements
 
-Each environment must be treated as a bounded work surface with a defined role.
+Each environment must be treated as a bounded execution surface rather than an open-ended conversational scratchpad.
 
-### 6.1 Minimum environment control fields
+### 6.1 Minimum Environment Control Fields
 
-For any meaningful work session, the operator must know and record:
+For every meaningful execution slice, the operator must know:
 
 - run_id
 - execution_mode
 - environment_name
 - primary_task_class
+- current_objective
 - artifact_target
 - route_position
 - input_refs
@@ -125,357 +120,337 @@ For any meaningful work session, the operator must know and record:
 - unresolved_items
 - next_expected_environment
 
-### 6.2 Environment naming rule
+### 6.2 Environment Naming Rule
 
-The operator should use stable naming inside each tool wherever possible.
+Recommended naming pattern for projects, spaces, or threads:
 
-Recommended naming pattern:
+- project-or-space name
+- market focus
+- run or artifact focus
+- version where needed
 
-project-or-space name
-market focus
-run or artifact focus
-version when needed
+Example:
 
-Example pattern:
+    server-market / region-scan / run-sm-2026-03-14-001
 
-server-market / vendor-landscape / run-sm-2026-03-14-001
+### 6.3 Environment Containment Rule
 
-### 6.3 Environment containment rule
+Each environment should contain only the material required for its current task slice.
 
-Each environment should hold only the material required for its assigned task slice.
+Do not overload one environment with all system duties when decomposition improves determinism, restartability, or output quality.
 
-Do not overload one environment with all tasks if decomposition improves determinism.
+## 7. ChatGPT Projects Operating Pattern
 
-## 7. ChatGPT Projects operating pattern
-
-### 7.1 Primary use
+### 7.1 Primary Use
 
 Use ChatGPT Projects for:
 
 - compiler-stage work
 - normalized markdown drafting
-- repository-shaped outputs
-- handoff creation
-- manifest-aware artifact packaging
-- cross-model material consolidation
+- repository-shaped artifact generation
+- handoff generation
+- schema-aligned packaging
+- final consolidation of upstream outputs
 
-### 7.2 Project structure expectation
+### 7.2 Project Structure Expectation
 
 A ChatGPT Project should contain, when applicable:
 
-- governing document references
-- current route policy summary
-- active artifact targets
-- imported upstream outputs
-- normalized task prompts
-- compiler-stage working notes
+- current artifact targets
+- active canonical references
+- imported upstream synthesis
+- imported cited acquisition outputs
+- normalized compiler prompts
+- packaging constraints
+- unresolved-item list
 
-### 7.3 Recommended thread separation
-
-Inside ChatGPT Projects, separate threads by function when work is large.
+### 7.3 Recommended Thread Families
 
 Recommended thread families:
 
 - compiler-main
 - normalization-pass
+- artifact-draft
 - handoff-generation
-- contradiction-register-finalization
-- artifact-specific drafting
+- contradiction-disposition-finalization
 
-### 7.4 Inputs expected from upstream environments
+### 7.4 Inputs Expected from Upstream Environments
 
 ChatGPT should usually receive:
 
-- cited acquisition bundle
+- cited acquisition packet
 - synthesis summary
 - contradiction findings
 - unresolved items
-- target artifact class
 - target file path
+- target artifact class
 - required structure
+- version and status expectation
 
-### 7.5 ChatGPT output class
+### 7.5 Output Class
 
 Expected ChatGPT outputs include:
 
-- canonical markdown drafts
-- repository-ready sections
-- normalized artifact language
-- handoff notes
-- operator execution packs
+- repository-ready markdown
+- structured handoffs
+- normalized artifact sections
+- packaging notes
+- template-aligned drafts
 
-## 8. Claude Projects operating pattern
+## 8. Claude Projects Operating Pattern
 
-### 8.1 Primary use
+### 8.1 Primary Use
 
 Use Claude Projects for:
 
-- long-document reasoning
-- dense comparative analysis
+- long-document synthesis
+- comparative analysis
 - contradiction review
-- extracting stable implications from large evidence sets
-- recommendation logic drafting before compiler normalization
+- deriving stable implications from large evidence sets
+- recommendation logic drafting before final compiler normalization
 
-### 8.2 Project structure expectation
+### 8.2 Project Structure Expectation
 
 A Claude Project should contain, when applicable:
 
 - upstream evidence bundle
-- related supporting documents
+- grouped source notes
 - comparison targets
 - contradiction candidates
 - analysis objective
-- required output shape
+- expected output shape
 
-### 8.3 Recommended thread separation
+### 8.3 Recommended Thread Families
 
 Recommended Claude thread families:
 
 - synthesis-main
-- comparison-pass
 - contradiction-review
 - recommendation-logic-draft
-- evidence-gap-analysis
+- comparison-pass
+- gap-analysis
 
-### 8.4 Inputs expected from upstream environments
+### 8.4 Inputs Expected from Upstream Environments
 
 Claude should usually receive:
 
 - acquisition packet
-- grouped evidence notes
-- source tier notes
-- key claims requiring synthesis
-- ambiguity or contradiction targets
-- desired output class
+- evidence grouping
+- ambiguity flags
+- contradiction candidates
+- synthesis objective
+- required output class
 
-### 8.5 Claude output class
+### 8.5 Output Class
 
 Expected Claude outputs include:
 
 - structured synthesis notes
+- comparative matrices
+- contradiction findings
 - implication chains
-- comparative tables
-- contradiction review notes
 - recommendation logic drafts
 
-## 9. Perplexity Spaces operating pattern
+## 9. Perplexity Spaces Operating Pattern
 
-### 9.1 Primary use
+### 9.1 Primary Use
 
 Use Perplexity first for:
 
 - citation-first acquisition
 - source discovery
 - source triangulation
-- first-pass market scans
-- current vendor or competitor pulls
+- vendor and competitor fact gathering
+- market or region scans
 - regulation and policy retrieval
-- acquisition-oriented contradiction support
+- fast validation of claims from other environments
 
-### 9.2 Space or thread structure expectation
+### 9.2 Space or Thread Structure Expectation
 
-A Perplexity Space or equivalent thread should contain:
+A Perplexity Space or research thread should contain:
 
-- tightly scoped acquisition objective
-- search scope
-- current subject boundary
-- evidence extraction intent
-- citation preservation expectation
+- tightly bounded acquisition objective
+- subject boundary
+- source expectations
+- evidence extraction goal
+- citation preservation requirement
 
-### 9.3 Recommended thread separation
+### 9.3 Recommended Thread Families
 
 Recommended Perplexity thread families:
 
 - acquisition-main
 - competitor-scan
-- regulation-scan
 - region-scan
+- regulation-scan
 - source-gap-closure
-- fast contradiction check
+- contradiction-check-fast
 
-### 9.4 Inputs expected from upstream environments
+### 9.4 Inputs Expected from Upstream Environments
 
 Perplexity may receive:
 
-- target segment or market question
-- region or vendor boundary
+- a target question
+- region or vendor scope
 - evidence gaps from Claude or ChatGPT
 - claims requiring citation confirmation
-- time-sensitive signal requiring formal source validation
+- signal items from Grok requiring formal validation
 
-### 9.5 Perplexity output class
+### 9.5 Output Class
 
 Expected Perplexity outputs include:
 
+- cited evidence bundles
 - source maps
-- cited evidence notes
-- acquisition bundles
-- vendor fact sets
-- region or policy source bundles
-- evidence-gap closure notes
+- fact sets
+- gap-closure notes
+- source-backed contradiction checks
 
-## 10. Grok operating pattern
+## 10. Grok Operating Pattern
 
-### 10.1 Primary use
+### 10.1 Primary Use
 
 Use Grok for:
 
-- social-adjacent signal capture
-- Reddit or forum-style weak-signal collection
+- social-adjacent signal extraction
+- Reddit and forum-adjacent signal scouting
 - ecosystem chatter
-- operator pain-point reconnaissance
 - launch reaction and discourse monitoring
+- operator pain-point reconnaissance
 - emerging-topic watch signals
 
-### 10.2 Workspace or prompt-pack expectation
+### 10.2 Workspace / Prompt-Pack Expectation
 
-Because Grok workspace semantics may vary, the operator should treat Grok as a controlled prompt-pack operating pattern rather than relying on undocumented persistence.
+Because Grok workspace semantics remain less stable and less documented than the other environments, Grok should be treated as a bounded prompt-pack operating surface rather than the primary persistence anchor.
 
-A Grok working surface should include:
+A Grok execution surface should include:
 
 - bounded objective
 - narrow signal target
 - explicit extraction ask
-- explicit note that outputs are provisional until validated elsewhere
+- explicit note that output is provisional until validated elsewhere
 - intended downstream validation route
 
-### 10.3 Recommended thread separation
+### 10.3 Recommended Thread Families
 
 Recommended Grok thread families:
 
 - signal-main
-- operator-pain-points
 - ecosystem-reaction
+- operator-pain-points
 - launch-reaction
-- field-friction-watch
 - weak-signal-escalation
+- field-friction-watch
 
-### 10.4 Inputs expected from upstream environments
+### 10.4 Inputs Expected from Upstream Environments
 
 Grok may receive:
 
-- a market topic requiring discourse pulse
+- a market issue requiring discourse pulse
 - a vendor or product issue to scan socially
 - a suspected pain point to probe
-- a newly surfaced issue needing community-signal sampling
+- a newly surfaced issue needing signal sampling
 
-### 10.5 Grok output class
+### 10.5 Output Class
 
 Expected Grok outputs include:
 
 - signal notes
 - anecdotal evidence candidates
-- early warning items
 - emerging-topic summaries
+- early warning items
 - provisional pain-point leads
 
-Grok outputs are not publication-grade conclusions on their own.
+Grok outputs are never treated as publication-grade conclusions on their own.
 
-## 11. Execution by mode
+## 11. Execution by Mode
 
-### 11.1 Mode A — single-model / single-chat
+### 11.1 Mode A — Single Model / Single Chat
 
-Use this when:
+Use when:
 
-- task scope is narrow
+- scope is narrow
 - risk is low
-- artifact scope is limited
-- overlap is not yet needed
+- artifact target is limited
+- overlap is not needed
 
 Procedure:
 
-1. identify objective
+1. define objective
 2. choose one primary environment
-3. load governing context
-4. define artifact target
-5. execute the task in one chat
-6. extract the output
+3. load relevant governing context
+4. define target artifact or output class
+5. execute task in one bounded chat
+6. extract output
 7. record unresolved items
 8. move to next gate or close run slice
 
-Typical examples:
+### 11.2 Mode B — Single Model / Multi Chat
 
-- one acquisition thread in Perplexity
-- one synthesis pass in Claude
-- one compiler pass in ChatGPT
-
-### 11.2 Mode B — single-model / multi-chat
-
-Use this when:
+Use when:
 
 - one platform remains primary
-- work must be decomposed into multiple branches
-- branching improves clarity or token discipline
-- outputs will later be merged in the same platform or downstream
+- work benefits from decomposition into branches
+- token discipline or clarity requires branching
+- branch outputs will later be merged
 
 Procedure:
 
-1. identify primary model
+1. define primary model
 2. define branch map
 3. assign one objective per branch
 4. preserve branch naming
-5. collect outputs from each branch
-6. merge into a synthesis or compiler thread
-7. record merge logic in run notes
+5. collect branch outputs
+6. merge them in the same environment or downstream
+7. record merge logic in run notes or handoff
 
-Typical examples:
+### 11.3 Mode C — Multi Model / Multi Environment
 
-- multiple Perplexity acquisition threads by region
-- multiple Claude analysis threads by vendor
-- multiple ChatGPT drafting threads by artifact family
+Use when:
 
-### 11.3 Mode C — multi-model / multi-environment
-
-Use this when:
-
-- the work is high-value or high-risk
+- work is high value or high risk
 - evidence breadth matters
 - contradiction risk is material
-- synthesis and compilation must be separated
+- synthesis and compilation should be separated
 - different model strengths are intentionally combined
 
 Procedure:
 
 1. define route policy
-2. define model assignments
+2. define environment assignments
 3. define transfer checkpoints
 4. run acquisition in the selected environment
-5. validate and package transfer bundle
-6. pass to next environment
-7. continue until artifact target reaches compiler state
-8. finalize handoff and gate status
+5. package transfer bundle
+6. pass explicitly to the next environment
+7. continue until compiler state is reached
+8. finalize output and handoff
 
-Typical examples:
-
-- Perplexity to Claude to ChatGPT
-- Grok to Perplexity to Claude to ChatGPT
-
-## 12. Transfer packet contract
+## 12. Transfer Packet Contract
 
 ### 12.1 Rule
 
 No environment-to-environment transfer may rely on vague chat recall.
 
-A transfer packet must be explicit and compact.
+Every transfer must be explicit and compact.
 
-### 12.2 Minimum transfer packet fields
+### 12.2 Minimum Transfer Fields
 
 Every transfer packet must include:
 
 - run_id
-- current objective
 - execution_mode
-- source environment
-- target environment
-- current artifact target
-- summary of prior work
-- evidence bundle reference
-- prior output reference
-- unresolved items
-- specific ask for next environment
-- expected output class
+- source_environment
+- target_environment
+- objective
+- artifact_target
+- completed_so_far
+- evidence_refs
+- prior_output_refs
+- unresolved_items
+- next_environment_ask
+- expected_output_class
 
-### 12.3 Transfer packet template
+### 12.3 Transfer Template
 
 Use this shape:
 
@@ -492,17 +467,17 @@ Use this shape:
 - next_environment_ask:
 - expected_output_class:
 
-### 12.4 Transfer quality rule
+### 12.4 Transfer Quality Rule
 
-The transfer packet must be sufficient for the next environment to operate without guessing:
+The transfer packet must be sufficient for the receiving environment to operate without guessing:
 
 - what the task is
 - what already happened
 - what evidence is load-bearing
 - what remains unresolved
-- what the next output must look like
+- what the next output should look like
 
-## 13. Environment-to-environment procedures
+## 13. Environment-to-Environment Procedures
 
 ### 13.1 Perplexity to Claude
 
@@ -512,14 +487,14 @@ Transfer:
 
 - source bundle
 - key citations
-- claim families
+- grouped claims
 - ambiguity flags
 - synthesis objective
-- desired analysis form
+- required analysis form
 
 Expected result:
 
-- structured synthesis draft
+- structured synthesis
 - implications
 - contradiction flags
 - recommendation logic candidates
@@ -531,16 +506,16 @@ Use when weak signals require formal validation.
 Transfer:
 
 - signal note
-- candidate issues
-- suspected pain points
-- vendors or topics mentioned
+- candidate pain points
+- suspected issues
+- named topics or vendors
 - validation objective
 
 Expected result:
 
 - cited validation bundle
-- confirmed or rejected signals
-- source-backed expansion of the signal
+- confirmed or rejected signal
+- source-backed expansion of the issue
 
 ### 13.3 Claude to ChatGPT
 
@@ -550,7 +525,8 @@ Transfer:
 
 - synthesis summary
 - structured findings
-- contradictions and unresolved items
+- contradiction findings
+- unresolved items
 - target file path
 - required section structure
 - artifact class
@@ -558,28 +534,28 @@ Transfer:
 Expected result:
 
 - normalized repository-ready markdown
-- clear status and version headers
-- structured sections aligned to the target file family
+- explicit version and status header
+- section structure aligned with target artifact family
 
 ### 13.4 Perplexity to ChatGPT
 
-Use when the acquisition output is light enough to skip deep synthesis.
+Use when acquisition output is light enough to skip deep synthesis.
 
 Transfer:
 
 - source map
-- cited evidence summary
+- cited fact summary
 - target artifact type
 - required normalization shape
 
 Expected result:
 
 - normalized evidence-led draft
-- repository-shaped artifact or note
+- compiler-stage note or artifact section
 
 ### 13.5 ChatGPT to Claude
 
-Use when a compiler-stage artifact needs deeper reasoning review before finalization.
+Use when compiler-stage material needs deeper reasoning review before finalization.
 
 Transfer:
 
@@ -594,20 +570,20 @@ Expected result:
 - contradiction disposition
 - improved implication framing
 
-## 14. Multi-chat branching patterns
+## 14. Multi-Chat Branching Patterns
 
-### 14.1 Branching rule
+### 14.1 Branching Rule
 
-Create branches when the work benefits from separation by:
+Branch when the work benefits from separation by:
 
 - region
 - vendor
-- segment
+- market segment
 - evidence class
 - contradiction class
 - artifact family
 
-### 14.2 Merge rule
+### 14.2 Merge Rule
 
 Branch outputs must be merged deliberately.
 
@@ -619,9 +595,7 @@ The merge step must record:
 - what was discarded
 - which environment performed the merge
 
-### 14.3 Preferred merge environments
-
-Preferred merge environment by task class:
+### 14.3 Preferred Merge Environments
 
 | Merge type           | Preferred environment |
 | -------------------- | --------------------- |
@@ -630,15 +604,15 @@ Preferred merge environment by task class:
 | final artifact merge | ChatGPT               |
 | contradiction merge  | Claude then ChatGPT   |
 
-## 15. Session restart rules
+## 15. Session Restart Rules
 
-### 15.1 Restart principle
+### 15.1 Restart Principle
 
-Restart from the last valid gate, not from general memory.
+Restart from the last valid gate, not from vague memory.
 
-### 15.2 Required restart inputs
+### 15.2 Required Restart Inputs
 
-Before resuming any non-trivial work, the operator must reload:
+Before resuming non-trivial work, the operator must reload:
 
 - current governing docs
 - current run_id
@@ -648,43 +622,43 @@ Before resuming any non-trivial work, the operator must reload:
 - latest accepted upstream outputs
 - unresolved items
 
-### 15.3 Restart decision tree
+### 15.3 Restart Decision Logic
 
-If the previous session ended before meaningful output:
+If previous session ended before meaningful output:
 restart at input gate.
 
 If acquisition completed but synthesis did not:
-restart at evidence gate or reasoning gate as appropriate.
+restart at evidence or reasoning gate.
 
 If synthesis completed but compiler output did not:
 restart at output gate.
 
 If compiler output exists but review is incomplete:
-restart at publish gate preparation.
+restart at publish-gate preparation.
 
-### 15.4 Unsafe restart condition
+### 15.4 Unsafe Restart Condition
 
 Do not resume from memory alone when:
 
-- the last accepted artifact is unclear
+- last accepted artifact is unclear
 - unresolved items are missing
 - route position is unclear
 - more than one environment was active and transfer state is ambiguous
 
-In those cases, reconstruct state from repository artifacts and the last written handoff.
+In those cases, reconstruct state from repository artifacts and the latest written handoff.
 
-## 16. Contradiction loop workflow
+## 16. Contradiction Loop Workflow
 
-### 16.1 Trigger conditions
+### 16.1 Trigger Conditions
 
 Invoke contradiction loop when:
 
-- two environments materially disagree
-- a weak signal conflicts with cited evidence
-- a synthesis step exposes ungrounded assumptions
-- a compiler draft appears stronger than the evidence supports
+- environments materially disagree
+- weak signal conflicts with cited evidence
+- synthesis exposes ungrounded assumptions
+- compiler output overstates what evidence supports
 
-### 16.2 Preferred contradiction route
+### 16.2 Preferred Contradiction Route
 
 Default contradiction route:
 
@@ -692,9 +666,9 @@ Default contradiction route:
 2. Perplexity cross-checks evidence if needed
 3. ChatGPT normalizes final contradiction disposition
 
-### 16.3 Contradiction disposition classes
+### 16.3 Contradiction Disposition Classes
 
-Each contradiction should be marked as one of:
+Every contradiction should be marked as one of:
 
 - unresolved
 - source-conflict
@@ -704,44 +678,45 @@ Each contradiction should be marked as one of:
 - resolved-in-favor-of-cross-validated-source
 - compiler-overreach-corrected
 
-### 16.4 Contradiction recording rule
+### 16.4 Recording Rule
 
-No meaningful contradiction may be silently ignored.
+No meaningful contradiction may be silently discarded.
 
-Even if a dedicated contradiction schema is not yet present, contradiction findings must be preserved in run notes or handoff notes.
+If a dedicated contradiction schema is not yet present, contradiction findings must be preserved in run notes or handoff notes.
 
-## 17. Operator responsibilities
+## 17. Operator Responsibilities
 
 The operator is responsible for:
 
-- starting from repository root
+- starting and ending work at repository root
 - loading governing documents before meaningful work
 - selecting execution mode
 - selecting route policy
-- creating explicit transfer packets
 - preserving accepted outputs
-- keeping git state intentional
+- extracting model outputs into repository files
 - recording unresolved items
-- restarting from the last valid gate
-- not replacing model analysis with manual authorship
+- restarting from last valid gate
+- maintaining git and gate discipline
 
-The operator is not responsible for being the primary analytical engine.
+The operator is not responsible for performing the system’s primary analytical labor manually.
 
-## 18. Operator execution reminders
+## 18. Operator Execution Reminders
 
-### 18.1 Repo-root discipline
+### 18.1 Repo-Root Discipline
 
-Every work cycle should begin and end at repository root.
+Every work cycle begins and ends at:
+
+    ~/repos/server-market-deterministic-agentic-model
 
 Required posture:
 
 - SSH into droplet
-- attach tmux
-- cd to ~/repos/server-market-deterministic-agentic-model
-- perform file writes, validation, git checks, and handoff generation from repo root
-- end at repo root
+- attach tmux session
+- cd to repository root
+- perform writes, validation, git checks, and handoff generation from root
+- finish at root
 
-### 18.2 Extraction discipline
+### 18.2 Extraction Discipline
 
 When extracting model output into repo files:
 
@@ -751,40 +726,41 @@ When extracting model output into repo files:
 - do not silently rewrite architecture
 - do not collapse evidence and inference together
 
-### 18.3 Environment discipline
+### 18.3 Environment Discipline
 
 When using multiple environments:
 
 - one environment owns one primary task at a time
-- transfer only the material needed
+- transfer only necessary material
 - do not assume hidden persistence features are stable
 - record unresolved items before moving downstream
 
-### 18.4 Git and gate discipline
+### 18.4 Git and Gate Discipline
 
 Before commit or push:
 
 - run formatter
-- run validation gate
-- confirm git diff is expected
-- confirm artifact path and file name are correct
+- run CI gate
+- inspect git diff
+- confirm file path and filename
+- confirm no accidental shell artifacts landed in the file
 
-## 19. Environment handoff template
+## 19. Environment Handoff Template
 
 Use this when ending a session that will resume later or in another chat.
 
-### 19.1 Required handoff fields
+### 19.1 Required Handoff Fields
 
-- completed work summary
-- pending work summary
-- next files to modify
-- current version references
-- unresolved risks and questions
-- current repo state
-- current execution mode if active
-- next recommended route
+- completed_work
+- pending_work
+- next_files_to_modify
+- current_version_references
+- unresolved_risks_and_questions
+- repo_state
+- active_execution_mode
+- next_recommended_route
 
-### 19.2 Handoff skeleton
+### 19.2 Handoff Skeleton
 
 - completed_work:
 - pending_work:
@@ -795,33 +771,34 @@ Use this when ending a session that will resume later or in another chat.
 - active_execution_mode:
 - next_recommended_route:
 
-## 20. Non-goals and constraints
+## 20. Non-Goals and Constraints
 
 This guide does not guarantee:
 
-- perfect persistence inside commercial model UIs
-- equal capability across all vendors
+- perfect persistence in any commercial UI
+- equal capability across vendors
 - stable vendor limits over time
 - zero operator judgment
 
 This guide intentionally avoids:
 
-- treating Grok workspace behavior as more documented than it is
-- treating Perplexity as a root compiler
+- treating Grok as the primary persistence anchor
+- treating Perplexity as the root compiler
 - treating ChatGPT as the primary live social monitor
-- treating Claude as the primary acquisition engine
+- treating Claude as the primary live acquisition engine
 
-## 21. Open issues
+## 21. Open Issues
 
-The following remain open and should be preserved explicitly:
+The following remain open and must stay explicit:
 
-- Grok workspace or project semantics may continue to move
-- Perplexity Pro persistence and connector-sync behavior remain bounded compared with enterprise tiers
-- exact first-tier limits vary by vendor
-- environment-specific export behavior may change
-- future prompt-pack files must align with this guide once created
+- Grok workspace semantics and limits may continue to move
+- Perplexity Space persistence and connector-sync behavior remain bounded
+- Claude export and quota behavior requires continued observation
+- ChatGPT connector and limit behavior may shift by region or plan
+- cross-environment artifact packaging strategy is still evolving
+- manual testing remains required before final capability freeze
 
-## 22. Appendix references
+## 22. Appendix References
 
 This guide should remain aligned with future additions in:
 
