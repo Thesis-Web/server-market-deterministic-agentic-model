@@ -28,33 +28,22 @@ Artifact type: run-manifest
 
 ### model_assignments
 
-- platform:
-  -
-- plan_tier:
-  -
-- environment:
-  -
-- task_class:
-  -
-- role_type:
-  -
-- reason_for_route:
-  -
-- expected_outputs:
-  -
-- overlap_with:
-  -
-- status:
-  -
+- ## platform:
+- ## plan_tier:
+- ## environment:
+- ## task_class:
+- ## role_type:
+- ## reason_for_route:
+- ## expected_outputs:
+- ## overlap_with:
+- ## status:
 
 ## Overlap Plan
 
 - overlap_required:
 - reason:
-- task_classes:
-  -
-- target_models:
-  -
+- ## task_classes:
+- ## target_models:
 - expected_outcome:
 
 ## Input Bundle Refs
@@ -92,12 +81,9 @@ Artifact type: run-manifest
 - status:
 - producing_stage:
 - primary_model_origin:
-- secondary_model_origins:
-  -
-- evidence_refs:
-  -
-- contradiction_refs:
-  -
+- ## secondary_model_origins:
+- ## evidence_refs:
+- ## contradiction_refs:
 - review_status:
 
 ## Gate Results
@@ -118,8 +104,7 @@ Artifact type: run-manifest
 
 ## Checksum Ledger Refs
 
-- checksum_ledger_refs:
-  -
+- ## checksum_ledger_refs:
 
 ## Notes
 
@@ -127,5 +112,4 @@ Artifact type: run-manifest
 
 ## Unresolved Items
 
-- unresolved_items:
-  -
+- ## unresolved_items:
