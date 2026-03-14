@@ -1,85 +1,81 @@
 # Retail/Manual Multi-Model Implementation Spec
 
 Version: v0.1.0  
-Status: draft  
-Date: 2026-03-13  
+Status: draft canonical realignment  
+Date: 2026-03-14  
 Author: OpenAI ChatGPT with human operator James
-
-## Section Index
-
-1. Purpose
-2. Scope
-3. Definitions and artifact taxonomy
-4. System structure
-5. Data contracts
-6. Run protocol
-7. Validation and controls
-8. Error handling and recovery
-9. Logging and auditability
-10. Security and confidentiality
-11. Implementation notes
-12. Open issues
-13. Appendices
 
 ## 1. Purpose
 
-This engineering spec defines the exact deterministic procedures, repository structures, artifact types, prompt packaging rules, schema expectations, manifests, logs, gates, and operator procedures required to execute the AI-first human-interface market research operating system manually.
+This engineering spec defines the deterministic implementation contract for Track A, the retail/manual multi-model execution system.
 
-This is the implementation companion to Blueprint 1. It defines how the Stage 0 manual system is actually run in commercial model interfaces while preserving restartability, lineage, and future automation readiness.
+It specifies:
+
+- supported Track A execution modes
+- approved model environments
+- route policy
+- artifact and evidence handling
+- model-origin tagging
+- gate logic
+- logging requirements
+- restart and recovery behavior
+- operator procedure from repository root on the droplet workflow
+
+This spec implements Blueprint 1. It does not define the later API orchestrator.
 
 ## 2. Scope
 
-### 2.1 In-scope
+### 2.1 In scope
 
 This spec governs:
 
-- repository structure for manual-system operation
-- deterministic artifact naming
-- prompt-pack and schema-pack structure
-- run manifest requirements
-- event and review logging
-- checksum ledger requirements
-- gate definitions
-- bounded retry policy
-- operator workflow in retail model environments
-- invalidation and restart procedures
+- manual operation across supported model environments
+- run metadata and route metadata
+- artifact taxonomy and naming
+- evidence lineage handling
+- overlap-for-validation policy
+- operator transfer between environments
+- logging and handoff continuity
+- gate-based validation
+- restart from last valid gate
 
-### 2.2 Out-of-scope
+### 2.2 Out of scope
 
 This spec does not define:
 
-- API orchestration runtime internals
-- production service deployment
-- enterprise auth and permissions systems
-- full software agent execution engines
-- final dashboard architecture
-
-Those belong to the later agentic orchestration spec.
+- Track B task schedulers
+- API orchestration internals
+- enterprise auth and access control systems
+- production service infrastructure
+- dashboards or observability UIs
+- model-vendor-specific automation beyond manual operator procedure
 
 ## 3. Definitions and artifact taxonomy
 
 ### 3.1 Core definitions
 
-| Term                  | Definition                                                                     |
-| --------------------- | ------------------------------------------------------------------------------ |
-| Run                   | a bounded research execution instance with a unique run ID                     |
-| Artifact              | a versioned output object produced during a run                                |
-| Evidence bundle       | a grouped set of source-grounded material used by an artifact                  |
-| Gate                  | a controlled validation checkpoint with pass, retry, fail, or escalate outcome |
-| Review decision       | a human or model validation disposition on an artifact or gate                 |
-| Contradiction record  | a structured record of conflicting claims or unresolved analytical tension     |
-| Checksum ledger entry | a record pairing an artifact path or manifest object with its hash             |
-| Handoff note          | a restart-safe continuation document recording state and next actions          |
+| Term                 | Definition                                                                               |
+| -------------------- | ---------------------------------------------------------------------------------------- |
+| Run                  | A bounded research execution instance with unique run ID and route metadata              |
+| Execution mode       | One of the approved Track A operating modes                                              |
+| Route policy         | The explicit mapping of task classes to model environments                               |
+| Artifact             | A versioned output object produced during a run                                          |
+| Evidence bundle      | A grouped source set supporting an artifact                                              |
+| Model-origin tag     | Structured attribution showing which model materially contributed to a stage or artifact |
+| Overlap review       | An intentional duplicate or parallel pass used for contradiction or drift detection      |
+| Contradiction record | A structured record of conflicting claims or unresolved tension                          |
+| Review decision      | Pass, retry, block, or escalate disposition on an artifact or gate                       |
+| Handoff note         | Restart-safe continuation record for next session or next environment                    |
 
 ### 3.2 Canonical artifact classes
 
-The Stage 0 system recognizes the following canonical artifact classes:
+Track A recognizes these canonical artifact classes:
 
 - market-segment-definition
 - region-profile
 - vendor-landscape
-- pain-point-matrix
-- feature-opportunity-map
+- customer-pain-point
+- feature-opportunity
 - recommendation-brief
 - shift-signal-note
 - evidence-ledger
@@ -87,25 +83,9 @@ The Stage 0 system recognizes the following canonical artifact classes:
 - run-manifest
 - handoff-note
 
-### 3.3 Artifact intent by class
+### 3.3 Artifact status values
 
-| Artifact class            | Intent                                                                           |
-| ------------------------- | -------------------------------------------------------------------------------- |
-| market-segment-definition | define a segment as an analytical control object                                 |
-| region-profile            | record region-specific constraints, policies, and deployment realities           |
-| vendor-landscape          | compare relevant competitors and vendor positioning                              |
-| pain-point-matrix         | normalize customer and operator pain points                                      |
-| feature-opportunity-map   | map pain points and conditions to server traits                                  |
-| recommendation-brief      | record recommendation logic and evidence basis                                   |
-| shift-signal-note         | capture directional market signals not yet mature enough for full recommendation |
-| evidence-ledger           | preserve source lineage and evidence tiering                                     |
-| contradiction-log         | preserve conflicting claims and open tensions                                    |
-| run-manifest              | record run identity, configuration, outputs, and gate state                      |
-| handoff-note              | preserve restart continuity and next-step precision                              |
-
-### 3.4 Artifact status values
-
-Canonical status values:
+Allowed status values:
 
 - draft
 - in-review
@@ -114,25 +94,11 @@ Canonical status values:
 - invalidated
 - published
 
-### 3.5 Deterministic file naming
-
-Canonical filename pattern:
-
-`<scope-date>-<market-or-region>-<segment-or-topic>-<artifact-class>-<version>-<status>.md`
-
-Where a field is not applicable, use `global`.
-
-Example:
-
-`2026-03-13-global-global-recommendation-brief-v0.1.0-draft.md`
-
-For governing canonical documents under `docs/`, stable semantic names are allowed where the file itself is the controlled canonical object.
-
 ## 4. System structure
 
 ### 4.1 Repository structure
 
-The Stage 0 implementation expects this baseline structure:
+The implementation assumes this baseline repository structure:
 
 - `docs/`
 - `docs/blueprints/`
@@ -149,31 +115,13 @@ The Stage 0 implementation expects this baseline structure:
 - `scripts/`
 - `src/`
 
-### 4.2 Directory purpose
-
-| Path                      | Purpose                                             |
-| ------------------------- | --------------------------------------------------- |
-| docs/project-constitution | canonical governance and outline artifacts          |
-| docs/blueprints           | architecture and operating blueprints               |
-| docs/engineering-specs    | procedural and technical control specs              |
-| docs/operator-guides      | human execution guides                              |
-| prompts                   | prompt packs by role and task family                |
-| schemas                   | canonical schema families                           |
-| templates                 | run-control and output templates                    |
-| manifests                 | normalized manifest instances and examples          |
-| logs                      | session, run, review, failure, and checksum logs    |
-| runs                      | run-specific state directories                      |
-| outputs                   | compiled output artifacts for review or publication |
-| scripts                   | deterministic validation and helper utilities       |
-| src                       | future code scaffolds and typed utilities           |
-
-### 4.3 Run directory structure
+### 4.2 Run directory structure
 
 Each run should be isolated under:
 
 `runs/<run-id>/`
 
-Recommended contents:
+Recommended structure:
 
 - `runs/<run-id>/manifest.json`
 - `runs/<run-id>/artifacts/`
@@ -182,9 +130,9 @@ Recommended contents:
 - `runs/<run-id>/logs/`
 - `runs/<run-id>/handoff/`
 
-### 4.4 Prompt-pack structure
+### 4.3 Prompt-pack structure
 
-Recommended prompt-pack layout:
+Prompt families remain:
 
 - `prompts/acquisition/`
 - `prompts/normalization/`
@@ -195,46 +143,99 @@ Recommended prompt-pack layout:
 - `prompts/compiler/`
 - `prompts/handoff/`
 
-Each prompt file should include:
+### 4.4 Schema-pack structure
 
-- title
-- version
-- status
-- intended task class
-- allowed inputs
-- required outputs
-- failure conditions
-- notes on escalation triggers
-
-### 4.5 Schema-pack structure
-
-Recommended schema-pack layout:
+Schema families remain:
 
 - `schemas/evidence-ledger/`
 - `schemas/market-segment/`
 - `schemas/region-profile/`
 - `schemas/vendor-landscape/`
-- `schemas/pain-point-matrix/`
-- `schemas/feature-opportunity-map/`
+- `schemas/customer-pain-point/`
+- `schemas/feature-opportunity/`
 - `schemas/recommendation/`
 - `schemas/shift-signal/`
 - `schemas/run-manifest/`
 - `schemas/contradiction-log/`
 
-Each schema family should expose at minimum:
+## 5. Supported Track A execution modes
 
-- markdown field expectations
-- required fields
-- optional fields
-- version
-- validation notes
-- future JSON compatibility notes
+### 5.1 Mode A — single-model / single-chat
 
-## 5. Data contracts
+Use when the task is narrow and low-risk.
 
-### 5.1 Run manifest contract
+Required metadata:
 
-Each run manifest must define at least:
+- `execution_mode: single-model-single-chat`
+- `primary_model`
+- `objective_scope`
+- `artifact_targets`
+
+### 5.2 Mode B — single-model / multi-chat
+
+Use when one model remains primary but the work must be decomposed across separate threads or workspaces.
+
+Required metadata:
+
+- `execution_mode: single-model-multi-chat`
+- `primary_model`
+- `chat_branch_map`
+- `merge_strategy`
+
+### 5.3 Mode C — multi-model / multi-environment
+
+Use when the task is high-value, high-risk, or requires broad evidence acquisition and deep synthesis.
+
+Required metadata:
+
+- `execution_mode: multi-model-multi-environment`
+- `route_policy_id`
+- `model_assignments`
+- `overlap_plan`
+- `transfer_checkpoints`
+
+## 6. Supported environment definitions
+
+Track A currently supports these environments:
+
+- ChatGPT Projects
+- Claude Projects
+- Perplexity Spaces or equivalent research threads
+- Grok project/workspace/prompt-pack operating pattern
+
+The implementation stance is operational, not marketing-dependent. If a platform surface changes, the human operator records the effective environment behavior used in the run manifest.
+
+## 7. Approved Track A core model set
+
+### 7.1 Approved set
+
+The approved Track A core set is:
+
+- ChatGPT Plus
+- Claude Pro
+- Perplexity Pro
+- Grok Premium
+
+### 7.2 Current routing stance
+
+| Task class              | Primary route  | Secondary/overlap route |
+| ----------------------- | -------------- | ----------------------- |
+| acquisition             | Perplexity Pro | Grok Premium            |
+| live-signal acquisition | Grok Premium   | Perplexity Pro          |
+| normalization           | ChatGPT Plus   | Claude Pro              |
+| deep synthesis          | Claude Pro     | ChatGPT Plus            |
+| contradiction review    | Claude Pro     | Perplexity Pro          |
+| final compilation       | ChatGPT Plus   | Claude Pro              |
+
+### 7.3 Route policy rule
+
+A route decision must be explicit. No run may silently change primary model responsibility for a task class without updating route metadata.
+
+## 8. Data contracts
+
+### 8.1 Run manifest required fields
+
+Each run manifest must define at minimum:
 
 - `run_id`
 - `objective`
@@ -242,104 +243,126 @@ Each run manifest must define at least:
 - `project`
 - `system_stage`
 - `status`
+- `execution_mode`
+- `route_policy_id`
 - `start_timestamp`
 - `end_timestamp`
 - `models_used`
-- `source_window`
+- `model_assignments`
+- `overlap_plan`
 - `input_bundle_refs`
+- `source_window`
 - `prompt_pack_version`
 - `schema_pack_version`
-
-Additional canonical schema families (v0.1.0 scaffold):
-
-- region profile
-- vendor landscape
-- customer pain-point
-- feature opportunity
-- shift signal
-
-- `artifact_refs`
+- `governing_docs_loaded`
+- `artifact_outputs`
 - `gate_results`
-- `unresolved_items`
-- `review_state`
+- `handoff_ref`
 
-### 5.2 Artifact contract
+### 8.2 Model assignment object
 
-Each artifact must define at least:
+Each model assignment entry should include:
+
+- `platform`
+- `plan_tier`
+- `environment`
+- `task_class`
+- `role_type`
+- `reason_for_route`
+- `expected_outputs`
+- `overlap_with`
+- `status`
+
+### 8.3 Artifact registration object
+
+Each artifact registration should include:
 
 - `artifact_id`
 - `artifact_type`
-- `title`
+- `artifact_path`
 - `version`
 - `status`
-- `date`
-- `run_id`
-- `producer`
-- `scope`
+- `producing_stage`
+- `primary_model_origin`
+- `secondary_model_origins`
 - `evidence_refs`
-- `confidence_level`
-- `unresolved_items`
-- `checksum_ref`
+- `contradiction_refs`
+- `review_status`
 
-### 5.3 Evidence ledger contract
+### 8.4 Evidence ledger object
 
-Each evidence ledger entry must include at least:
+Each evidence ledger entry should include:
 
-- source identifier
-- source type
-- evidence tier
-- capture date
-- claim summary
-- quote or paraphrase block reference
-- relevance notes
-- associated artifact refs
+- `evidence_id`
+- `source_title`
+- `source_type`
+- `source_tier`
+- `observed_date`
+- `retrieved_by_model`
+- `retrieved_in_environment`
+- `used_in_artifacts`
+- `claim_class`
+- `notes`
 
-### 5.4 Contradiction log contract
+### 8.5 Model-origin tagging contract
 
-Each contradiction record must include at least:
+Every artifact that aggregates more than one model contribution must preserve:
 
-- contradiction ID
-- implicated artifacts
-- conflicting claims
-- source refs
-- severity
-- current disposition
-- required follow-up
-- resolution state
+- `primary_model_origin`
+- `supporting_model_origins`
+- `model_stage_contributions`
 
-### 5.5 Review record contract
+Suggested stage values:
 
-Each review record must include at least:
+- acquisition
+- normalization
+- synthesis
+- contradiction-review
+- compilation
 
-- review ID
-- target artifact or gate
-- reviewer identity
-- review type
-- findings
-- disposition
-- timestamp
+## 9. Naming convention
 
-## 6. Run protocol
+### 9.1 Artifact filename pattern
 
-### 6.1 Run ID format
+Use:
 
-Recommended run ID format:
+`<scope-date>-<market-or-region>-<segment-or-topic>-<artifact-class>-<version>-<status>.md`
+
+Example:
+
+`2026-03-14-global-global-recommendation-brief-v0.1.0-draft.md`
+
+### 9.2 Run ID pattern
+
+Use:
 
 `run-YYYYMMDD-<scope>-<sequence>`
 
 Example:
 
-`run-20260313-blueprint-01`
+`run-20260314-tracka-01`
 
-### 6.2 Stage label
+### 9.3 Route policy identifier
 
-All Stage 0 manual runs should record:
+Use:
+
+`route-policy-<date>-<name>-v<semver>`
+
+Example:
+
+`route-policy-20260314-tracka-core-v0.1.0`
+
+## 10. Run protocol
+
+### 10.1 Stage label
+
+All Track A runs record:
 
 `system_stage: stage-0-manual-deterministic`
 
-### 6.3 Run life cycle
+### 10.2 Run lifecycle states
 
-A run progresses through these states:
+Allowed run states:
 
 - initialized
 - acquiring
@@ -353,392 +376,293 @@ A run progresses through these states:
 - published
 - archived
 
-### 6.4 Operator start sequence
+### 10.3 Operator start sequence
 
-1. open the droplet session
-2. attach or create the `server-market` tmux session
-3. confirm repo path
-4. create or continue session logging
-5. load governing docs
-6. assign or confirm run ID
-7. declare objective
-8. identify affected artifact families
-9. begin at the correct gate
+From repository root, the operator must:
 
-### 6.5 Supported model environments
+1. open SSH session to droplet
+2. attach or create tmux session
+3. return to repo root
+4. confirm clean or intentional git state
+5. open or continue logging
+6. load governing documents
+7. assign or continue run ID
+8. set execution mode
+9. set route policy
+10. declare artifact targets
+11. begin at the correct gate
 
-The manual system may operate across:
+### 10.4 Governing files required before meaningful work
 
-- ChatGPT Projects
-- Grok workspaces
-- Perplexity spaces or equivalent research threads
-- Claude projects when needed
-- Gemini large-context workflows when needed
+At minimum:
 
-All environments must still obey the same manifests, prompts, gates, and handoff requirements.
+- project constitution
+- project instructions
+- project outline
+- blueprint outline
+- engineering specs outline
+- current blueprint
+- current engineering spec
 
-### 6.6 Input bundle requirements
+### 10.5 Transfer contract between environments
 
-Each meaningful run must declare:
+When work moves from one model environment to another, the operator must transfer:
 
-- governing files loaded
-- input artifacts loaded
-- source window or evidence window
-- selected prompt family
-- selected schema family
-- expected outputs
+- current objective
+- current artifact target
+- evidence bundle reference
+- prior model output reference
+- unresolved items
+- explicit ask for the next environment
 
-### 6.7 Output registration
+No transfer should rely on vague conversational recall.
 
-Every artifact produced in a run must be registered in the run manifest before being considered for validation or publication.
+## 11. Validation and controls
 
-## 7. Validation and controls
+### 11.1 Mandatory gate sequence
 
-### 7.1 Gate sequence
+1. input gate
+2. evidence gate
+3. schema gate
+4. reasoning gate
+5. output gate
+6. publish gate
 
-The Stage 0 system uses the following mandatory gate sequence:
+### 11.2 Input gate
 
-1. Input gate
-2. Evidence gate
-3. Schema gate
-4. Reasoning gate
-5. Output gate
-6. Publish gate
+Pass requires:
 
-### 7.2 Input gate rules
+- explicit objective
+- identified execution mode
+- identified route policy
+- identified artifact targets
+- governing docs loaded
+- run manifest initialized
 
-Pass conditions:
+Fail requires stop and correction.
 
-- objective is explicit
-- governing docs are identified
-- target artifacts are identified
-- prompt/schema versions are identified
-- run manifest exists or is being created
+### 11.3 Evidence gate
 
-Fail conditions:
-
-- ambiguous objective
-- missing canonical governance context
-- missing target artifact definition
-
-### 7.3 Evidence gate rules
-
-Pass conditions:
+Pass requires:
 
 - evidence exists for each major claim family
-- source-tier coverage is recorded
-- gaps are explicitly logged
-- evidence ledger exists
+- source tiers are recorded
+- evidence gaps are logged
+- acquisition model origins are recorded
 
-Fail conditions:
+### 11.4 Schema gate
 
-- unsupported recommendation basis
-- missing or weak evidence with no unresolved-item entry
-- absent lineage
+Pass requires:
 
-### 7.4 Schema gate rules
+- artifact conforms to expected schema family
+- required fields exist
+- status, version, run linkage, and model-origin tags exist
 
-Pass conditions:
+### 11.5 Reasoning gate
 
-- artifact structure conforms to expected schema family
-- required fields are present
-- status, version, date, and run linkage exist
+Pass requires:
 
-Fail conditions:
-
-- silent field drift
-- missing required sections
-- inconsistent artifact typing
-
-### 7.5 Reasoning gate rules
-
-Pass conditions:
-
-- major claims map to evidence
-- contradictions are addressed or logged
+- claims map to evidence
 - inferences are marked
-- confidence level is declared
+- contradictions are handled or logged
+- overlap review occurred where route policy required it
 
-Fail conditions:
+### 11.6 Output gate
 
-- unsupported analytical leaps
-- contradiction suppression
-- overconfident synthesis without source basis
+Pass requires:
 
-### 7.6 Output gate rules
-
-Pass conditions:
-
-- artifact is readable for intended audience
-- evidence chain is preserved
+- artifact is coherent
+- lineage is attached
 - unresolved items are visible
-- terminology is internally consistent
+- review status is explicit
 
-Fail conditions:
+### 11.7 Publish gate
 
-- audience mismatch
-- hidden uncertainty
-- packaging that obscures lineage
+Pass requires:
 
-### 7.7 Publish gate rules
+- operator review completed
+- manifest updated
+- contradictions either resolved or accepted with notation
+- handoff or publication note written
 
-Pass conditions:
+## 12. Overlap and duplicate-hit handling
 
-- review state is recorded
-- manifest is current
-- checksum ledger is updated
-- handoff note or continuation state exists
-- publication target is explicit
+### 12.1 Allowed overlap triggers
 
-Fail conditions:
+Invoke overlap when:
 
-- incomplete lineage package
-- missing review state
-- untracked artifact version
+- evidence is contested
+- live signals may distort conclusions
+- recommendation stakes are high
+- one model is likely weak on a task class
+- validation confidence is insufficient
 
-### 7.8 Retry ceilings
+### 12.2 Duplicate-hit handling
 
-Default retry ceiling per gate: 2 retries beyond the initial attempt.
+When two models hit the same task class:
 
-After the ceiling is reached, the operator must either:
+- preserve both outputs as intermediate evidence
+- do not collapse differences silently
+- record contradiction or divergence explicitly
+- designate one as primary only after review
 
-- escalate
-- change input conditions materially
-- invalidate the artifact path
-- stop the run
+### 12.3 Overlap result states
 
-### 7.9 No-progress detection
+Overlap outcomes:
 
-A retry is considered invalid if it repeats the same prompt route and produces no substantive defect reduction. Identical failure behavior triggers escalation.
+- confirmed
+- contradicted
+- broadened
+- unresolved
 
-## 8. Error handling and recovery
+## 13. Error handling and recovery
 
-### 8.1 Failure classes
+### 13.1 Stop conditions
 
-Failure classes include:
+Stop the run when:
 
-- input failure
-- evidence insufficiency
-- schema mismatch
-- reasoning defect
-- contradiction overload
-- packaging defect
-- governance drift
+- governing context is missing
+- route policy is ambiguous
+- evidence is insufficient
+- artifact structure drifts materially
+- contradictions cannot be resolved or bounded
 
-### 8.2 When to retry
+### 13.2 Retry conditions
 
-Retry only when one of the following changed:
+Retry is allowed when:
 
-- input bundle was corrected
-- evidence set expanded
-- schema clarified
-- task framing narrowed
-- route changed
-- validation feedback incorporated
+- formatting failed
+- schema fields are incomplete
+- one model response was clearly partial
+- environment transfer omitted required context
 
-### 8.3 When to stop
+### 13.3 Escalation conditions
 
-Stop immediately when:
+Escalate to human review when:
 
-- a governing contradiction is detected
-- evidence is materially insufficient and cannot be expanded in-scope
-- the artifact class is structurally wrong
-- retry ceiling is exhausted without progress
+- route conflict exists
+- live and durable evidence materially disagree
+- recommendation risk is high
+- repeated retries produce no forward progress
 
-### 8.4 When to escalate
+### 13.4 Restart rule
 
-Escalate when:
+Restart from the last valid gate, using:
 
-- unresolved contradictions affect recommendation direction
-- confidence is too low for decision use
-- artifact structure requires governance change
-- output would influence strategic product decisions but evidence is weak
-
-### 8.5 Artifact invalidation protocol
-
-When an artifact path fails irrecoverably:
-
-- mark status as `invalidated`
-- record reason
-- preserve the failed artifact for audit
-- reference replacement artifact path if one exists
-- update manifest and checksum ledger
-
-### 8.6 Restart protocol
-
-Restart from the last valid gate, not from chat memory.
-
-Restart requires:
-
-- current run manifest
-- last validated artifacts
-- current contradiction log
-- unresolved-item list
+- run manifest
+- registered artifacts
+- evidence ledger
+- contradiction log
 - latest handoff note
-- prompt and schema version references
 
-### 8.7 Handoff protocol
+Do not reconstruct state from memory alone.
 
-Every interrupted or paused substantive run must generate a handoff note containing:
+## 14. Logging and auditability
 
-- completed work
-- blocked work
-- current gate state
-- next required actions
-- files affected
-- unresolved risks
+### 14.1 Required log classes
 
-## 9. Logging and auditability
+Track A must preserve at minimum:
 
-### 9.1 Log families
-
-The Stage 0 system recognizes these log families:
-
-- session log
 - run log
-- event log
+- route log
+- evidence log
 - contradiction log
 - review log
 - failure log
 - checksum ledger
 
-### 9.2 Session logging
+### 14.2 Route log minimum fields
 
-Operator shell activity should be logged under:
-
-`logs/session/`
-
-Recommended pattern:
-
-`command 2>&1 | tee logs/session/<command-name>.log`
-
-### 9.3 Run logging
-
-Each run should preserve:
-
-- run lifecycle events
-- gate transitions
-- artifact creation events
-- validation outcomes
-- escalation decisions
-
-### 9.4 Event log structure
-
-Each event log entry should include:
+Each route decision entry should include:
 
 - timestamp
-- run ID
-- event type
-- target object
+- run_id
+- task_class
+- selected_model
+- alternate_models_considered
+- overlap_required
+- operator_note
+
+### 14.3 Review log minimum fields
+
+Each review entry should include:
+
+- artifact_id
+- gate_name
+- reviewer
 - disposition
-- notes
+- blocking_issues
+- follow_up_action
 
-### 9.5 Checksum ledger requirements
+### 14.4 Handoff minimum fields
 
-Each publishable or validation-relevant artifact should have a checksum record containing:
+Each handoff note must include:
 
-- artifact path
-- hash algorithm
-- hash value
-- generation timestamp
-- associated run ID
+- completed work summary
+- pending work summary
+- next files to modify
+- current version references
+- unresolved risks and questions
 
-Preferred initial algorithm: `sha256`
+## 15. Security and confidentiality
 
-### 9.6 Audit package minimum
+The project is personal IP of the project owner.
 
-A reviewable output package is incomplete unless it includes:
+Manual operator procedure must therefore assume:
 
-- output artifact
-- evidence ledger
-- run manifest
-- contradiction log when applicable
-- checksum ledger entries
-- handoff or review note
+- proprietary work products remain controlled
+- no publication without review state
+- no silent connector or sharing expansion without user intent
+- no recommendation leaves draft state without evidence tagging
 
-## 10. Security and confidentiality
+## 16. Implementation notes
 
-### 10.1 Project confidentiality stance
+### 16.1 Repo-root terminal workflow
 
-This project and its work products are the personal IP of the project owner. Internal artifacts should be treated as controlled materials unless explicitly prepared for publication.
+The default operating flow is:
 
-### 10.2 Handling stance
+- SSH into droplet
+- attach tmux session
+- return to repo root
+- run all write, validation, and git commands from repo root
+- end at repo root
 
-The manual system must avoid:
+### 16.2 Logging pattern
 
-- uncontrolled copying of proprietary artifacts into uncontrolled contexts
-- omission of review state on outward-facing deliverables
-- publication of recommendation artifacts without lineage support
+Recommended logging pattern:
 
-### 10.3 Model-environment caution
+`mkdir -p logs/session && <command> 2>&1 | tee logs/session/<command-name>.log`
 
-When using retail model environments, the operator must maintain awareness of what material is being loaded and what publication state the material holds. Sensitive internal strategy outputs should remain bounded to approved working contexts.
+### 16.3 Current practical posture
 
-## 11. Implementation notes
+Track A should currently be treated as:
 
-### 11.1 Current repository alignment
+- Perplexity-led for acquisition
+- Grok-assisted for live signal capture
+- Claude-led for synthesis
+- ChatGPT-led for normalization and compilation
 
-The current repository bootstrap already includes the major root structures needed for this spec. Immediate next work after this spec should prioritize prompt-pack scaffolding, schema normalization, template hardening, manifest examples, and operator guides aligned to supported model environments.
+This is a working default, not an eternal rule.
 
-### 11.2 Preferred language direction
+## 17. Open issues
 
-Future implementation direction remains:
+Open issues to preserve explicitly:
 
-- primary orchestration language: TypeScript strict
-- secondary utility language: Python
-- optional later specialized workers: Go
+- Grok consumer workspace semantics may continue to move
+- exact first-tier operational limits vary by vendor
+- ZIP handling exists in working practice but is unevenly documented across platforms
+- overlap thresholds may need refinement after empirical use
 
-### 11.3 Near-term implementation priorities
+## 18. Appendices
 
-Immediate implementation priorities after this spec:
+This spec must remain aligned with:
 
-1. add prompt-pack scaffolds
-2. add schema family canonical definitions
-3. add run-manifest template
-4. add checksum ledger template
-5. add contradiction log template
-6. add operator guides for supported model environments
-7. add helper scripts for manifest and checksum generation
-
-Helper scripts (Stage 0 / Phase 0 closure):
-
-- `scripts/validate-schemas.mjs` (`npm run validate:schemas`)
-- `scripts/generate-run-manifest.mjs` (`npm run generate:run-manifest`)
-- `scripts/compute-checksum.mjs` (`npm run compute:checksums`)
-
-These scripts are intentionally minimal and must remain deterministic (no network access, no non-pinned dependencies).
-
-## 12. Open issues
-
-Open issues for the next spec and implementation pass:
-
-- exact markdown-plus-JSON schema dual-format design
-- prompt pack file naming convention
-- review-state vocabulary expansion
-- manifest template examples
-- checksum generation automation strategy
-- model-specific routing guidance by task type
-- publication-state handling for executive versus working artifacts
-
-## 13. Appendices
-
-### 13.1 Canonical file targets
-
-- `docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md`
-- `docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md`
-
-### 13.2 Governing references
-
-- `docs/project-constitution/server-market-project-constitution-v0.1.0.md`
-- `docs/project-constitution/server-market-project-instructions-v0.1.0.md`
-- `docs/project-constitution/project-outline-v0.1.0.md`
-- `docs/project-constitution/prompts-and-schema-outline-v0.1.0.md`
-- `docs/project-constitution/agentic-architecture-outline-v0.1.0.md`
-- `docs/blueprints/blueprint-outline-v0.1.0.md`
-- `docs/engineering-specs/engineering-specs-outline-v0.1.0.md`
-
-### 13.3 Commit target
-
-Recommended commit message:
-
-`docs: add canonical blueprint and engineering spec v0.1.0`
+- AI-First Human-Interface Market Research Operating System Blueprint
+- project constitution
+- project instructions
+- project outline
+- blueprint outline
+- engineering specs outline
+- prompts and schema outline
+- agentic architecture outline
+- repo bootstrap outline

@@ -1,114 +1,120 @@
 # AI-First Human-Interface Market Research Operating System Blueprint
 
 Version: v0.1.0  
-Status: draft  
-Date: 2026-03-13  
+Status: draft canonical realignment  
+Date: 2026-03-14  
 Author: OpenAI ChatGPT with human operator James
-
-## Section Index
-
-1. Executive summary
-2. Problem statement
-3. System mission
-4. Users and stakeholders
-5. Design principles
-6. Scope and non-goals
-7. Functional architecture
-8. Workflow phases
-9. Roles and responsibilities
-10. Deliverables
-11. Controls and gates
-12. Risks and mitigations
-13. Future evolution
-14. Appendix references
 
 ## 1. Executive summary
 
-This blueprint defines the first proving system for the server-market-deterministic-agentic-model repository. The system is an AI-first, human-interface operating model for server product strategy and market research. It is intended to run inside retail commercial model interfaces rather than custom software runtimes.
+This blueprint defines Track A of the server-market-deterministic-agentic-model project as a manual, deterministic, AI-first operating system executed across commercial model interfaces.
 
-The operating premise is strict. The models perform the majority of analytical work. The human does not operate as the primary analyst. The human operates as the interface layer responsible for setup, routing, review, escalation, continuity, and publication control.
+Track A is the proving system. It is not ad hoc prompting, and it is not yet the future API orchestration layer. It is the controlled manual environment in which the operating rules, routing decisions, artifact classes, validation logic, and handoff discipline are proven before any deeper automation is attempted.
 
-The system exists to produce deterministic, evidence-backed outputs for server product strategy. It is designed to answer which server classes should be built, revised, prioritized, or deferred; which regional or segment constraints materially shape design decisions; which vendor positions matter; and which customer pain points map to actionable design traits.
+The central operating premise is fixed:
 
-This blueprint is Stage 0 of a later agentic system. It is not an ad hoc research playbook. It is a constrained operating system with defined phases, artifact classes, model-role separation, evidence lineage, gate-based progression, and restartability.
+- the models perform the primary analytical work
+- the human serves as operator, reviewer, and escalation authority
+- outputs must preserve evidence lineage, artifact structure, and restartability
+- later agentic behavior must automate proven Track A behavior rather than inventing a new architecture
+
+Track A is formally expressed in three execution modes:
+
+1. single-model / single-chat
+2. single-model / multi-chat
+3. multi-model / multi-environment
+
+This three-mode structure is a refinement of the existing Track A thesis, not a new architecture. It preserves the project constitution, the project outline, and the migration path into Track B orchestration.
+
+The approved Track A core model set for the current design state is:
+
+- ChatGPT Plus
+- Claude Pro
+- Perplexity Pro
+- Grok Premium
+
+Within this manual operating system, the models are not treated as interchangeable. They are routed according to functional strengths, with intentional overlap where contradiction detection, drift detection, or evidentiary strengthening is required.
 
 ## 2. Problem statement
 
-Server-market strategy work is typically fragmented across disconnected analyst reports, product notes, engineering assumptions, vendor material, field anecdotes, and executive interpretation. The result is drift, weak evidence lineage, non-repeatable conclusions, and recommendations that are difficult to audit or replay.
+Server-market strategy work is normally fragmented across market reports, vendor collateral, regulatory material, field anecdotes, technical documents, competitive positioning, and executive interpretation. In standard practice, the human analyst becomes the primary processing bottleneck. This creates drift, inconsistent evidence handling, weak reproducibility, and recommendations that are difficult to audit.
 
-Traditional human-led workflows also create structural bottlenecks. The human analyst becomes the primary processing unit, which limits throughput, increases inconsistency, and makes cross-model research difficult to standardize. Research quality becomes dependent on memory, writing style, and inconsistent operating discipline rather than on controlled evidence handling.
+That failure mode worsens when multiple commercial model environments are used without a deterministic operating system. The result is usually:
 
-This project addresses that failure mode by defining a deterministic AI-first system in which:
+- source loss between environments
+- inconsistent routing of tasks to models
+- undocumented overlap and duplication
+- weak restart behavior
+- hidden contradictions
+- non-normalized outputs that cannot be compared or replayed
 
-- the models are the primary reasoning fabric
-- the human is the operator, reviewer, and escalation gate
-- artifacts are normalized into canonical forms
-- every recommendation is attached to evidence lineage
-- every run is restartable from the last valid gate
-- every future automation decision is anchored to already-proven manual behavior
+This blueprint addresses that by defining a constrained manual system in which:
+
+- the human is the interface, not the primary analytical processor
+- each model has a bounded role profile
+- artifact production follows normalized schema families
+- validation is gate-based
+- evidence lineage is explicit
+- model-origin contribution is preserved
+- restart happens from the last valid gate rather than conversational memory
 
 ## 3. System mission
 
-The mission of the manual operating system is to produce repeatable, audit-ready market research and product-strategy outputs for server systems decision-making.
+The mission of Track A is to produce repeatable, evidence-backed, audit-ready market-research and product-strategy outputs for server product planning.
 
-The system must support a server systems product manager operating across:
+The operating system must support a server systems product manager and adjacent stakeholders who need defensible answers to questions such as:
 
-- executive leadership
-- product strategy
-- architecture and platform planning
-- technical marketing
-- business planning
-- regional market analysis
-- engineering liaison functions
+- which server classes should be built, revised, prioritized, or deferred
+- which geographies or regulatory environments materially alter requirements
+- which customer pain points should shape design traits
+- which competitors and vendor moves matter
+- which ecosystem shifts are directional noise versus durable signals
+- which recommendations are sufficiently evidence-backed for executive review
 
-The system must transform raw evidence into controlled outputs that are suitable for executive review, product planning, and later orchestration. It must do so with explicit evidence-tier tagging, bounded inference, versioned prompts, versioned schemas, and explicit operator checkpoints.
-
-The system must be strong enough to serve as the governance baseline for later API-based agentic orchestration.
+The system must convert raw evidence into controlled artifacts that can later be automated in Track B without architectural reinvention.
 
 ## 4. Users and stakeholders
 
 ### 4.1 Primary user
 
-The primary user is a server systems product manager responsible for translating market, regional, operational, and competitive evidence into design and portfolio decisions.
+The primary user is a server systems product manager operating between executive leadership, architecture, engineering, product strategy, technical marketing, sales context, and business planning.
 
 ### 4.2 Secondary users
 
 Secondary users include:
 
-- market intelligence teams
-- product strategy leaders
+- market intelligence
+- product strategy
 - technical marketing
-- business planning
-- architecture liaisons
+- architecture liaison functions
 - engineering leadership
+- business planning
 - executive reviewers
 
 ### 4.3 Stakeholder expectations
 
-Stakeholders require different output characteristics.
-
-| Stakeholder            | Primary need                        | Required output traits                       |
-| ---------------------- | ----------------------------------- | -------------------------------------------- |
-| Product manager        | design and segment decision support | evidence-backed, comparative, actionable     |
-| Executive leadership   | strategy and prioritization         | concise, board-safe, defensible              |
-| Engineering leadership | design implications                 | technical constraints, clarity, traceability |
-| Technical marketing    | positioning support                 | segment framing, competitor context          |
-| Business planning      | market sizing and prioritization    | quantified assumptions, explicit risks       |
-| Audit/review operator  | run integrity                       | manifests, logs, hashes, gate visibility     |
+| Stakeholder            | Primary need                          | Required output traits                    |
+| ---------------------- | ------------------------------------- | ----------------------------------------- |
+| Product manager        | server design and portfolio direction | actionable, comparative, traceable        |
+| Executive leadership   | strategic prioritization              | concise, defensible, evidence-backed      |
+| Engineering leadership | design implications and constraints   | technically grounded, explicit, auditable |
+| Technical marketing    | market framing and positioning        | segment-aware, competitor-aware           |
+| Business planning      | sizing and prioritization             | explicit assumptions, risk visibility     |
+| Human operator         | run control and continuity            | manifests, logs, gates, restartability    |
 
 ## 5. Design principles
 
 ### 5.1 AI-first design
 
-The operating system is optimized for model execution quality before human convenience. Instructions, templates, schemas, naming, and phase sequencing are structured for machine interpretability and deterministic reuse.
+The system is optimized for model execution quality first. File structures, templates, prompts, schemas, and operating steps exist to improve machine interpretability and deterministic reuse.
 
 ### 5.2 Human-as-interface
 
-The human is not the primary processor. The human initializes runs, provides controlled task framing, manages files and instructions, selects escalation branches, reviews contradictions, and authorizes publication.
+The human is the control layer interface. The human sets objectives, loads inputs, routes tasks, manages continuity, reviews contradictions, authorizes escalation, and approves publication. The human is not the primary analytical engine.
 
 ### 5.3 Determinism over improvisation
 
-Live runs must follow versioned prompts, normalized file structures, stable artifact naming, and gate-based progression. The system rejects improvisational prompt behavior as a standard operating mode.
+Track A rejects unstructured prompt improvisation as a primary operating mode. Manual execution must still follow versioned prompts, normalized artifact classes, run manifests, gates, and handoffs.
 
 ### 5.4 Evidence-first outputs
 
@@ -121,421 +127,420 @@ Every substantive output must preserve evidence lineage and distinguish:
 
 ### 5.5 Schema-first normalization
 
-Raw evidence is not treated as a final product. Evidence must be normalized into artifact classes with explicit fields and expected structure so that later review, validation, and replay are possible.
+Raw outputs from model environments are intermediate material, not final artifacts. They must be normalized into canonical classes that can be validated, compared, and later automated.
 
 ### 5.6 Restartability
 
-The system must be resumable from the last valid gate. Work continuity cannot depend on conversational memory alone.
+No critical work product should depend on ephemeral chat memory alone. Runs must be resumable from the last valid gate with manifest visibility and handoff continuity.
 
 ### 5.7 Explicit auditability
 
-Run manifests, event logs, contradiction records, review notes, and checksum ledgers must exist as first-class control objects, even in the manual stage.
+Track A must preserve:
+
+- run identity
+- route decisions
+- model participation
+- evidence tiering
+- model-origin contribution
+- contradiction handling
+- review state
+- publication state
 
 ### 5.8 Bounded inference
 
-Inference is allowed only when marked and separated from source-grounded claims. Unsupported confident synthesis is treated as a defect.
+Inference is allowed only when marked. Recommendations must separate source-grounded claims from model-derived synthesis.
 
 ### 5.9 Traceable recommendations
 
-Recommendations must expose the route from evidence to implication to recommendation. Hidden reasoning jumps are not acceptable for publishable outputs.
+A publishable recommendation must expose its path from evidence through synthesis to recommendation logic. Hidden jumps are unacceptable.
 
 ## 6. Scope and non-goals
 
-### 6.1 In-scope domains
+### 6.1 In-scope
 
-The manual system covers server-market analysis across at least:
+Track A covers at minimum:
 
 - enterprise general workloads
 - near-edge servers
 - far-edge servers
 - high-performance servers
 
-Optional domains such as AI inference infrastructure, sovereign deployments, or highly regulated specialized infrastructure may be added later under explicit change control.
+It also covers, at minimum:
 
-### 6.2 In-scope analytical outputs
-
-The system is intended to support production of:
-
-- executive market briefs
-- product manager working briefs
-- market segment dossiers
-- regional requirement briefs
+- TAM, SAM, SOM framing
+- regional requirement differences
 - vendor landscapes
-- customer pain-point matrices
-- feature opportunity maps
-- server recommendation matrices
-- shift signal notes
-- assumptions and risk registers
-- evidence ledgers
+- pain-point mapping
+- serviceability and lifecycle needs
+- thermal, power, and density pressures
+- ecosystem and chipset direction
+- market shift signals
+- evidence-led product recommendations
 
-### 6.3 Non-goals
+### 6.2 Non-goals
 
-The manual system does not attempt to:
+Track A is not trying to do the following yet:
 
-- automate orchestration end to end
-- replace human publication authority
-- create novel artifact classes without governance updates
-- provide real-time production dashboards
-- infer confidential facts not supported by evidence
-- operate as a fully autonomous product strategy agent
-- collapse governance artifacts into chat-only behavior
+- implement the future orchestrator runtime
+- replace canonical governance with chat memory
+- guarantee perfect automation inside consumer model interfaces
+- invent novel agent classes not already justified by manual behavior
+- treat every platform as equivalent or interchangeable
+- publish recommendations without evidence and review state
 
 ## 7. Functional architecture
 
+Track A operates through the following functional modules.
+
 ### 7.1 Control and governance module
 
-This module governs naming, versioning, manifests, templates, gate flow, retry ceilings, unresolved-item handling, and cross-file consistency. It ensures that the manual system behaves like a controlled operating environment rather than a loose prompt workflow.
+Responsible for:
 
-### 7.2 Model-role routing module
+- governing document priority
+- run IDs
+- artifact IDs
+- prompt and schema versioning
+- gate sequence
+- checksum and handoff discipline
+- unresolved-item propagation
 
-This module assigns model families to bounded task types. Different model environments may be used for acquisition, normalization, synthesis, proofing, and final packaging. Role clarity matters more than brand attachment.
+### 7.2 Model-routing module
+
+Responsible for:
+
+- selecting model environment by task type
+- recording route decisions
+- invoking overlap when validation strength is needed
+- preventing silent role drift between models
 
 ### 7.3 Acquisition module
 
-This module gathers market, regulatory, vendor, operator, ecosystem, and competitive evidence. It is optimized for breadth, evidence capture, citation preservation, and source-tier awareness.
+Responsible for:
+
+- gathering market, vendor, regulatory, ecosystem, and operator evidence
+- separating primary from secondary and anecdotal sources
+- capturing time-sensitive external signals
 
 ### 7.4 Structuring module
 
-This module converts raw evidence into normalized schemas and artifact classes such as market segment definitions, region profiles, vendor landscapes, and evidence ledgers.
+Responsible for:
 
-### 7.5 Reasoning and synthesis module
+- normalizing evidence into canonical schemas
+- preserving evidence tiers
+- preserving model-origin contribution
+- producing intermediate structured artifacts
 
-This module performs cross-source comparison, pain-point extraction, pattern grouping, opportunity mapping, segment synthesis, and recommendation framing. It must preserve source traceability and expose unresolved items.
+### 7.5 Synthesis module
 
-### 7.6 Validation and contradiction module
+Responsible for:
 
-This module tests evidence sufficiency, schema conformance, reasoning coherence, unsupported claims, and contradiction presence. It determines whether artifacts advance, retry, or escalate.
+- segment analysis
+- cross-source comparison
+- implication development
+- contradiction surfacing
+- recommendation drafting
 
-### 7.7 Recommendation compilation module
+### 7.6 Validation module
 
-This module converts validated analytical artifacts into decision-ready outputs for product managers and executives. It must preserve evidence lineage while tightening language and structure for audience use.
+Responsible for:
 
-### 7.8 Operator guidance and recovery module
+- evidence checks
+- schema checks
+- contradiction review
+- route-review adequacy
+- output readiness
 
-This module governs human execution steps, restart behavior, invalidation protocol, and handoff generation. It is the continuity layer for the manual system.
+### 7.7 Compilation module
 
-### 7.9 Publication module
+Responsible for:
 
-This module controls when artifacts are considered fit for internal publication. Publication requires gate completion, manifest completeness, and review state.
+- assembling final work products
+- preserving evidence lineage
+- preserving review status
+- producing executive-safe and operator-safe versions
+
+### 7.8 Failure-recovery module
+
+Responsible for:
+
+- stop conditions
+- escalation rules
+- restart protocol
+- invalidation handling
+- handoff generation
 
 ## 8. Workflow phases
 
-### 8.1 Phase 0 — constitution and setup
+Track A follows a normalized workflow.
 
-Objectives:
+### Phase 0 — constitution and setup
 
-- load governing instructions and canonical docs
-- confirm repo and session state
-- establish run ID and objective
-- confirm prompt pack and schema pack versions
-- create or update run-control records
+- return to repository root
+- load governing documents
+- confirm objective
+- assign run ID
+- identify affected artifacts
+- identify execution mode
+- identify route policy
 
-Exit criteria:
+### Phase 1 — market map definition
 
-- governing docs loaded
-- run objective fixed
-- operator session prepared
-- baseline logs started
+- define segment scope
+- define regional scope
+- define evidence targets
+- define target outputs
+- define initial route plan
 
-### 8.2 Phase 1 — market map definition
+### Phase 2 — acquisition runs
 
-Objectives:
+- gather primary and secondary evidence
+- separate durable evidence from live signals
+- log source classes
+- record acquisition model participation
 
-- define target market scope
-- define segment boundaries
-- define regional windows
-- define competitor set
-- define evidence requirements
+### Phase 3 — normalization runs
 
-Exit criteria:
-
-- scope statement recorded
-- target artifact list recorded
-- evidence acquisition plan approved
-
-### 8.3 Phase 2 — acquisition runs
-
-Objectives:
-
-- gather evidence by source class
+- convert raw evidence into canonical schema-shaped artifacts
 - preserve source lineage
-- tag evidence tiers
-- capture initial unresolved questions
+- preserve model-origin attribution
+- identify gaps and unresolved items
 
-Exit criteria:
+### Phase 4 — segment and cross-segment synthesis
 
-- evidence ledger populated
-- minimum evidence threshold met or gap logged
+- compare artifacts across segments, regions, vendors, and signals
+- map pain points to design implications
+- draft scenario implications and recommendation logic
 
-### 8.4 Phase 3 — normalization runs
+### Phase 5 — validation and contradiction review
 
-Objectives:
+- execute evidence gate
+- execute schema gate
+- execute reasoning gate
+- execute overlap review where needed
+- log contradictions and unresolved items
 
-- transform gathered evidence into canonical artifact schemas
-- reduce raw-source ambiguity
-- separate observed facts from inferences
+### Phase 6 — recommendation drafting and compilation
 
-Exit criteria:
+- compile recommendation briefs
+- compile executive-safe summaries
+- attach evidence lineage
+- attach review status
 
-- normalized artifacts created
-- schema defects corrected or logged
+### Phase 7 — publication and handoff
 
-### 8.5 Phase 4 — segment analysis runs
-
-Objectives:
-
-- analyze each segment independently
-- identify drivers, constraints, pain points, competitors, and design implications
-- preserve segment-local contradictions
-
-Exit criteria:
-
-- segment artifacts complete
-- confidence and unresolved-item fields populated
-
-### 8.6 Phase 5 — cross-segment synthesis
-
-Objectives:
-
-- compare segments
-- identify common themes and differentiators
-- map opportunities to server design traits and business rationale
-
-Exit criteria:
-
-- synthesis artifact complete
-- conflicting claims routed for review
-
-### 8.7 Phase 6 — recommendation drafting
-
-Objectives:
-
-- convert synthesis into decision-oriented recommendations
-- attach evidence tiering
-- identify confidence level and dependency assumptions
-
-Exit criteria:
-
-- recommendation artifact generated
-- recommendation-to-evidence chain visible
-
-### 8.8 Phase 7 — validation and contradiction review
-
-Objectives:
-
-- test input completeness
-- test evidence sufficiency
-- test schema conformance
-- test reasoning coherence
-- review contradiction records
-- decide pass, retry, or escalate
-
-Exit criteria:
-
-- gate results recorded
-- invalidated artifacts marked
-- approved artifacts advanced
-
-### 8.9 Phase 8 — publication and handoff
-
-Objectives:
-
-- compile final audience-facing artifacts
-- attach manifests, ledgers, and review state
-- create restart-safe handoff note
-
-Exit criteria:
-
-- output package complete
-- lineage package attached
-- next-state continuity preserved
+- pass output and publish gates
+- register final artifacts
+- write restart-safe handoff
+- preserve logs and manifest state
 
 ## 9. Roles and responsibilities
 
-### 9.1 Model role matrix
+### 9.1 Human operator responsibilities
 
-| Task class      | Primary model behavior                             | Required properties                            |
-| --------------- | -------------------------------------------------- | ---------------------------------------------- |
-| Acquisition     | broad evidence collection and source capture       | citation discipline, breadth, source awareness |
-| Normalization   | schema filling and evidence structuring            | consistency, field discipline, low drift       |
-| Synthesis       | cross-source comparison and implication generation | analytical depth, contradiction sensitivity    |
-| Validation      | defect detection and unsupported-claim testing     | adversarial stance, precision                  |
-| Final packaging | executive-safe writing and structured outputs      | clarity, compression, fidelity                 |
+The human operator is responsible for:
 
-### 9.2 Human operator duties
+- maintaining repo-root operating discipline
+- loading governing files
+- selecting execution mode
+- selecting route policy
+- moving artifacts between environments when needed
+- preserving run state
+- reviewing contradictions
+- authorizing escalation or publication
 
-The operator is responsible for:
+### 9.2 Model responsibilities
 
-- loading and maintaining governing context
-- selecting the correct task mode
-- ensuring canonical file placement
-- preserving run continuity
-- reviewing contradictions and failures
-- deciding retry versus escalation
-- approving publish state
-- maintaining repo hygiene and commit discipline
+The models are responsible for the analytical work itself, within bounded task classes.
 
-### 9.3 Human operator limits
+### 9.3 Core Track A model set
 
-The operator should not:
+The approved core Track A model set is:
 
-- overwrite analytical findings without traceable reason
-- silently introduce new schema structures
-- skip failed gates for convenience
-- treat unsupported intuition as evidence
-- bypass manifest or lineage requirements
+- ChatGPT Plus
+- Claude Pro
+- Perplexity Pro
+- Grok Premium
 
-### 9.4 Escalation role
+Gemini is not part of the current Track A core.
 
-Escalation occurs when:
+## 10. Model role matrix
 
-- evidence is insufficient
-- contradictions remain unresolved after bounded retries
-- schema cannot represent needed structure
-- recommendations materially affect product direction but confidence is low
-- cross-file governance drift is detected
+### 10.1 Primary routing stance
 
-## 10. Deliverables
+| Platform       | Primary role                                                                           | Secondary role             | Avoid as primary                        |
+| -------------- | -------------------------------------------------------------------------------------- | -------------------------- | --------------------------------------- |
+| Perplexity Pro | evidence acquisition, citation-first research, fast contradiction surfacing            | supporting synthesis input | root compiler                           |
+| Grok Premium   | live ecosystem signals, X/social-adjacent signal capture, rapid current-event scouting | supplemental acquisition   | canonical compiler, heavy normalization |
+| Claude Pro     | deep synthesis, long-document reasoning, contradiction analysis                        | structured drafting        | primary live acquisition                |
+| ChatGPT Plus   | compilation, normalization, packaging, project-based artifact work                     | synthesis support          | primary live-signal monitor             |
 
-### 10.1 Deliverable classes
+### 10.2 Overlap policy
 
-The system must support at least the following deliverables:
+Intentional overlap is permitted when:
+
+- evidence is high-stakes
+- signals are new or unstable
+- contradiction risk is high
+- one model’s output may suppress minority but important evidence
+- a recommendation path needs stronger validation
+
+Allowed overlap purposes include:
+
+- contradiction detection
+- drift detection
+- confidence strengthening
+- retention of minority or edge-case evidence
+
+### 10.3 Model-origin evidence tagging
+
+Artifacts must preserve which environment materially contributed to which stage of work. At minimum, the system must be able to distinguish:
+
+- acquisition contribution
+- normalization contribution
+- synthesis contribution
+- compilation contribution
+
+A typical pattern may look like:
+
+- Perplexity: acquisition
+- Grok: live-signal acquisition
+- Claude: synthesis
+- ChatGPT: normalization and compilation
+
+This is a default routing posture, not an immutable rule.
+
+## 11. Track A execution modes
+
+### 11.1 Mode A — single-model / single-chat
+
+Use when:
+
+- the task is narrow
+- evidence scope is limited
+- contradiction risk is low
+- one artifact family is being drafted or repaired
+
+Strengths:
+
+- fastest operator overhead
+- cleanest continuity
+- simplest restart surface
+
+Limitations:
+
+- weakest cross-model validation
+- highest risk of unseen model bias
+- not ideal for high-stakes recommendations
+
+### 11.2 Mode B — single-model / multi-chat
+
+Use when:
+
+- one model remains the primary engine
+- the task needs decomposition across subtopics
+- context segmentation helps control drift
+- multiple artifacts or subproblems must be developed in parallel
+
+Strengths:
+
+- preserves model specialization while reducing single-thread overload
+- easier to isolate acquisition, synthesis, and review branches
+- cleaner contradiction checks inside one environment
+
+Limitations:
+
+- still platform-bounded
+- still vulnerable to environment-specific blind spots
+
+### 11.3 Mode C — multi-model / multi-environment
+
+Use when:
+
+- the task is high-value
+- evidence acquisition needs live breadth
+- long-document synthesis is heavy
+- contradiction risk is material
+- final recommendation quality matters more than operator simplicity
+
+Strengths:
+
+- strongest validation posture
+- strongest evidence breadth
+- strongest resistance to single-platform drift
+
+Limitations:
+
+- highest operator overhead
+- highest continuity burden
+- strongest need for manifests, handoffs, and route logging
+
+## 12. Deliverables
+
+Track A must support at minimum the following deliverable classes:
 
 - executive market brief
 - product manager working brief
-- market segment definition
-- region profile
+- market segment dossier
+- regional requirement brief
 - vendor landscape
-- pain-point matrix
+- customer pain-point matrix
 - feature opportunity map
 - recommendation brief
 - shift signal note
-- evidence ledger
 - contradiction log
+- evidence ledger
 - run manifest
 - handoff note
 
-### 10.2 Audience mapping
+## 13. Controls and gates
 
-| Deliverable               | Primary audience         | Purpose                                |
-| ------------------------- | ------------------------ | -------------------------------------- |
-| Executive market brief    | executive leadership     | strategic direction and prioritization |
-| Product manager brief     | product management       | working decision support               |
-| Market segment definition | research and product     | scoped analytical unit                 |
-| Region profile            | product and compliance   | regional constraints and fit           |
-| Vendor landscape          | strategy and marketing   | competitor positioning                 |
-| Pain-point matrix         | product and architecture | demand-side design drivers             |
-| Feature opportunity map   | product and engineering  | trait-to-need mapping                  |
-| Recommendation brief      | decision-makers          | build, revise, defer recommendations   |
-| Shift signal note         | strategy owners          | weak signals and directional changes   |
-| Evidence ledger           | audit and reviewers      | source lineage                         |
-| Contradiction log         | reviewers and validators | conflict visibility                    |
-| Run manifest              | operator and audit       | run identity and control state         |
-| Handoff note              | operator continuity      | restart-safe continuation              |
+The system requires these mandatory gates:
 
-## 11. Controls and gates
+1. input gate
+2. evidence gate
+3. schema gate
+4. reasoning gate
+5. output gate
+6. publish gate
 
-### 11.1 Control objects
+No recommendation should advance past review without explicit gate state.
 
-The manual system treats the following as required control objects:
+## 14. Risks and mitigations
 
-- run manifest
-- event log
-- evidence ledger
-- contradiction log
-- review log
-- checksum ledger
-- handoff note
+| Risk                               | Description                               | Mitigation                                                |
+| ---------------------------------- | ----------------------------------------- | --------------------------------------------------------- |
+| platform drift                     | consumer model surfaces change quickly    | route by proven behavior, not marketing claims            |
+| evidence loss between environments | manual movement can lose source context   | require manifest registration and evidence ledger updates |
+| hidden contradiction               | one model suppresses conflicting evidence | invoke overlap policy and contradiction logging           |
+| stale chat memory                  | long sessions distort or compress context | restart from manifest and handoff, not memory alone       |
+| operator inconsistency             | manual work introduces variability        | enforce repo-root workflow, fixed gates, fixed templates  |
+| over-trust in one model            | convenience biases routing                | preserve explicit role matrix and route-review steps      |
 
-### 11.2 Gate model
+## 15. Future evolution
 
-The operating system uses six gates:
+This blueprint is the proving baseline for Track B.
 
-1. Input gate
-2. Evidence gate
-3. Schema gate
-4. Reasoning gate
-5. Output gate
-6. Publish gate
+Track B must automate already-approved Track A behavior, including:
 
-### 11.3 Gate intent
+- route policy
+- artifact classes
+- evidence lineage
+- contradiction handling
+- validation gates
+- restart logic
+- review branches
 
-- Input gate validates objective, scope, files, and prompt package selection.
-- Evidence gate validates minimum evidence sufficiency and source-tier coverage.
-- Schema gate validates structural conformance of normalized artifacts.
-- Reasoning gate validates coherence, contradiction handling, and unsupported inference.
-- Output gate validates audience readiness and recommendation traceability.
-- Publish gate validates review state, manifest completeness, and restart package completeness.
+Track B must not silently replace the logic of Track A with a new architecture.
 
-### 11.4 Retry stance
+## 16. Appendix references
 
-Retries are bounded. Repeating the same failed behavior without changed input, route, or validation correction is not allowed.
+This blueprint is governed by and must remain consistent with:
 
-## 12. Risks and mitigations
-
-### 12.1 Prompt drift
-
-Risk: instructions degrade across long sessions.  
-Mitigation: reload canonical docs, preserve version headers, maintain run manifest references, generate handoffs.
-
-### 12.2 Schema drift
-
-Risk: artifacts begin to vary structurally between runs.  
-Mitigation: anchor all major outputs to explicit schema families and reject silent field mutations.
-
-### 12.3 Evidence weakness
-
-Risk: recommendations rely too heavily on weak or anecdotal sources.  
-Mitigation: enforce evidence-tier tagging, require unresolved-item notation, block publish when evidence gate fails.
-
-### 12.4 Model overreach
-
-Risk: synthesis introduces unsupported conclusions.  
-Mitigation: separate observed facts, validated facts, derived implications, and hypotheses; run contradiction and validation passes.
-
-### 12.5 Operator shortcutting
-
-Risk: human bypasses controls to accelerate output.  
-Mitigation: use visible gates, logs, manifests, and commit hygiene as a hard operating pattern.
-
-### 12.6 Cross-file inconsistency
-
-Risk: blueprint, spec, prompts, and outputs diverge.  
-Mitigation: treat governing docs as canonical and update affected document families together.
-
-## 13. Future evolution
-
-This blueprint is the approved Stage 0 operating model.
-
-Future evolution proceeds in controlled steps:
-
-- Stage 0: manual deterministic system in retail tools
-- Stage 1: local helper scripts for manifests, validation, and compilation
-- Stage 2: partial scripted execution and stronger schema enforcement
-- Stage 3: selected task orchestration with explicit routing and replay logic
-- Stage 4: multi-model agentic orchestration
-- Stage 5: enterprise-grade operating platform
-
-The future agentic system must not invent new operating behavior. It must formalize and automate behavior already proven here.
-
-## 14. Appendix references
-
-### 14.1 Governing references
-
-- docs/project-constitution/server-market-project-constitution-v0.1.0.md
-- docs/project-constitution/server-market-project-instructions-v0.1.0.md
-- docs/project-constitution/project-outline-v0.1.0.md
-- docs/project-constitution/prompts-and-schema-outline-v0.1.0.md
-- docs/project-constitution/agentic-architecture-outline-v0.1.0.md
-- docs/blueprints/blueprint-outline-v0.1.0.md
-- docs/engineering-specs/engineering-specs-outline-v0.1.0.md
-
-### 14.2 Planned companion blueprint
-
-- docs/blueprints/agentic-multi-model-research-orchestration-blueprint-v0.1.0.md
-
-### 14.3 Implementation dependency
-
-This blueprint is implemented procedurally by:
-
-- docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md
+- project outline
+- blueprint outline
+- engineering specs outline
+- prompts and schema outline
+- repo bootstrap outline
+- agentic architecture outline
+- project constitution
+- project instructions
