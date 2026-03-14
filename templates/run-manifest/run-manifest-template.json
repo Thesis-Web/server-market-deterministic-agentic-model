@@ -1,13 +1,13 @@
 {
   "schema_version": "0.1.0",
   "artifact_type": "run-manifest",
-  "run_id": "run-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-01",
   "objective": "",
   "operator": "",
   "project": "server-market-deterministic-agentic-model",
   "system_stage": "stage-0-manual-deterministic",
   "status": "initialized",
-  "execution_mode": "manual",
+  "execution_mode": "multi-model-multi-environment",
   "route_policy_id": "",
   "start_timestamp": "",
   "end_timestamp": "",
@@ -122,5 +122,11 @@
   "handoff_ref": "",
   "checksum_ledger_refs": [],
   "notes": "",
-  "unresolved_items": []
+  "unresolved_items": [],
+  "primary_model": "",
+  "objective_scope": "",
+  "artifact_targets": [],
+  "chat_branch_map": [],
+  "merge_strategy": "",
+  "transfer_checkpoints": []
 }

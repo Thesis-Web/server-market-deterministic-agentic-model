@@ -103,10 +103,9 @@ Each gate result entry must include:
 
 ### execution_mode
 
-- manual
-- manual-overlap
-- hybrid
-- agentic
+- single-model-single-chat
+- single-model-multi-chat
+- multi-model-multi-environment
 
 ### review_state
 
@@ -115,3 +114,26 @@ Each gate result entry must include:
 - approved
 - approved_with_notes
 - rejected
+
+## Mode-Specific Fields
+
+### Mode A — single-model-single-chat
+
+- primary_model
+- objective_scope
+- artifact_targets
+
+### Mode B — single-model-multi-chat
+
+- primary_model
+- chat_branch_map
+- merge_strategy
+- artifact_targets
+
+### Mode C — multi-model-multi-environment
+
+- route_policy_id
+- model_assignments
+- overlap_plan
+- transfer_checkpoints
+- artifact_targets

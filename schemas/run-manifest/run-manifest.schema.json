@@ -41,7 +41,7 @@
     },
     "run_id": {
       "type": "string",
-      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{2,4}$"
     },
     "objective": {
       "type": "string",
@@ -77,7 +77,11 @@
     },
     "execution_mode": {
       "type": "string",
-      "enum": ["manual", "manual-overlap", "hybrid", "agentic"]
+      "enum": [
+        "single-model-single-chat",
+        "single-model-multi-chat",
+        "multi-model-multi-environment"
+      ]
     },
     "route_policy_id": {
       "type": "string",
@@ -307,6 +311,55 @@
       "type": "string"
     },
     "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_model": {
+      "type": "string"
+    },
+    "objective_scope": {
+      "type": "string"
+    },
+    "artifact_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "chat_branch_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["branch_id", "objective", "output_targets"],
+        "properties": {
+          "branch_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "output_targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "merge_strategy": {
+      "type": "string"
+    },
+    "transfer_checkpoints": {
       "type": "array",
       "items": {
         "type": "string"
@@ -607,178 +660,45 @@
   },
   "allOf": [
     {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "project-constitution"
-              },
-              "path": {
-                "const": "docs/project-constitution/server-market-project-constitution-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
+      "if": {
+        "properties": {
+          "execution_mode": {
+            "const": "single-model-single-chat"
           }
         }
+      },
+      "then": {
+        "required": ["primary_model", "objective_scope", "artifact_targets"]
       }
     },
     {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "project-instructions"
-              },
-              "path": {
-                "const": "docs/project-constitution/server-market-project-instructions-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
+      "if": {
+        "properties": {
+          "execution_mode": {
+            "const": "single-model-multi-chat"
           }
         }
+      },
+      "then": {
+        "required": ["primary_model", "chat_branch_map", "merge_strategy", "artifact_targets"]
       }
     },
     {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "project-outline"
-              },
-              "path": {
-                "const": "docs/project-constitution/project-outline-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
+      "if": {
+        "properties": {
+          "execution_mode": {
+            "const": "multi-model-multi-environment"
           }
         }
-      }
-    },
-    {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "blueprint-outline"
-              },
-              "path": {
-                "const": "docs/blueprints/blueprint-outline-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "engineering-specs-outline"
-              },
-              "path": {
-                "const": "docs/engineering-specs/engineering-specs-outline-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "current-blueprint"
-              },
-              "path": {
-                "const": "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "properties": {
-        "governing_docs_loaded": {
-          "type": "array",
-          "contains": {
-            "type": "object",
-            "required": ["doc_id", "path", "version", "status"],
-            "properties": {
-              "doc_id": {
-                "const": "current-engineering-spec"
-              },
-              "path": {
-                "const": "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md"
-              },
-              "version": {
-                "const": "v0.1.0"
-              },
-              "status": {
-                "const": "loaded"
-              }
-            }
-          }
-        }
+      },
+      "then": {
+        "required": [
+          "route_policy_id",
+          "model_assignments",
+          "overlap_plan",
+          "transfer_checkpoints",
+          "artifact_targets"
+        ]
       }
     }
   ]

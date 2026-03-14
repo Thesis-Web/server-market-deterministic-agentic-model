@@ -230,3 +230,33 @@ Artifact type: run-manifest
 
 - unresolved_items:
   - item:
+
+## Mode-Specific Fields
+
+### Mode A
+
+- primary_model:
+- objective_scope:
+- artifact_targets:
+  - item:
+
+### Mode B
+
+- primary_model:
+- chat_branch_map:
+  - branch:
+    - branch_id:
+    - objective:
+    - output_targets:
+      - item:
+    - notes:
+- merge_strategy:
+- artifact_targets:
+  - item:
+
+### Mode C
+
+- transfer_checkpoints:
+  - item:
+- artifact_targets:
+  - item:

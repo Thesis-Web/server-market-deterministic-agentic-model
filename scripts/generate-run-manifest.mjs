@@ -29,7 +29,7 @@ function ensureRunStructure(runId) {
 const runId = getArg('--run');
 if (!runId) {
   console.error(
-    'Usage: node scripts/generate-run-manifest.mjs --run run-YYYYMMDD-scope-0001 [--objective "text"] [--operator "name"] [--route-policy "id"] [--execution-mode "manual|manual-overlap|hybrid|agentic"] [--out path]',
+    'Usage: node scripts/generate-run-manifest.mjs --run run-YYYYMMDD-scope-01 [--objective "text"] [--operator "name"] [--route-policy "id"] [--execution-mode "single-model-single-chat|single-model-multi-chat|multi-model-multi-environment"] [--out path]',
   );
   process.exit(1);
 }
