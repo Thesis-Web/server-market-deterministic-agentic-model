@@ -16,7 +16,7 @@ status: draft
 - invalidated
 - published
 
-## Required Root Fields
+## Required Fields
 
 - schema_version
 - artifact_type
