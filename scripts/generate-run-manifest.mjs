@@ -7,6 +7,25 @@ function getArg(name) {
   return process.argv[idx + 1] ?? null;
 }
 
+function ensureRunStructure(runId) {
+  const runRoot = path.resolve('runs', runId);
+  const subdirs = ['artifacts', 'evidence', 'reviews', 'logs', 'handoff'];
+
+  fs.mkdirSync(runRoot, { recursive: true });
+
+  for (const subdir of subdirs) {
+    const subdirPath = path.join(runRoot, subdir);
+    fs.mkdirSync(subdirPath, { recursive: true });
+
+    const gitkeepPath = path.join(subdirPath, '.gitkeep');
+    if (!fs.existsSync(gitkeepPath)) {
+      fs.writeFileSync(gitkeepPath, '', 'utf8');
+    }
+  }
+
+  return runRoot;
+}
+
 const runId = getArg('--run');
 if (!runId) {
   console.error(
@@ -26,6 +45,8 @@ if (!fs.existsSync(templatePath)) {
   process.exit(1);
 }
 
+ensureRunStructure(runId);
+
 const template = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
 template.run_id = runId;
 template.objective = objective;
@@ -38,3 +59,4 @@ fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(template, null, 2) + '\n', 'utf8');
 
 console.log(`Wrote run manifest: ${path.relative(process.cwd(), outPath)}`);
+console.log(`Ensured run scaffold: runs/${runId}/`);

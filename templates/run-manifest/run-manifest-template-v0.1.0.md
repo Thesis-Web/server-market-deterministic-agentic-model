@@ -4,6 +4,43 @@ Version: v0.1.0
 Status: draft
 Artifact type: run-manifest
 
+## Required Root Fields
+
+- schema_version
+- artifact_type
+- run_id
+- objective
+- operator
+- project
+- system_stage
+- status
+- execution_mode
+- route_policy_id
+- start_timestamp
+- end_timestamp
+- models_used
+- model_assignments
+- overlap_plan
+- input_bundle_refs
+- source_window
+- prompt_pack_version
+- schema_pack_version
+- governing_docs_loaded
+- artifact_outputs
+- gate_results
+- review_state
+- handoff_ref
+- unresolved_items
+
+## Recommended Run Directory Placement
+
+- runs/<run-id>/manifest.json
+- runs/<run-id>/artifacts/
+- runs/<run-id>/evidence/
+- runs/<run-id>/reviews/
+- runs/<run-id>/logs/
+- runs/<run-id>/handoff/
+
 ## Core Identity
 
 - run_id:
