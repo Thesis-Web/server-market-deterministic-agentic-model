@@ -1,7 +1,3 @@
-cd ~/repos/server-market-deterministic-agentic-model
-
-cat > docs/operator-guides/track-a-ai-use-cases-and-model-routing-guide-v0.1.0.md <<'EOF'
-
 # Track A AI Use Cases and Model Routing Guide
 
 Version: v0.1.0  
