@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RouteLog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "route_log_id",
+    "run_id",
+    "project",
+    "entries",
+    "review_state",
+    "unresolved_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "route-log"
+    },
+    "route_log_id": {
+      "type": "string",
+      "pattern": "^route-log-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/route_log_entry"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "route_log_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_log_entry_id",
+        "event_timestamp",
+        "task_class",
+        "assigned_platform",
+        "assigned_environment",
+        "assigned_role",
+        "route_action",
+        "route_reason",
+        "overlap_targets",
+        "notes"
+      ],
+      "properties": {
+        "route_log_entry_id": {
+          "type": "string"
+        },
+        "event_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "task_class": {
+          "type": "string"
+        },
+        "assigned_platform": {
+          "type": "string"
+        },
+        "assigned_environment": {
+          "type": "string"
+        },
+        "assigned_role": {
+          "type": "string"
+        },
+        "route_action": {
+          "type": "string",
+          "enum": [
+            "route_assigned",
+            "route_confirmed",
+            "overlap_added",
+            "overlap_removed",
+            "rerouted",
+            "route_blocked",
+            "route_completed"
+          ]
+        },
+        "route_reason": {
+          "type": "string"
+        },
+        "overlap_targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
