@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceLog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "evidence_log_id",
+    "run_id",
+    "project",
+    "entries",
+    "review_state",
+    "unresolved_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "evidence-log"
+    },
+    "evidence_log_id": {
+      "type": "string",
+      "pattern": "^evidence-log-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_log_entry"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "evidence_log_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_log_entry_id",
+        "event_timestamp",
+        "evidence_id",
+        "source_title",
+        "source_type",
+        "source_tier",
+        "action",
+        "fact_status",
+        "related_artifacts",
+        "actor",
+        "notes"
+      ],
+      "properties": {
+        "evidence_log_entry_id": {
+          "type": "string"
+        },
+        "event_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_id": {
+          "type": "string"
+        },
+        "source_title": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "source_tier": {
+          "type": "string",
+          "enum": ["tier1", "tier2", "tier3", "tier4", "tier5"]
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "evidence_captured",
+            "evidence_updated",
+            "evidence_validated",
+            "evidence_contradicted",
+            "evidence_superseded",
+            "evidence_linked_to_artifact"
+          ]
+        },
+        "fact_status": {
+          "type": "string",
+          "enum": ["captured", "validated", "contradicted", "superseded", "unresolved"]
+        },
+        "related_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actor": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

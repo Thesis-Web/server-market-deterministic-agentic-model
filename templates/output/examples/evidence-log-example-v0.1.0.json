@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "evidence-log",
+  "evidence_log_id": "evidence-log-20260314-demo-0001",
+  "run_id": "run-20260314-demo-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "evidence_log_entry_id": "evidence-log-entry-0001",
+      "event_timestamp": "2026-03-14T12:00:00Z",
+      "evidence_id": "evidence-0001",
+      "source_title": "Example vendor thermal design guide",
+      "source_type": "vendor-doc",
+      "source_tier": "tier1",
+      "action": "evidence_captured",
+      "fact_status": "captured",
+      "related_artifacts": ["artifact-market-segment-demo-0001"],
+      "actor": "operator",
+      "notes": "Minimal example evidence log entry."
+    }
+  ],
+  "notes": "Example evidence log.",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}

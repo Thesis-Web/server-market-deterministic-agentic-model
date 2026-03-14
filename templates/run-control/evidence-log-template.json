@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "evidence-log",
+  "evidence_log_id": "evidence-log-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "evidence_log_entry_id": "evidence-log-entry-0001",
+      "event_timestamp": "",
+      "evidence_id": "evidence-0001",
+      "source_title": "",
+      "source_type": "",
+      "source_tier": "tier1",
+      "action": "evidence_captured",
+      "fact_status": "captured",
+      "related_artifacts": [],
+      "actor": "operator",
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}
