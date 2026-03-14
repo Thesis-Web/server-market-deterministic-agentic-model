@@ -24,34 +24,45 @@ Artifact type: run-manifest
 
 ### models_used
 
--
+- 
 
 ### model_assignments
 
 - platform:
-  plan_tier:
-  environment:
-  task_class:
-  role_type:
-  reason_for_route:
-  expected_outputs:
-  - overlap_with:
-  - status:
+  - 
+- plan_tier:
+  - 
+- environment:
+  - 
+- task_class:
+  - 
+- role_type:
+  - 
+- reason_for_route:
+  - 
+- expected_outputs:
+  - 
+- overlap_with:
+  - 
+- status:
+  - 
 
 ## Overlap Plan
 
 - overlap_required:
 - reason:
-- ## task_classes:
-- ## target_models:
+- task_classes:
+  - 
+- target_models:
+  - 
 - expected_outcome:
 
 ## Input Bundle Refs
 
 - ref_id:
-  ref_type:
-  path_or_location:
-  notes:
+- ref_type:
+- path_or_location:
+- notes:
 
 ## Source Window
 
@@ -68,31 +79,34 @@ Artifact type: run-manifest
 ## Governing Docs Loaded
 
 - doc_id:
-  path:
-  version:
-  status:
+- path:
+- version:
+- status:
 
 ## Artifact Outputs
 
 - artifact_id:
-  artifact_type:
-  artifact_path:
-  version:
-  status:
-  producing_stage:
-  primary_model_origin:
-  secondary_model_origins:
-  - evidence_refs:
-  - contradiction_refs:
-  - review_status:
+- artifact_type:
+- artifact_path:
+- version:
+- status:
+- producing_stage:
+- primary_model_origin:
+- secondary_model_origins:
+  - 
+- evidence_refs:
+  - 
+- contradiction_refs:
+  - 
+- review_status:
 
 ## Gate Results
 
 - gate_name:
-  outcome:
-  timestamp:
-  reviewer:
-  notes:
+- outcome:
+- timestamp:
+- reviewer:
+- notes:
 
 ## Review State
 
@@ -104,10 +118,14 @@ Artifact type: run-manifest
 
 ## Checksum Ledger Refs
 
--
+- checksum_ledger_refs:
+  - 
 
 ## Notes
 
+- notes:
+
 ## Unresolved Items
 
--
+- unresolved_items:
+  - 
