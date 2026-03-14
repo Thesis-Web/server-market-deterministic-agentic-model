@@ -47,7 +47,7 @@ Artifact type: run-manifest
 - objective:
 - operator:
 - project:
-- system_stage:
+- system_stage: stage-0-manual-deterministic
 - status:
 - execution_mode:
 - route_policy_id:
@@ -128,6 +128,13 @@ Artifact type: run-manifest
   - primary_model_origin:
   - secondary_model_origins:
     - item:
+  - supporting_model_origins:
+    - item:
+  - model_stage_contributions:
+    - contribution:
+      - stage: acquisition | normalization | synthesis | contradiction-review | compilation
+      - model_origin:
+      - notes:
   - evidence_refs:
     - item:
   - contradiction_refs:

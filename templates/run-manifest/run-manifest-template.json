@@ -5,7 +5,7 @@
   "objective": "",
   "operator": "",
   "project": "server-market-deterministic-agentic-model",
-  "system_stage": "track-a-manual",
+  "system_stage": "stage-0-manual-deterministic",
   "status": "initialized",
   "execution_mode": "manual",
   "route_policy_id": "",

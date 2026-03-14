@@ -25,5 +25,14 @@
     "serviceability_notes": "example placeholder"
   },
   "compliance_and_certifications": ["example placeholder"],
-  "unresolved_items": ["Replace placeholders with Tier 1\u20134 evidence bundles."]
+  "unresolved_items": ["Replace placeholders with Tier 1\u20134 evidence bundles."],
+  "primary_model_origin": "chatgpt-plus",
+  "supporting_model_origins": [],
+  "model_stage_contributions": [
+    {
+      "stage": "normalization",
+      "model_origin": "chatgpt-plus",
+      "notes": "Initial example artifact construction."
+    }
+  ]
 }

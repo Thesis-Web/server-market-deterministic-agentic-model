@@ -52,6 +52,7 @@ template.run_id = runId;
 template.objective = objective;
 template.operator = operator;
 template.route_policy_id = routePolicyId;
+template.system_stage = 'stage-0-manual-deterministic';
 template.start_timestamp = new Date().toISOString();
 
 const outPath = path.resolve(outPathArg);

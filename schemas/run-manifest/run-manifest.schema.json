@@ -57,7 +57,7 @@
     },
     "system_stage": {
       "type": "string",
-      "enum": ["track-a-manual", "track-b-agentic"]
+      "const": "stage-0-manual-deterministic"
     },
     "status": {
       "type": "string",
@@ -313,7 +313,9 @@
         "secondary_model_origins",
         "evidence_refs",
         "contradiction_refs",
-        "review_status"
+        "review_status",
+        "supporting_model_origins",
+        "model_stage_contributions"
       ],
       "properties": {
         "artifact_id": {
@@ -357,6 +359,40 @@
         },
         "review_status": {
           "type": "string"
+        },
+        "supporting_model_origins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "model_stage_contributions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["stage", "model_origin"],
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "acquisition",
+                  "normalization",
+                  "synthesis",
+                  "contradiction-review",
+                  "compilation"
+                ]
+              },
+              "model_origin": {
+                "type": "string",
+                "minLength": 1
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
