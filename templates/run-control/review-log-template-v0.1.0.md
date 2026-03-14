@@ -1,39 +1,28 @@
 # Review Log Template
 
-Version: v0.1.0
-Status: draft
-Artifact type: review-log
+version: 0.1.0
+status: draft
 
-## Core Identity
+## Required Root Fields
 
-- review_log_id:
-- run_id:
-- project:
+- schema_version
+- artifact_type
+- review_log_id
+- run_id
+- project
+- entries
+- review_state
+- unresolved_items
 
-## Entries
+## Required Entry Fields
 
-- review_entry:
-  - review_entry_id:
-  - reviewed_object_id:
-  - reviewed_object_type:
-  - gate_name:
-  - reviewer:
-  - review_timestamp:
-  - decision:
-  - decision_reason:
-  - follow_up_actions:
-    - item:
-  - notes:
-
-## Notes
-
-- notes:
-
-## Review State
-
-- review_state:
-
-## Unresolved Items
-
-- unresolved_items:
-  - item:
+- review_entry_id
+- artifact_id
+- artifact_type_reviewed
+- gate_name
+- reviewer
+- review_timestamp
+- disposition
+- blocking_issues
+- follow_up_action
+- notes

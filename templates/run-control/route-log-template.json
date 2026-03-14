@@ -7,15 +7,18 @@
   "entries": [
     {
       "route_log_entry_id": "route-log-entry-0001",
-      "event_timestamp": "",
+      "timestamp": "",
+      "run_id": "run-YYYYMMDD-scope-0001",
       "task_class": "",
-      "assigned_platform": "",
-      "assigned_environment": "",
-      "assigned_role": "",
+      "selected_model": "",
+      "selected_environment": "",
+      "selected_role": "",
+      "alternate_models_considered": [],
+      "overlap_required": false,
       "route_action": "route_assigned",
       "route_reason": "",
-      "overlap_targets": [],
-      "notes": ""
+      "operator_note": "",
+      "overlap_targets": []
     }
   ],
   "notes": "",

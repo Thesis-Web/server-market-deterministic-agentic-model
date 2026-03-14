@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HandoffNote",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "handoff_id",
+    "run_id",
+    "project",
+    "completed_work",
+    "pending_work",
+    "next_files_to_modify",
+    "current_version_references",
+    "unresolved_risks_and_questions",
+    "repo_state",
+    "active_execution_mode",
+    "next_recommended_route",
+    "review_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "handoff-note"
+    },
+    "handoff_id": {
+      "type": "string",
+      "pattern": "^handoff-note-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completed_work": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pending_work": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_files_to_modify": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_version_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_risks_and_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "repo_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo_root", "git_branch", "git_status_summary", "terminal_cwd"],
+      "properties": {
+        "repo_root": {
+          "type": "string"
+        },
+        "git_branch": {
+          "type": "string"
+        },
+        "git_status_summary": {
+          "type": "string"
+        },
+        "terminal_cwd": {
+          "type": "string"
+        }
+      }
+    },
+    "active_execution_mode": {
+      "type": "string",
+      "enum": [
+        "single-model-single-chat",
+        "single-model-multi-chat",
+        "multi-model-multi-environment"
+      ]
+    },
+    "next_recommended_route": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    }
+  }
+}

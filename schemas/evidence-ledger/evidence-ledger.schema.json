@@ -63,13 +63,13 @@
         "source_title",
         "source_type",
         "source_tier",
+        "observed_date",
         "source_locator",
         "retrieved_at",
         "retrieved_by_model",
         "retrieved_in_environment",
-        "claim_class",
-        "fact_status",
         "used_in_artifacts",
+        "claim_class",
         "notes"
       ],
       "properties": {
@@ -86,6 +86,10 @@
           "type": "string",
           "enum": ["tier1", "tier2", "tier3", "tier4", "tier5"]
         },
+        "observed_date": {
+          "type": "string",
+          "format": "date"
+        },
         "source_locator": {
           "type": "string"
         },
@@ -99,6 +103,12 @@
         "retrieved_in_environment": {
           "type": "string"
         },
+        "used_in_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "claim_class": {
           "type": "string",
           "enum": [
@@ -111,12 +121,6 @@
         "fact_status": {
           "type": "string",
           "enum": ["captured", "validated", "contradicted", "superseded", "unresolved"]
-        },
-        "used_in_artifacts": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "notes": {
           "type": "string"

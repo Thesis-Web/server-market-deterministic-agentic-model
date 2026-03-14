@@ -1,39 +1,30 @@
 # Route Log Template
 
-Version: v0.1.0
-Status: draft
-Artifact type: route-log
+version: 0.1.0
+status: draft
 
-## Core Identity
+## Required Root Fields
 
-- route_log_id:
-- run_id:
-- project:
+- schema_version
+- artifact_type
+- route_log_id
+- run_id
+- project
+- entries
+- review_state
+- unresolved_items
 
-## Entries
+## Required Entry Fields
 
-- route_log_entry:
-  - route_log_entry_id:
-  - event_timestamp:
-  - task_class:
-  - assigned_platform:
-  - assigned_environment:
-  - assigned_role:
-  - route_action:
-  - route_reason:
-  - overlap_targets:
-    - item:
-  - notes:
-
-## Notes
-
-- notes:
-
-## Review State
-
-- review_state:
-
-## Unresolved Items
-
-- unresolved_items:
-  - item:
+- route_log_entry_id
+- timestamp
+- run_id
+- task_class
+- selected_model
+- selected_environment
+- selected_role
+- alternate_models_considered
+- overlap_required
+- route_action
+- route_reason
+- operator_note

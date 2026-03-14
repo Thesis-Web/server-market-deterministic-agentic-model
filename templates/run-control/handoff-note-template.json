@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "handoff-note",
+  "handoff_id": "handoff-note-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "completed_work": [],
+  "pending_work": [],
+  "next_files_to_modify": [],
+  "current_version_references": [],
+  "unresolved_risks_and_questions": [],
+  "repo_state": {
+    "repo_root": "~/repos/server-market-deterministic-agentic-model",
+    "git_branch": "main",
+    "git_status_summary": "",
+    "terminal_cwd": "~/repos/server-market-deterministic-agentic-model"
+  },
+  "active_execution_mode": "multi-model-multi-environment",
+  "next_recommended_route": "",
+  "notes": "",
+  "review_state": "not_reviewed"
+}

@@ -60,26 +60,25 @@
       "additionalProperties": false,
       "required": [
         "review_entry_id",
-        "reviewed_object_id",
-        "reviewed_object_type",
+        "artifact_id",
+        "artifact_type_reviewed",
         "gate_name",
         "reviewer",
         "review_timestamp",
-        "decision",
-        "decision_reason",
-        "follow_up_actions",
+        "disposition",
+        "blocking_issues",
+        "follow_up_action",
         "notes"
       ],
       "properties": {
         "review_entry_id": {
           "type": "string"
         },
-        "reviewed_object_id": {
+        "artifact_id": {
           "type": "string"
         },
-        "reviewed_object_type": {
-          "type": "string",
-          "enum": ["run", "artifact", "schema", "template", "prompt-pack", "output"]
+        "artifact_type_reviewed": {
+          "type": "string"
         },
         "gate_name": {
           "type": "string",
@@ -100,20 +99,23 @@
           "type": "string",
           "format": "date-time"
         },
-        "decision": {
+        "disposition": {
           "type": "string",
           "enum": ["approved", "approved_with_notes", "rejected", "needs_revision", "deferred"]
         },
-        "decision_reason": {
-          "type": "string"
-        },
-        "follow_up_actions": {
+        "blocking_issues": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
+        "follow_up_action": {
+          "type": "string"
+        },
         "notes": {
+          "type": "string"
+        },
+        "decision_reason": {
           "type": "string"
         }
       }

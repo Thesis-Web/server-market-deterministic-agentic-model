@@ -1,41 +1,30 @@
 # Evidence Ledger Template
 
-Version: v0.1.0
-Status: draft
-Artifact type: evidence-ledger
+version: 0.1.0
+status: draft
 
-## Core Identity
+## Required Root Fields
 
-- ledger_id:
-- run_id:
-- project:
+- schema_version
+- artifact_type
+- ledger_id
+- run_id
+- project
+- entries
+- review_state
+- unresolved_items
 
-## Entries
+## Required Entry Fields
 
-- evidence_entry:
-  - evidence_id:
-  - source_title:
-  - source_type:
-  - source_tier:
-  - source_locator:
-  - retrieved_at:
-  - retrieved_by_model:
-  - retrieved_in_environment:
-  - claim_class:
-  - fact_status:
-  - used_in_artifacts:
-    - item:
-  - notes:
-
-## Notes
-
-- notes:
-
-## Review State
-
-- review_state:
-
-## Unresolved Items
-
-- unresolved_items:
-  - item:
+- evidence_id
+- source_title
+- source_type
+- source_tier
+- observed_date
+- source_locator
+- retrieved_at
+- retrieved_by_model
+- retrieved_in_environment
+- used_in_artifacts
+- claim_class
+- notes

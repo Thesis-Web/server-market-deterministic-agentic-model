@@ -10,13 +10,14 @@
       "source_title": "Example vendor thermal design guide",
       "source_type": "vendor-doc",
       "source_tier": "tier1",
+      "observed_date": "2026-03-12",
       "source_locator": "docs/examples/vendor-thermal-design-guide.pdf",
       "retrieved_at": "2026-03-14T12:00:00Z",
       "retrieved_by_model": "chatgpt-plus",
       "retrieved_in_environment": "track-a-manual",
+      "used_in_artifacts": ["artifact-market-segment-demo-0001"],
       "claim_class": "observed_fact",
       "fact_status": "captured",
-      "used_in_artifacts": ["artifact-market-segment-demo-0001"],
       "notes": "Minimal example entry."
     }
   ],

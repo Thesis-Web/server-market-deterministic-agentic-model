@@ -5,9 +5,9 @@ status: draft
 
 ## Purpose
 
-This schema defines the canonical route log artifact for deterministic research runs.
+This schema defines the canonical route log artifact for Track A deterministic runs.
 
-The route log records model-routing decisions, environment assignments, overlap decisions, route changes, and rationale for task placement during a run.
+The route log records explicit route decisions, selected model assignment, alternate models considered, overlap requirements, operator rationale, and route outcome notes.
 
 ## Required Fields
 
@@ -25,15 +25,17 @@ The route log records model-routing decisions, environment assignments, overlap 
 Each route log entry must include:
 
 - route_log_entry_id
-- event_timestamp
+- timestamp
+- run_id
 - task_class
-- assigned_platform
-- assigned_environment
-- assigned_role
+- selected_model
+- selected_environment
+- selected_role
+- alternate_models_considered
+- overlap_required
 - route_action
 - route_reason
-- overlap_targets
-- notes
+- operator_note
 
 ## Allowed Values
 

@@ -5,9 +5,9 @@ status: draft
 
 ## Purpose
 
-This schema defines the canonical evidence ledger artifact for deterministic research runs.
+This schema defines the canonical evidence ledger artifact for Track A deterministic runs.
 
-The evidence ledger records evidence lineage across acquisition, normalization, synthesis, contradiction review, and compilation.
+The evidence ledger records source capture, source tier, observation date, retrieval provenance, claim classification, artifact linkage, and unresolved evidence notes.
 
 ## Required Fields
 
@@ -28,13 +28,13 @@ Each evidence ledger entry must include:
 - source_title
 - source_type
 - source_tier
+- observed_date
 - source_locator
 - retrieved_at
 - retrieved_by_model
 - retrieved_in_environment
-- claim_class
-- fact_status
 - used_in_artifacts
+- claim_class
 - notes
 
 ## Allowed Values

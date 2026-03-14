@@ -5,9 +5,9 @@ status: draft
 
 ## Purpose
 
-This schema defines the canonical review log artifact for deterministic research runs.
+This schema defines the canonical review log artifact for Track A deterministic runs.
 
-The review log records human review decisions, gate outcomes, approval status, rejection reasons, and required follow-up actions for artifacts and runs.
+The review log records artifact and gate review decisions, reviewer disposition, blocking issues, follow-up actions, and review notes.
 
 ## Required Fields
 
@@ -25,26 +25,17 @@ The review log records human review decisions, gate outcomes, approval status, r
 Each review log entry must include:
 
 - review_entry_id
-- reviewed_object_id
-- reviewed_object_type
+- artifact_id
+- artifact_type_reviewed
 - gate_name
 - reviewer
 - review_timestamp
-- decision
-- decision_reason
-- follow_up_actions
+- disposition
+- blocking_issues
+- follow_up_action
 - notes
 
 ## Allowed Values
-
-### reviewed_object_type
-
-- run
-- artifact
-- schema
-- template
-- prompt-pack
-- output
 
 ### gate_name
 
@@ -56,7 +47,7 @@ Each review log entry must include:
 - publish-gate
 - manual-review
 
-### decision
+### disposition
 
 - approved
 - approved_with_notes

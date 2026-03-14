@@ -7,15 +7,18 @@
   "entries": [
     {
       "route_log_entry_id": "route-log-entry-0001",
-      "event_timestamp": "2026-03-14T12:00:00Z",
+      "timestamp": "2026-03-14T12:00:00Z",
+      "run_id": "run-20260314-demo-0001",
       "task_class": "acquisition",
-      "assigned_platform": "perplexity-pro",
-      "assigned_environment": "track-a-manual",
-      "assigned_role": "acquisition",
+      "selected_model": "perplexity-pro",
+      "selected_environment": "track-a-manual",
+      "selected_role": "acquisition",
+      "alternate_models_considered": ["grok-premium"],
+      "overlap_required": true,
       "route_action": "route_assigned",
       "route_reason": "Citation-first acquisition route selected for primary evidence gathering.",
-      "overlap_targets": ["chatgpt-plus"],
-      "notes": "Minimal example route entry."
+      "operator_note": "Overlap retained because live-signal distortion is possible.",
+      "overlap_targets": ["grok-premium"]
     }
   ],
   "notes": "Example route log.",

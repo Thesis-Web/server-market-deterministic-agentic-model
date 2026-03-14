@@ -7,15 +7,16 @@
   "entries": [
     {
       "review_entry_id": "review-entry-0001",
-      "reviewed_object_id": "",
-      "reviewed_object_type": "artifact",
+      "artifact_id": "",
+      "artifact_type_reviewed": "",
       "gate_name": "manual-review",
       "reviewer": "",
       "review_timestamp": "",
-      "decision": "needs_revision",
-      "decision_reason": "",
-      "follow_up_actions": [],
-      "notes": ""
+      "disposition": "needs_revision",
+      "blocking_issues": [],
+      "follow_up_action": "",
+      "notes": "",
+      "decision_reason": ""
     }
   ],
   "notes": "",

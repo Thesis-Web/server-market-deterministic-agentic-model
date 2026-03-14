@@ -10,13 +10,14 @@
       "source_title": "",
       "source_type": "",
       "source_tier": "tier1",
+      "observed_date": "YYYY-MM-DD",
       "source_locator": "",
       "retrieved_at": "",
       "retrieved_by_model": "",
       "retrieved_in_environment": "",
+      "used_in_artifacts": [],
       "claim_class": "observed_fact",
       "fact_status": "captured",
-      "used_in_artifacts": [],
       "notes": ""
     }
   ],

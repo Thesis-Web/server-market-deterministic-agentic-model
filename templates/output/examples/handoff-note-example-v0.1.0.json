@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "handoff-note",
+  "handoff_id": "handoff-note-20260314-demo-0001",
+  "run_id": "run-20260314-demo-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "completed_work": [
+    "Validated evidence-ledger, route-log, and review-log schema alignment.",
+    "Created canonical handoff-note schema, templates, and example artifact."
+  ],
+  "pending_work": [
+    "Run formatting and gate validation.",
+    "Commit and push the audited 14.1 conformance fixes."
+  ],
+  "next_files_to_modify": [
+    "schemas/handoff-note/handoff-note.schema.json",
+    "templates/run-control/handoff-note-template.json",
+    "prompts/handoff/handoff-generation-prompt-v0.1.0.md"
+  ],
+  "current_version_references": [
+    "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md",
+    "docs/operator-guides/track-a-multi-model-environment-execution-guide-v0.1.0.md"
+  ],
+  "unresolved_risks_and_questions": [
+    "No unresolved schema drift remains in the audited 14.1 families after validation."
+  ],
+  "repo_state": {
+    "repo_root": "~/repos/server-market-deterministic-agentic-model",
+    "git_branch": "main",
+    "git_status_summary": "modified audited 14.1 conformance files",
+    "terminal_cwd": "~/repos/server-market-deterministic-agentic-model"
+  },
+  "active_execution_mode": "multi-model-multi-environment",
+  "next_recommended_route": "run formatting, ci gate, commit, push",
+  "notes": "Minimal example handoff note.",
+  "review_state": "not_reviewed"
+}

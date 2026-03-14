@@ -60,35 +60,50 @@
       "additionalProperties": false,
       "required": [
         "route_log_entry_id",
-        "event_timestamp",
+        "timestamp",
+        "run_id",
         "task_class",
-        "assigned_platform",
-        "assigned_environment",
-        "assigned_role",
+        "selected_model",
+        "selected_environment",
+        "selected_role",
+        "alternate_models_considered",
+        "overlap_required",
         "route_action",
         "route_reason",
-        "overlap_targets",
-        "notes"
+        "operator_note"
       ],
       "properties": {
         "route_log_entry_id": {
           "type": "string"
         },
-        "event_timestamp": {
+        "timestamp": {
           "type": "string",
           "format": "date-time"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
         },
         "task_class": {
           "type": "string"
         },
-        "assigned_platform": {
+        "selected_model": {
           "type": "string"
         },
-        "assigned_environment": {
+        "selected_environment": {
           "type": "string"
         },
-        "assigned_role": {
+        "selected_role": {
           "type": "string"
+        },
+        "alternate_models_considered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "overlap_required": {
+          "type": "boolean"
         },
         "route_action": {
           "type": "string",
@@ -105,14 +120,14 @@
         "route_reason": {
           "type": "string"
         },
+        "operator_note": {
+          "type": "string"
+        },
         "overlap_targets": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "notes": {
-          "type": "string"
         }
       }
     }
