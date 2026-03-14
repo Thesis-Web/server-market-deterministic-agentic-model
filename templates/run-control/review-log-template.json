@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "review-log",
+  "review_log_id": "review-log-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "review_entry_id": "review-entry-0001",
+      "reviewed_object_id": "",
+      "reviewed_object_type": "artifact",
+      "gate_name": "manual-review",
+      "reviewer": "",
+      "review_timestamp": "",
+      "decision": "needs_revision",
+      "decision_reason": "",
+      "follow_up_actions": [],
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}

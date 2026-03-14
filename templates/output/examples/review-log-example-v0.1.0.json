@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "review-log",
+  "review_log_id": "review-log-20260314-demo-0001",
+  "run_id": "run-20260314-demo-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "review_entry_id": "review-entry-0001",
+      "reviewed_object_id": "artifact-market-segment-demo-0001",
+      "reviewed_object_type": "artifact",
+      "gate_name": "output-gate",
+      "reviewer": "operator",
+      "review_timestamp": "2026-03-14T12:00:00Z",
+      "decision": "approved_with_notes",
+      "decision_reason": "Artifact is acceptable but follow-up citation tightening remains open.",
+      "follow_up_actions": ["Add one more tier1 source before publication."],
+      "notes": "Minimal example review entry."
+    }
+  ],
+  "notes": "Example review log.",
+  "review_state": "approved_with_notes",
+  "unresolved_items": ["Need one additional tier1 source before publish gate."]
+}
