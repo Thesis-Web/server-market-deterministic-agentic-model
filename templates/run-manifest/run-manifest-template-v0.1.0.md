@@ -24,34 +24,40 @@ Artifact type: run-manifest
 
 ### models_used
 
--
+- item:
 
 ### model_assignments
 
-- ## platform:
-- ## plan_tier:
-- ## environment:
-- ## task_class:
-- ## role_type:
-- ## reason_for_route:
-- ## expected_outputs:
-- ## overlap_with:
-- ## status:
+- assignment:
+  - platform:
+  - plan_tier:
+  - environment:
+  - task_class:
+  - role_type:
+  - reason_for_route:
+  - expected_outputs:
+    - item:
+  - overlap_with:
+    - item:
+  - status:
 
 ## Overlap Plan
 
 - overlap_required:
 - reason:
-- ## task_classes:
-- ## target_models:
+- task_classes:
+  - item:
+- target_models:
+  - item:
 - expected_outcome:
 
 ## Input Bundle Refs
 
-- ref_id:
-- ref_type:
-- path_or_location:
-- notes:
+- input_bundle_ref:
+  - ref_id:
+  - ref_type:
+  - path_or_location:
+  - notes:
 
 ## Source Window
 
@@ -67,32 +73,38 @@ Artifact type: run-manifest
 
 ## Governing Docs Loaded
 
-- doc_id:
-- path:
-- version:
-- status:
+- governing_doc:
+  - doc_id:
+  - path:
+  - version:
+  - status:
 
 ## Artifact Outputs
 
-- artifact_id:
-- artifact_type:
-- artifact_path:
-- version:
-- status:
-- producing_stage:
-- primary_model_origin:
-- ## secondary_model_origins:
-- ## evidence_refs:
-- ## contradiction_refs:
-- review_status:
+- artifact_output:
+  - artifact_id:
+  - artifact_type:
+  - artifact_path:
+  - version:
+  - status:
+  - producing_stage:
+  - primary_model_origin:
+  - secondary_model_origins:
+    - item:
+  - evidence_refs:
+    - item:
+  - contradiction_refs:
+    - item:
+  - review_status:
 
 ## Gate Results
 
-- gate_name:
-- outcome:
-- timestamp:
-- reviewer:
-- notes:
+- gate_result:
+  - gate_name:
+  - outcome:
+  - timestamp:
+  - reviewer:
+  - notes:
 
 ## Review State
 
@@ -104,7 +116,8 @@ Artifact type: run-manifest
 
 ## Checksum Ledger Refs
 
-- ## checksum_ledger_refs:
+- checksum_ledger_refs:
+  - item:
 
 ## Notes
 
@@ -112,4 +125,5 @@ Artifact type: run-manifest
 
 ## Unresolved Items
 
-- ## unresolved_items:
+- unresolved_items:
+  - item:
