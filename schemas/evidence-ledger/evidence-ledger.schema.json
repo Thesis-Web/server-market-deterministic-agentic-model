@@ -3,7 +3,16 @@
   "title": "EvidenceLedger",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "artifact_type", "entries"],
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "ledger_id",
+    "run_id",
+    "project",
+    "entries",
+    "review_state",
+    "unresolved_items"
+  ],
   "properties": {
     "schema_version": {
       "type": "string",
@@ -13,10 +22,35 @@
       "type": "string",
       "const": "evidence-ledger"
     },
+    "ledger_id": {
+      "type": "string",
+      "pattern": "^evidence-ledger-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
     "entries": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/evidence_entry"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
   },
@@ -29,11 +63,13 @@
         "source_title",
         "source_type",
         "source_tier",
-        "observed_date",
+        "source_locator",
+        "retrieved_at",
         "retrieved_by_model",
         "retrieved_in_environment",
-        "used_in_artifacts",
         "claim_class",
+        "fact_status",
+        "used_in_artifacts",
         "notes"
       ],
       "properties": {
@@ -50,8 +86,12 @@
           "type": "string",
           "enum": ["tier1", "tier2", "tier3", "tier4", "tier5"]
         },
-        "observed_date": {
+        "source_locator": {
           "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
         },
         "retrieved_by_model": {
           "type": "string"
@@ -59,14 +99,24 @@
         "retrieved_in_environment": {
           "type": "string"
         },
+        "claim_class": {
+          "type": "string",
+          "enum": [
+            "observed_fact",
+            "cross_validated_fact",
+            "derived_implication",
+            "scenario_hypothesis"
+          ]
+        },
+        "fact_status": {
+          "type": "string",
+          "enum": ["captured", "validated", "contradicted", "superseded", "unresolved"]
+        },
         "used_in_artifacts": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "claim_class": {
-          "type": "string"
         },
         "notes": {
           "type": "string"

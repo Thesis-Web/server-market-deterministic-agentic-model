@@ -3,7 +3,16 @@
   "title": "ContradictionLog",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "artifact_type", "entries"],
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "contradiction_log_id",
+    "run_id",
+    "project",
+    "entries",
+    "review_state",
+    "unresolved_items"
+  ],
   "properties": {
     "schema_version": {
       "type": "string",
@@ -13,10 +22,35 @@
       "type": "string",
       "const": "contradiction-log"
     },
+    "contradiction_log_id": {
+      "type": "string",
+      "pattern": "^contradiction-log-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[a-z0-9-]+-[0-9]{4}$"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
     "entries": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/contradiction_entry"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
   },
@@ -26,38 +60,58 @@
       "additionalProperties": false,
       "required": [
         "contradiction_id",
-        "conflicting_sources",
-        "description",
+        "related_evidence_ids",
+        "conflicting_claims",
+        "contradiction_type",
+        "severity",
         "disposition",
-        "related_artifacts",
+        "impacted_artifacts",
         "notes"
       ],
       "properties": {
         "contradiction_id": {
           "type": "string"
         },
-        "conflicting_sources": {
+        "related_evidence_ids": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "minItems": 1
         },
-        "description": {
-          "type": "string"
+        "conflicting_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2
+        },
+        "contradiction_type": {
+          "type": "string",
+          "enum": [
+            "source_conflict",
+            "interpretation_conflict",
+            "timing_conflict",
+            "model_inference_conflict",
+            "evidence_gap"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"]
         },
         "disposition": {
           "type": "string",
           "enum": [
             "unresolved",
-            "source-conflict",
-            "weak-signal-not-confirmed",
-            "evidence-gap",
-            "resolved-in-favor-of-primary-source",
-            "resolved-in-favor-of-cross-validated-source",
-            "compiler-overreach-corrected"
+            "monitoring",
+            "resolved_in_favor_of_primary_source",
+            "resolved_in_favor_of_cross_validated_sources",
+            "downgraded_to_hypothesis",
+            "invalidated_output_corrected"
           ]
         },
-        "related_artifacts": {
+        "impacted_artifacts": {
           "type": "array",
           "items": {
             "type": "string"
