@@ -9,21 +9,21 @@ Normalize competitive landscape for a defined scope (segment + region + time win
 
 ## Required Fields
 
-- landscapeId
-- scope (object: segmentId, regionId, timeWindow)
+- landscape_id
+- scope (object: segment_id, region_id, timeWindow)
 - vendors (array)
-- evidenceRefs (array of evidence bundle ids)
-- unresolvedItems (array)
+- evidence_refs (array of evidence bundle ids)
+- unresolved_items (array)
 
 ## Vendor Object (Required Fields)
 
 Each vendor entry must include:
 
-- vendorName
-- vendorType (oem | odm | cloud | integrator | component | reseller)
-- offeringsSummary
-- positioningSummary
+- vendor_name
+- vendor_type (oem | odm | cloud | integrator | component | reseller)
+- offerings_summary
+- positioning_summary
 - differentiators (array)
 - weaknesses (array)
-- riskFlags (array)
-- evidenceRefs (array)
+- risk_flags (array)
+- evidence_refs (array)

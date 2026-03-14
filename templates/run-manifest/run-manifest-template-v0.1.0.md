@@ -1,7 +1,7 @@
 # Run Manifest Template
 
-Version: v0.1.0  
-Status: draft  
+Version: v0.1.0
+Status: draft
 Artifact type: run-manifest
 
 ## Core Identity

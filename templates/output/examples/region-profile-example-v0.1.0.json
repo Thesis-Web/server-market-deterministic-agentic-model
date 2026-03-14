@@ -1,26 +1,26 @@
 {
-  "regionId": "REG-US",
-  "regionName": "United States",
-  "regionType": "country",
-  "effectiveDate": "2026-03-13",
-  "evidenceRefs": ["EVID-EXAMPLE-0001"],
+  "region_id": "REG-US",
+  "region_name": "United States",
+  "region_type": "country",
+  "effective_date": "2026-03-13",
+  "evidence_refs": ["EVID-EXAMPLE-0001"],
   "constraints": {
-    "exportControls": "example placeholder",
-    "importDuties": "example placeholder",
-    "dataSovereignty": "example placeholder",
-    "encryptionRestrictions": "example placeholder",
-    "radioEmissionsStandards": "example placeholder",
-    "safetyStandards": "example placeholder",
-    "environmentalStandards": "example placeholder"
+    "export_controls": "example placeholder",
+    "import_duties": "example placeholder",
+    "data_sovereignty": "example placeholder",
+    "encryption_restrictions": "example placeholder",
+    "radio_emissions_standards": "example placeholder",
+    "safety_standards": "example placeholder",
+    "environmental_standards": "example placeholder"
   },
-  "deploymentRealities": {
-    "gridStability": "example placeholder",
-    "typicalPowerDensity": "example placeholder",
-    "coolingAssumptions": "example placeholder",
-    "ambientTempBands": "example placeholder",
-    "logisticsNotes": "example placeholder",
-    "serviceabilityNotes": "example placeholder"
+  "deployment_realities": {
+    "grid_stability": "example placeholder",
+    "typical_power_density": "example placeholder",
+    "cooling_assumptions": "example placeholder",
+    "ambient_temp_bands": "example placeholder",
+    "logistics_notes": "example placeholder",
+    "serviceability_notes": "example placeholder"
   },
-  "complianceAndCertifications": ["example placeholder"],
-  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "compliance_and_certifications": ["example placeholder"],
+  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
 }

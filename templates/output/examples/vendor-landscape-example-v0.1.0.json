@@ -1,22 +1,22 @@
 {
-  "landscapeId": "VL-EXAMPLE-0001",
+  "landscape_id": "VL-EXAMPLE-0001",
   "scope": {
-    "segmentId": "SEG-EXAMPLE",
-    "regionId": "REG-US",
+    "segment_id": "SEG-EXAMPLE",
+    "region_id": "REG-US",
     "timeWindow": "2026H1"
   },
   "vendors": [
     {
-      "vendorName": "ExampleVendor",
-      "vendorType": "oem",
-      "offeringsSummary": "example placeholder",
-      "positioningSummary": "example placeholder",
+      "vendor_name": "ExampleVendor",
+      "vendor_type": "oem",
+      "offerings_summary": "example placeholder",
+      "positioning_summary": "example placeholder",
       "differentiators": ["example placeholder"],
       "weaknesses": ["example placeholder"],
-      "riskFlags": ["example placeholder"],
-      "evidenceRefs": ["EVID-EXAMPLE-0001"]
+      "risk_flags": ["example placeholder"],
+      "evidence_refs": ["EVID-EXAMPLE-0001"]
     }
   ],
-  "evidenceRefs": ["EVID-EXAMPLE-0001"],
-  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "evidence_refs": ["EVID-EXAMPLE-0001"],
+  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
 }

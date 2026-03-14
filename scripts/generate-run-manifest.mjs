@@ -20,21 +20,21 @@ const operator = getArg('--operator') ?? '';
 const routePolicyId = getArg('--route-policy') ?? '';
 const outPathArg = getArg('--out') ?? path.join('runs', runId, 'manifest.json');
 
-const templatePath = path.resolve('templates', 'run-control', 'run-manifest-template.json');
+const templatePath = path.resolve('templates', 'run-manifest', 'run-manifest-template.json');
 if (!fs.existsSync(templatePath)) {
   console.error(`Missing template: ${templatePath}`);
   process.exit(1);
 }
 
-const tpl = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
-tpl.run_id = runId;
-tpl.objective = objective;
-tpl.operator = operator;
-tpl.route_policy_id = routePolicyId;
-tpl.start_timestamp = new Date().toISOString();
+const template = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
+template.run_id = runId;
+template.objective = objective;
+template.operator = operator;
+template.route_policy_id = routePolicyId;
+template.start_timestamp = new Date().toISOString();
 
 const outPath = path.resolve(outPathArg);
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, JSON.stringify(tpl, null, 2) + '\n', 'utf8');
+fs.writeFileSync(outPath, JSON.stringify(template, null, 2) + '\n', 'utf8');
 
 console.log(`Wrote run manifest: ${path.relative(process.cwd(), outPath)}`);

@@ -1,23 +1,23 @@
 {
-  "opportunitySetId": "FO-EXAMPLE-0001",
+  "opportunity_set_id": "FO-EXAMPLE-0001",
   "scope": {
-    "segmentId": "SEG-EXAMPLE",
-    "regionId": "REG-US",
+    "segment_id": "SEG-EXAMPLE",
+    "region_id": "REG-US",
     "timeWindow": "2026H1"
   },
   "opportunities": [
     {
       "featureLabel": "Simplified serviceability",
       "description": "example placeholder",
-      "mappedPainPoints": ["Operational complexity"],
-      "expectedValue": "medium",
+      "mapped_pain_points": ["Operational complexity"],
+      "expected_value": "medium",
       "feasibility": "medium",
-      "timeHorizon": "mid",
-      "designTraits": ["example placeholder"],
+      "time_horizon": "mid",
+      "design_traits": ["example placeholder"],
       "risks": ["example placeholder"],
-      "evidenceRefs": ["EVID-EXAMPLE-0001"]
+      "evidence_refs": ["EVID-EXAMPLE-0001"]
     }
   ],
-  "evidenceRefs": ["EVID-EXAMPLE-0001"],
-  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "evidence_refs": ["EVID-EXAMPLE-0001"],
+  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
 }

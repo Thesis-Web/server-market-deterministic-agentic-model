@@ -9,39 +9,39 @@ Define a normalized regional constraint and deployment profile used to condition
 
 ## Required Fields
 
-- regionId
-- regionName
-- regionType (country | bloc | subregion | state-province | metro)
-- effectiveDate
-- evidenceRefs (array of evidence bundle ids)
+- region_id
+- region_name
+- region_type (country | bloc | subregion | state-province | metro)
+- effective_date
+- evidence_refs (array of evidence bundle ids)
 - constraints (object)
-- deploymentRealities (object)
-- complianceAndCertifications (array)
-- unresolvedItems (array)
+- deployment_realities (object)
+- compliance_and_certifications (array)
+- unresolved_items (array)
 
 ## Recommended Sections
 
 ### Constraints
 
-- exportControls
-- importDuties
-- dataSovereignty
-- encryptionRestrictions
-- radioEmissionsStandards
-- safetyStandards
-- environmentalStandards
+- export_controls
+- import_duties
+- data_sovereignty
+- encryption_restrictions
+- radio_emissions_standards
+- safety_standards
+- environmental_standards
 
 ### Deployment Realities
 
-- gridStability
-- typicalPowerDensity
-- coolingAssumptions
-- ambientTempBands
-- logisticsNotes
-- serviceabilityNotes
+- grid_stability
+- typical_power_density
+- cooling_assumptions
+- ambient_temp_bands
+- logistics_notes
+- serviceability_notes
 
 ### Notes
 
-- observedFacts
-- derivedImplications
-- scenarioHypotheses
+- observed_facts
+- derived_implications
+- scenario_hypotheses

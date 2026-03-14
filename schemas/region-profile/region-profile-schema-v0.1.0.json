@@ -3,29 +3,29 @@
   "title": "Region Profile Schema v0.1.0",
   "type": "object",
   "required": [
-    "regionId",
-    "regionName",
-    "regionType",
-    "effectiveDate",
-    "evidenceRefs",
+    "region_id",
+    "region_name",
+    "region_type",
+    "effective_date",
+    "evidence_refs",
     "constraints",
-    "deploymentRealities",
-    "complianceAndCertifications",
-    "unresolvedItems"
+    "deployment_realities",
+    "compliance_and_certifications",
+    "unresolved_items"
   ],
   "properties": {
-    "regionId": { "type": "string" },
-    "regionName": { "type": "string" },
-    "regionType": {
+    "region_id": { "type": "string" },
+    "region_name": { "type": "string" },
+    "region_type": {
       "type": "string",
       "enum": ["country", "bloc", "subregion", "state-province", "metro"]
     },
-    "effectiveDate": { "type": "string" },
-    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "effective_date": { "type": "string" },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "constraints": { "type": "object" },
-    "deploymentRealities": { "type": "object" },
-    "complianceAndCertifications": { "type": "array", "items": { "type": "string" } },
-    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+    "deployment_realities": { "type": "object" },
+    "compliance_and_certifications": { "type": "array", "items": { "type": "string" } },
+    "unresolved_items": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

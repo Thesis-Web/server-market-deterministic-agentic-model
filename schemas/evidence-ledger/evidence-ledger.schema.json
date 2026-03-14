@@ -2,24 +2,76 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "EvidenceLedger",
   "type": "object",
-  "required": ["schemaVersion", "artifactType", "entries"],
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_type", "entries"],
   "properties": {
-    "schemaVersion": { "type": "string" },
-    "artifactType": { "type": "string", "const": "evidence-ledger" },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "evidence-ledger"
+    },
     "entries": {
       "type": "array",
       "items": {
-        "type": "object",
-        "required": ["id", "tier", "claimType", "sourceRef"],
-        "properties": {
-          "id": { "type": "string" },
-          "tier": { "type": "string" },
-          "claimType": { "type": "string" },
-          "sourceRef": { "type": "string" }
-        },
-        "additionalProperties": true
+        "$ref": "#/$defs/evidence_entry"
       }
     }
   },
-  "additionalProperties": true
+  "$defs": {
+    "evidence_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "source_title",
+        "source_type",
+        "source_tier",
+        "observed_date",
+        "retrieved_by_model",
+        "retrieved_in_environment",
+        "used_in_artifacts",
+        "claim_class",
+        "notes"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "source_title": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "source_tier": {
+          "type": "string",
+          "enum": ["tier1", "tier2", "tier3", "tier4", "tier5"]
+        },
+        "observed_date": {
+          "type": "string"
+        },
+        "retrieved_by_model": {
+          "type": "string"
+        },
+        "retrieved_in_environment": {
+          "type": "string"
+        },
+        "used_in_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim_class": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }

@@ -9,11 +9,11 @@ Translate pain points and market constraints into a structured feature/opportuni
 
 ## Required Fields
 
-- opportunitySetId
-- scope (object: segmentId, optional regionId, timeWindow)
+- opportunity_set_id
+- scope (object: segment_id, optional region_id, timeWindow)
 - opportunities (array)
-- evidenceRefs (array of evidence bundle ids)
-- unresolvedItems (array)
+- evidence_refs (array of evidence bundle ids)
+- unresolved_items (array)
 
 ## Opportunity Object (Required Fields)
 
@@ -21,10 +21,10 @@ Each opportunity entry must include:
 
 - featureLabel
 - description
-- mappedPainPoints (array of pain point labels or ids)
-- expectedValue (low | medium | high)
+- mapped_pain_points (array of pain point labels or ids)
+- expected_value (low | medium | high)
 - feasibility (low | medium | high)
-- timeHorizon (near | mid | long)
-- designTraits (array)
+- time_horizon (near | mid | long)
+- design_traits (array)
 - risks (array)
-- evidenceRefs (array)
+- evidence_refs (array)

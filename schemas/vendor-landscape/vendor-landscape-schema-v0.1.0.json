@@ -2,42 +2,42 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Vendor Landscape Schema v0.1.0",
   "type": "object",
-  "required": ["landscapeId", "scope", "vendors", "evidenceRefs", "unresolvedItems"],
+  "required": ["landscape_id", "scope", "vendors", "evidence_refs", "unresolved_items"],
   "properties": {
-    "landscapeId": { "type": "string" },
+    "landscape_id": { "type": "string" },
     "scope": { "type": "object" },
     "vendors": {
       "type": "array",
       "items": {
         "type": "object",
         "required": [
-          "vendorName",
-          "vendorType",
-          "offeringsSummary",
-          "positioningSummary",
+          "vendor_name",
+          "vendor_type",
+          "offerings_summary",
+          "positioning_summary",
           "differentiators",
           "weaknesses",
-          "riskFlags",
-          "evidenceRefs"
+          "risk_flags",
+          "evidence_refs"
         ],
         "properties": {
-          "vendorName": { "type": "string" },
-          "vendorType": {
+          "vendor_name": { "type": "string" },
+          "vendor_type": {
             "type": "string",
             "enum": ["oem", "odm", "cloud", "integrator", "component", "reseller"]
           },
-          "offeringsSummary": { "type": "string" },
-          "positioningSummary": { "type": "string" },
+          "offerings_summary": { "type": "string" },
+          "positioning_summary": { "type": "string" },
           "differentiators": { "type": "array", "items": { "type": "string" } },
           "weaknesses": { "type": "array", "items": { "type": "string" } },
-          "riskFlags": { "type": "array", "items": { "type": "string" } },
-          "evidenceRefs": { "type": "array", "items": { "type": "string" } }
+          "risk_flags": { "type": "array", "items": { "type": "string" } },
+          "evidence_refs": { "type": "array", "items": { "type": "string" } }
         },
         "additionalProperties": false
       }
     },
-    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
-    "unresolvedItems": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "unresolved_items": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

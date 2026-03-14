@@ -76,22 +76,12 @@
       "format": "date-time"
     },
     "end_timestamp": {
-      "anyOf": [
-        {
-          "type": "string",
-          "format": "date-time"
-        },
-        {
-          "type": "string",
-          "const": ""
-        }
-      ]
+      "type": "string"
     },
     "models_used": {
       "type": "array",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "type": "string"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -183,28 +173,22 @@
       ],
       "properties": {
         "platform": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "plan_tier": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "environment": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "task_class": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "role_type": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "reason_for_route": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "expected_outputs": {
           "type": "array",
@@ -254,8 +238,7 @@
           }
         },
         "expected_outcome": {
-          "type": "string",
-          "enum": ["confirmed", "contradicted", "broadened", "unresolved", ""]
+          "type": "string"
         }
       }
     },
@@ -373,8 +356,7 @@
           }
         },
         "review_status": {
-          "type": "string",
-          "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+          "type": "string"
         }
       }
     },

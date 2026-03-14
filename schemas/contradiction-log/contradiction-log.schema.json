@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContradictionLog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_type", "entries"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "artifact_type": {
+      "type": "string",
+      "const": "contradiction-log"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contradiction_entry"
+      }
+    }
+  },
+  "$defs": {
+    "contradiction_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contradiction_id",
+        "conflicting_sources",
+        "description",
+        "disposition",
+        "related_artifacts",
+        "notes"
+      ],
+      "properties": {
+        "contradiction_id": {
+          "type": "string"
+        },
+        "conflicting_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "unresolved",
+            "source-conflict",
+            "weak-signal-not-confirmed",
+            "evidence-gap",
+            "resolved-in-favor-of-primary-source",
+            "resolved-in-favor-of-cross-validated-source",
+            "compiler-overreach-corrected"
+          ]
+        },
+        "related_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,22 +1,22 @@
 {
-  "painPointSetId": "PP-EXAMPLE-0001",
+  "pain_point_set_id": "PP-EXAMPLE-0001",
   "scope": {
-    "segmentId": "SEG-EXAMPLE",
-    "regionId": "REG-US",
+    "segment_id": "SEG-EXAMPLE",
+    "region_id": "REG-US",
     "timeWindow": "2026H1"
   },
-  "painPoints": [
+  "pain_points": [
     {
       "label": "Operational complexity",
       "description": "example placeholder",
       "severity": "medium",
       "frequency": "common",
-      "buyingDrivers": ["example placeholder"],
-      "impactedLifecyclePhase": "operate",
-      "designImplications": ["example placeholder"],
-      "evidenceRefs": ["EVID-EXAMPLE-0001"]
+      "buying_drivers": ["example placeholder"],
+      "impacted_lifecycle_phase": "operate",
+      "design_implications": ["example placeholder"],
+      "evidence_refs": ["EVID-EXAMPLE-0001"]
     }
   ],
-  "evidenceRefs": ["EVID-EXAMPLE-0001"],
-  "unresolvedItems": ["Replace placeholders with Tier 1–4 evidence bundles."]
+  "evidence_refs": ["EVID-EXAMPLE-0001"],
+  "unresolved_items": ["Replace placeholders with Tier 1–4 evidence bundles."]
 }

@@ -9,11 +9,11 @@ Capture early signals of market/technology/regulatory shifts that may change ser
 
 ## Required Fields
 
-- signalSetId
-- scope (object: segmentId, optional regionId, timeWindow)
+- signal_set_id
+- scope (object: segment_id, optional region_id, timeWindow)
 - signals (array)
-- evidenceRefs (array of evidence bundle ids)
-- unresolvedItems (array)
+- evidence_refs (array of evidence bundle ids)
+- unresolved_items (array)
 
 ## Signal Object (Required Fields)
 
@@ -24,6 +24,6 @@ Each signal entry must include:
 - description
 - directionality (tailwind | headwind | ambiguous)
 - confidence (low | medium | high)
-- timeHorizon (near | mid | long)
-- potentialImpacts (array)
-- evidenceRefs (array)
+- time_horizon (near | mid | long)
+- potential_impacts (array)
+- evidence_refs (array)

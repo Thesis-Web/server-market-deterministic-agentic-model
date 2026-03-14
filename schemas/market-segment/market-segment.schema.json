@@ -2,12 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "MarketSegment",
   "type": "object",
-  "required": ["schemaVersion", "artifactType", "segmentId", "segmentName"],
+  "required": ["schema_version", "artifact_type", "segment_id", "segment_name"],
   "properties": {
-    "schemaVersion": { "type": "string" },
-    "artifactType": { "type": "string", "const": "market-segment" },
-    "segmentId": { "type": "string" },
-    "segmentName": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "artifact_type": { "type": "string", "const": "market-segment" },
+    "segment_id": { "type": "string" },
+    "segment_name": { "type": "string" },
     "summary": { "type": "string" }
   },
   "additionalProperties": true
