@@ -81,6 +81,41 @@
       "timestamp": "",
       "reviewer": "",
       "notes": ""
+    },
+    {
+      "gate_name": "evidence-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
+    },
+    {
+      "gate_name": "schema-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
+    },
+    {
+      "gate_name": "reasoning-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
+    },
+    {
+      "gate_name": "output-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
+    },
+    {
+      "gate_name": "publish-gate",
+      "outcome": "pending",
+      "timestamp": "",
+      "reviewer": "",
+      "notes": ""
     }
   ],
   "review_state": "not_reviewed",

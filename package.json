@@ -15,10 +15,11 @@
     "typecheck": "tsc --noEmit",
     "validate:json-yaml": "node ./scripts/validate-json-yaml.mjs",
     "validate:structure": "node ./scripts/validate-repo-structure.mjs",
-    "ci:gate": "npm run format:check && npm run lint:md && npm run validate:json-yaml && npm run validate:structure && npm run validate:schemas && npm run typecheck",
+    "ci:gate": "npm run format:check && npm run lint:md && npm run validate:json-yaml && npm run validate:structure && npm run validate:schemas && npm run validate:gates && npm run typecheck",
     "validate:schemas": "node ./scripts/validate-schemas.mjs",
     "generate:run-manifest": "node ./scripts/generate-run-manifest.mjs",
-    "compute:checksums": "node ./scripts/compute-checksum.mjs"
+    "compute:checksums": "node ./scripts/compute-checksum.mjs",
+    "validate:gates": "node ./scripts/validate-gates.mjs"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.18.0",

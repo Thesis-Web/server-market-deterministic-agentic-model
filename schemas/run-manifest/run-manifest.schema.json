@@ -140,10 +140,155 @@
     },
     "gate_results": {
       "type": "array",
-      "items": {
-        "$ref": "#/$defs/gate_result"
-      },
-      "minItems": 1
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "input-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "evidence-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "schema-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "reasoning-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "output-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
+          "properties": {
+            "gate_name": {
+              "const": "publish-gate"
+            },
+            "outcome": {
+              "type": "string",
+              "enum": ["pending", "passed", "failed", "waived"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "items": false
     },
     "review_state": {
       "type": "string",
