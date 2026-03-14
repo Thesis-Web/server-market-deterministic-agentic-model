@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "run-log",
+  "run_log_id": "run-log-20260314-demo-0001",
+  "run_id": "run-20260314-demo-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "run_log_entry_id": "run-log-entry-0001",
+      "event_timestamp": "2026-03-14T12:00:00Z",
+      "lifecycle_stage": "initialized",
+      "event_type": "run_started",
+      "event_status": "info",
+      "actor": "operator",
+      "related_gate": "none",
+      "message": "Run initialized with canonical schema pack loaded.",
+      "notes": "Minimal example run log entry."
+    }
+  ],
+  "notes": "Example run log.",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "run-log",
+  "run_log_id": "run-log-YYYYMMDD-scope-0001",
+  "run_id": "run-YYYYMMDD-scope-0001",
+  "project": "server-market-deterministic-agentic-model",
+  "entries": [
+    {
+      "run_log_entry_id": "run-log-entry-0001",
+      "event_timestamp": "",
+      "lifecycle_stage": "initialized",
+      "event_type": "run_started",
+      "event_status": "info",
+      "actor": "operator",
+      "related_gate": "none",
+      "message": "",
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "review_state": "not_reviewed",
+  "unresolved_items": []
+}
