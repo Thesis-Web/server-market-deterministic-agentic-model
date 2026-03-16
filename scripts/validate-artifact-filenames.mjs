@@ -87,9 +87,7 @@ for (const runDirName of runDirs) {
     );
   }
 
-  const artifactTargets = Array.isArray(manifest.artifact_targets)
-    ? manifest.artifact_targets
-    : [];
+  const artifactTargets = Array.isArray(manifest.artifact_targets) ? manifest.artifact_targets : [];
   if (artifactTargets.length === 0) {
     errors.push(
       `runs/${runDirName}/manifest.json: artifact_targets must contain at least one item`,

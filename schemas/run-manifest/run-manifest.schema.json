@@ -150,25 +150,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "input-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -185,25 +174,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "evidence-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -220,25 +198,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "schema-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -255,25 +222,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "reasoning-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -290,25 +246,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "output-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -325,25 +270,14 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "gate_name",
-            "outcome",
-            "timestamp",
-            "reviewer",
-            "notes"
-          ],
+          "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
           "properties": {
             "gate_name": {
               "const": "publish-gate"
             },
             "outcome": {
               "type": "string",
-              "enum": [
-                "pending",
-                "passed",
-                "failed",
-                "waived"
-              ]
+              "enum": ["pending", "passed", "failed", "waived"]
             },
             "timestamp": {
               "type": "string",
@@ -362,13 +296,7 @@
     },
     "review_state": {
       "type": "string",
-      "enum": [
-        "not_reviewed",
-        "in_review",
-        "approved",
-        "approved_with_notes",
-        "rejected"
-      ]
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
     },
     "handoff_ref": {
       "type": "string"
@@ -405,11 +333,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "branch_id",
-          "objective",
-          "output_targets"
-        ],
+        "required": ["branch_id", "objective", "output_targets"],
         "properties": {
           "branch_id": {
             "type": "string",
@@ -490,13 +414,7 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "planned",
-            "active",
-            "completed",
-            "dropped",
-            "failed"
-          ]
+          "enum": ["planned", "active", "completed", "dropped", "failed"]
         }
       }
     },
@@ -537,12 +455,7 @@
     "input_bundle_ref": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "ref_id",
-        "ref_type",
-        "path_or_location",
-        "notes"
-      ],
+      "required": ["ref_id", "ref_type", "path_or_location", "notes"],
       "properties": {
         "ref_id": {
           "type": "string"
@@ -561,12 +474,7 @@
     "source_window": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "window_label",
-        "start_date",
-        "end_date",
-        "notes"
-      ],
+      "required": ["window_label", "start_date", "end_date", "notes"],
       "properties": {
         "window_label": {
           "type": "string"
@@ -585,12 +493,7 @@
     "governing_doc": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "doc_id",
-        "path",
-        "version",
-        "status"
-      ],
+      "required": ["doc_id", "path", "version", "status"],
       "properties": {
         "doc_id": {
           "type": "string",
@@ -621,9 +524,7 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "loaded"
-          ]
+          "enum": ["loaded"]
         }
       }
     },
@@ -700,10 +601,7 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "stage",
-              "model_origin"
-            ],
+            "required": ["stage", "model_origin"],
             "properties": {
               "stage": {
                 "type": "string",
@@ -730,13 +628,7 @@
     "gate_result": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "gate_name",
-        "outcome",
-        "timestamp",
-        "reviewer",
-        "notes"
-      ],
+      "required": ["gate_name", "outcome", "timestamp", "reviewer", "notes"],
       "properties": {
         "gate_name": {
           "type": "string",
@@ -751,12 +643,7 @@
         },
         "outcome": {
           "type": "string",
-          "enum": [
-            "pending",
-            "passed",
-            "failed",
-            "waived"
-          ]
+          "enum": ["pending", "passed", "failed", "waived"]
         },
         "timestamp": {
           "type": "string",
@@ -781,11 +668,7 @@
         }
       },
       "then": {
-        "required": [
-          "primary_model",
-          "objective_scope",
-          "artifact_targets"
-        ]
+        "required": ["primary_model", "objective_scope", "artifact_targets"]
       }
     },
     {
@@ -797,12 +680,7 @@
         }
       },
       "then": {
-        "required": [
-          "primary_model",
-          "chat_branch_map",
-          "merge_strategy",
-          "artifact_targets"
-        ]
+        "required": ["primary_model", "chat_branch_map", "merge_strategy", "artifact_targets"]
       }
     },
     {

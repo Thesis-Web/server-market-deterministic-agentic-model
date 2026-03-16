@@ -260,7 +260,11 @@ for (const manifestPath of manifests) {
       const entries = Array.isArray(contradictionJson.entries) ? contradictionJson.entries : [];
       for (const entry of entries) {
         if (!entry.disposition) {
-          fail(failures, relManifest, `contradiction entry ${entry.contradiction_id ?? 'unknown'} is missing disposition`);
+          fail(
+            failures,
+            relManifest,
+            `contradiction entry ${entry.contradiction_id ?? 'unknown'} is missing disposition`,
+          );
         } else if (!validDispositions.has(entry.disposition)) {
           fail(
             failures,
