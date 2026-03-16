@@ -203,7 +203,7 @@ Operating pattern:
 
 Prompt pattern per agent activation:
 
-```
+```text
 Use agent [N]. Read [agent-N].zip in the project folder and complete the task.
 Region: [region]. Data scope: [scope]. Sources: [source-tier].
 Input file: output_[N-1].txt (if applicable).
