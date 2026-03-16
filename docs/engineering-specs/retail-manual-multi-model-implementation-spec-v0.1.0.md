@@ -220,12 +220,12 @@ The `output_N.txt` files are valid `input_bundle_refs` entries in the run manife
 
 #### 5.1.2 Mode A agent role mapping
 
-| Agent | Role | Prompt pack | Produces |
-|---|---|---|---|
-| Agent 1 | acquisition | `prompts/acquisition/` | evidence bundle |
-| Agent 2 | normalization | `prompts/normalization/` | normalized artifacts |
+| Agent   | Role                      | Prompt pack                                     | Produces                      |
+| ------- | ------------------------- | ----------------------------------------------- | ----------------------------- |
+| Agent 1 | acquisition               | `prompts/acquisition/`                          | evidence bundle               |
+| Agent 2 | normalization             | `prompts/normalization/`                        | normalized artifacts          |
 | Agent 3 | synthesis + contradiction | `prompts/synthesis/` + `prompts/contradiction/` | synthesis + contradiction log |
-| Agent 4 | compiler | `prompts/compiler/` | recommendation brief |
+| Agent 4 | compiler                  | `prompts/compiler/`                             | recommendation brief          |
 
 The human operator functions as the controller agent and review-gate agent in Mode A. These roles become automated agents in Track B.
 

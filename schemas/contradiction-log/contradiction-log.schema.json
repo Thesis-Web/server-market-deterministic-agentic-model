@@ -45,13 +45,7 @@
     },
     "review_state": {
       "type": "string",
-      "enum": [
-        "not_reviewed",
-        "in_review",
-        "approved",
-        "approved_with_notes",
-        "rejected"
-      ]
+      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
     },
     "unresolved_items": {
       "type": "array",
@@ -104,12 +98,7 @@
         },
         "severity": {
           "type": "string",
-          "enum": [
-            "low",
-            "medium",
-            "high",
-            "critical"
-          ]
+          "enum": ["low", "medium", "high", "critical"]
         },
         "disposition": {
           "type": "string",
@@ -134,12 +123,7 @@
         },
         "overlap_result": {
           "type": "string",
-          "enum": [
-            "confirmed",
-            "contradicted",
-            "broadened",
-            "unresolved"
-          ]
+          "enum": ["confirmed", "contradicted", "broadened", "unresolved"]
         }
       }
     }

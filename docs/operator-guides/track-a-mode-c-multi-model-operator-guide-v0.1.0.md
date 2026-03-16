@@ -32,13 +32,13 @@ the direct precursor to Track B API orchestration.
 
 ## 4. Window and model assignments
 
-| Window | Platform | Agent role | Rationale |
-|---|---|---|---|
-| 1 | Perplexity Pro | Agent 1: acquisition | Citation-first web acquisition, strong source tiering |
-| 1b | Grok Premium | Agent 1 overlap: live signals | Native X/social integration, emerging signal capture |
-| 2 | ChatGPT Plus | Agent 2: normalization | Strong structured compilation, schema adherence |
-| 3 | Claude Pro | Agent 3: synthesis + contradiction | Long-document reasoning, contradiction detection |
-| 4 | ChatGPT Plus | Agent 4: compiler | Structured output packaging, handoff generation |
+| Window | Platform       | Agent role                         | Rationale                                             |
+| ------ | -------------- | ---------------------------------- | ----------------------------------------------------- |
+| 1      | Perplexity Pro | Agent 1: acquisition               | Citation-first web acquisition, strong source tiering |
+| 1b     | Grok Premium   | Agent 1 overlap: live signals      | Native X/social integration, emerging signal capture  |
+| 2      | ChatGPT Plus   | Agent 2: normalization             | Strong structured compilation, schema adherence       |
+| 3      | Claude Pro     | Agent 3: synthesis + contradiction | Long-document reasoning, contradiction detection      |
+| 4      | ChatGPT Plus   | Agent 4: compiler                  | Structured output packaging, handoff generation       |
 
 Window 1b (Grok) is a parallel acquisition thread, not a sequential step. Run
 it concurrently with Window 1. Reconcile both outputs before passing to Agent 2.

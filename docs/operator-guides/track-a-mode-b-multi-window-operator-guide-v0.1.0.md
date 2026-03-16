@@ -31,12 +31,12 @@ windows' work. Transfer is explicit and file-based only.
 
 ## 4. Project setup — one per window
 
-| Window | Project name | Instructions | Prompt pack |
-|---|---|---|---|
-| 1 | `[run-id]-agent1-acquisition` | Acquisition role only | Upload `prompts/acquisition/` |
-| 2 | `[run-id]-agent2-normalization` | Normalization role only | Upload `prompts/normalization/` |
-| 3 | `[run-id]-agent3-synthesis` | Synthesis + contradiction role | Upload `prompts/synthesis/` + `prompts/contradiction/` |
-| 4 | `[run-id]-agent4-compiler` | Compiler role only | Upload `prompts/compiler/` |
+| Window | Project name                    | Instructions                   | Prompt pack                                            |
+| ------ | ------------------------------- | ------------------------------ | ------------------------------------------------------ |
+| 1      | `[run-id]-agent1-acquisition`   | Acquisition role only          | Upload `prompts/acquisition/`                          |
+| 2      | `[run-id]-agent2-normalization` | Normalization role only        | Upload `prompts/normalization/`                        |
+| 3      | `[run-id]-agent3-synthesis`     | Synthesis + contradiction role | Upload `prompts/synthesis/` + `prompts/contradiction/` |
+| 4      | `[run-id]-agent4-compiler`      | Compiler role only             | Upload `prompts/compiler/`                             |
 
 Each project instructions block must state explicitly which agent role is
 active and that the model must not perform any other agent role.
