@@ -11,6 +11,9 @@ outputs/**
 !outputs/.gitkeep
 logs/**
 !logs/.gitkeep
-runs/**
-!runs/.gitkeep
 .manifests-cache/
+runs/**/*
+!runs/**/.gitkeep
+!runs/**/artifacts/**
+!runs/**/handoff/**
+!runs/**/manifest.json
