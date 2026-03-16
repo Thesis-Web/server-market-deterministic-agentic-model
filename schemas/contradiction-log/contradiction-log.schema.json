@@ -45,7 +45,13 @@
     },
     "review_state": {
       "type": "string",
-      "enum": ["not_reviewed", "in_review", "approved", "approved_with_notes", "rejected"]
+      "enum": [
+        "not_reviewed",
+        "in_review",
+        "approved",
+        "approved_with_notes",
+        "rejected"
+      ]
     },
     "unresolved_items": {
       "type": "array",
@@ -98,17 +104,23 @@
         },
         "severity": {
           "type": "string",
-          "enum": ["low", "medium", "high", "critical"]
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
         },
         "disposition": {
           "type": "string",
           "enum": [
             "unresolved",
-            "monitoring",
+            "source_conflict",
+            "weak_signal_not_confirmed",
+            "evidence_gap",
             "resolved_in_favor_of_primary_source",
-            "resolved_in_favor_of_cross_validated_sources",
-            "downgraded_to_hypothesis",
-            "invalidated_output_corrected"
+            "resolved_in_favor_of_cross_validated_source",
+            "compiler_overreach_corrected"
           ]
         },
         "impacted_artifacts": {
@@ -119,6 +131,15 @@
         },
         "notes": {
           "type": "string"
+        },
+        "overlap_result": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "contradicted",
+            "broadened",
+            "unresolved"
+          ]
         }
       }
     }

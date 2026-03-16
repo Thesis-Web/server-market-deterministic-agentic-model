@@ -505,6 +505,27 @@ The system requires these mandatory gates:
 
 No recommendation should advance past review without explicit gate state.
 
+### 13.1 Contradiction disposition taxonomy
+
+Every contradiction log entry must carry a `disposition` value from the canonical set defined in engineering spec §12.1.5:
+
+- `unresolved` — no resolution reached
+- `source_conflict` — two or more sources disagree on a fact
+- `weak_signal_not_confirmed` — signal exists but lacks corroboration
+- `evidence_gap` — no source found to resolve the conflict
+- `resolved_in_favor_of_primary_source` — primary source accepted as authoritative
+- `resolved_in_favor_of_cross_validated_source` — cross-validated source accepted as authoritative
+- `compiler_overreach_corrected` — model inferred beyond evidence; inference rolled back
+
+### 13.2 Overlap result taxonomy
+
+When a run executes an overlap task (`overlap_plan.overlap_required: true`), every resulting contradiction log entry must carry an `overlap_result` value from the canonical set defined in engineering spec §12.3:
+
+- `confirmed` — both models agree; finding strengthened
+- `contradicted` — models disagree; contradiction recorded
+- `broadened` — overlap surfaced additional evidence not in original pass
+- `unresolved` — overlap did not produce a resolvable outcome
+
 ## 14. Risks and mitigations
 
 | Risk                               | Description                               | Mitigation                                                |
@@ -520,6 +541,8 @@ No recommendation should advance past review without explicit gate state.
 
 This blueprint is the proving baseline for Track B.
 
+### 15.1 Track B migration path
+
 Track B must automate already-approved Track A behavior, including:
 
 - route policy
@@ -531,6 +554,30 @@ Track B must automate already-approved Track A behavior, including:
 - review branches
 
 Track B must not silently replace the logic of Track A with a new architecture.
+
+### 15.2 Track B construction method
+
+The approved construction method for Track B is:
+
+1. Copy the Track A prompt pack, schema pack, and template pack verbatim into the Track B implementation layer
+2. Replace the human operator transfer steps with API routing calls using the existing §12.1.3 transfer-packet contract as the typed message envelope
+3. Replace the human review-gate with a programmatic validation call against the existing gate logic in `scripts/validate-gates.mjs`
+4. Replace `output_N.txt` file handoffs with typed task objects carrying the same fields as the `input_bundle_refs` entries in the run manifest
+5. Add an orchestration controller that sequences agents 1–4 per the §5 execution mode definitions
+6. Simulate model API calls where live API credentials are not yet available — the simulation must preserve the same input/output contract so real calls can be substituted without logic changes
+
+Track B does not require new artifact classes, new schemas, or new gate logic. It requires an execution layer that calls the existing contracts programmatically.
+
+### 15.3 Track B API simulation stance
+
+Where API credentials are unavailable, the Track B implementation must:
+
+- stub each model API call with a function that accepts the same prompt-pack input and returns a schema-valid placeholder output
+- log all stubbed calls to the run log with `status: simulated`
+- mark all artifacts produced from stubs with `primary_model_origin: simulated`
+- preserve all gate logic — simulated runs must still pass or fail gates on structure, not on content
+
+This allows the full orchestration layer to be built, tested, and handed off before live API keys are available.
 
 ## 16. Appendix references
 

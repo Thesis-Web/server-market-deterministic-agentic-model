@@ -176,7 +176,7 @@ These families are required. They support §14.1 logging requirements and gate v
 
 ### 5.1 Mode A — single-model / single-chat
 
-Use when the task is narrow and low-risk.
+Use when the task is narrow and low-risk, or when teaching the 4-agent workflow within a single model environment.
 
 Required metadata:
 
@@ -184,6 +184,50 @@ Required metadata:
 - `primary_model`
 - `objective_scope`
 - `artifact_targets`
+
+#### 5.1.1 Mode A zip-agent topology
+
+Mode A supports a zip-agent operating pattern that simulates multi-agent behavior inside a single model project environment. This is the primary teaching mode for demonstrating how a 4-agent system works before API orchestration is built.
+
+Operating pattern:
+
+- The operator creates one project in the chosen model environment (e.g., ChatGPT Projects)
+- Four agent prompt packs are bundled as individual zip files and uploaded to the project:
+  - `agent1-acquisition.zip` — contains `prompts/acquisition/`
+  - `agent2-normalization.zip` — contains `prompts/normalization/`
+  - `agent3-synthesis.zip` — contains `prompts/synthesis/` and `prompts/contradiction/`
+  - `agent4-compiler.zip` — contains `prompts/compiler/`
+- The operator activates one agent at a time via prompt instruction
+- Each agent produces a versioned `output_N.txt` file
+- The operator saves the output, uploads it to the project as a file, and activates the next agent
+
+Prompt pattern per agent activation:
+
+```
+Use agent [N]. Read [agent-N].zip in the project folder and complete the task.
+Region: [region]. Data scope: [scope]. Sources: [source-tier].
+Input file: output_[N-1].txt (if applicable).
+```
+
+Output handoff pattern:
+
+- Agent 1 → `output_1.txt` (acquisition evidence bundle)
+- Agent 2 → `output_2.txt` (normalized artifacts)
+- Agent 3 → `output_3.txt` (synthesis + contradiction review)
+- Agent 4 → `output_4.txt` (compiled recommendation brief)
+
+The `output_N.txt` files are valid `input_bundle_refs` entries in the run manifest. They must be recorded with `ref_type: agent-output-txt` and the producing agent noted in `notes`.
+
+#### 5.1.2 Mode A agent role mapping
+
+| Agent | Role | Prompt pack | Produces |
+|---|---|---|---|
+| Agent 1 | acquisition | `prompts/acquisition/` | evidence bundle |
+| Agent 2 | normalization | `prompts/normalization/` | normalized artifacts |
+| Agent 3 | synthesis + contradiction | `prompts/synthesis/` + `prompts/contradiction/` | synthesis + contradiction log |
+| Agent 4 | compiler | `prompts/compiler/` | recommendation brief |
+
+The human operator functions as the controller agent and review-gate agent in Mode A. These roles become automated agents in Track B.
 
 ### 5.2 Mode B — single-model / multi-chat
 
@@ -196,6 +240,21 @@ Required metadata:
 - `chat_branch_map`
 - `merge_strategy`
 
+#### 5.2.1 Mode B window topology
+
+The operator opens multiple project windows or chat threads within a single model platform. Each window corresponds to one agent role.
+
+Operating pattern:
+
+- Window 1 / Project 1 — Agent 1 (acquisition)
+- Window 2 / Project 2 — Agent 2 (normalization)
+- Window 3 / Project 3 — Agent 3 (synthesis + contradiction)
+- Window 4 / Project 4 — Agent 4 (compiler)
+
+Each window receives the relevant prompt pack via project instructions or direct upload. The operator transfers outputs between windows using `output_N.txt` files following the same handoff pattern as Mode A §5.1.1.
+
+This mode teaches state isolation between agents — each window has no implicit knowledge of the others' internal work. Transfer is explicit and file-based only.
+
 ### 5.3 Mode C — multi-model / multi-environment
 
 Use when the task is high-value, high-risk, or requires broad evidence acquisition and deep synthesis.
@@ -207,6 +266,23 @@ Required metadata:
 - `model_assignments`
 - `overlap_plan`
 - `transfer_checkpoints`
+
+#### 5.3.1 Mode C window topology
+
+The operator runs four browser windows simultaneously, one per approved Track A model environment.
+
+Operating pattern:
+
+- Window 1 — Perplexity Pro (Agent 1: acquisition)
+- Window 2 — ChatGPT Plus (Agent 2: normalization)
+- Window 3 — Claude Pro (Agent 3: synthesis + contradiction)
+- Window 4 — ChatGPT Plus or Claude Pro (Agent 4: compiler)
+
+Grok Premium / SuperGrok supplements Window 1 for live signal and social acquisition and may operate as a parallel thread rather than a dedicated window.
+
+Each model receives only the prompt pack and input bundle relevant to its assigned agent role. No model receives another model's raw intermediate output directly — the operator is the transfer layer. Transfer follows the minimum transfer-packet contract defined in §12.1.3.
+
+This mode teaches the full multi-model routing discipline: why each model is chosen for each role, what the handoff protocol looks like across platforms, and where contradictions arise from model divergence rather than source disagreement.
 
 ## 6. Supported environment definitions
 
@@ -431,6 +507,32 @@ When work moves from one model environment to another, the operator must transfe
 
 No transfer should rely on vague conversational recall.
 
+#### 10.5.1 output_N.txt as a valid transfer artifact
+
+In Mode A and Mode B, agent-to-agent handoffs use plain text output files as the transfer medium. These files are first-class artifacts in the run manifest.
+
+Naming convention: `output_<N>.txt` where N is the agent sequence number (1–4).
+
+Registration in run manifest `input_bundle_refs`:
+
+```json
+{
+  "ref_id": "output-1",
+  "ref_type": "agent-output-txt",
+  "path_or_location": "runs/<run-id>/handoff/output_1.txt",
+  "notes": "Agent 1 acquisition output. Produced by ChatGPT Plus in project window 1."
+}
+```
+
+Storage: `runs/<run-id>/handoff/output_N.txt`
+
+Rules:
+
+- The file must be saved before activating the next agent
+- The receiving agent must reference it explicitly in its prompt
+- The content must not be edited between agents — contradictions go to the contradiction log, not silent correction
+- At publish gate, all four output files must be present in `runs/<run-id>/handoff/`
+
 ## 11. Validation and controls
 
 ### 11.1 Mandatory gate sequence
@@ -522,7 +624,9 @@ When two models hit the same task class:
 
 ### 12.3 Overlap result states
 
-Overlap outcomes:
+Overlap outcomes are recorded in the `overlap_result` field of the `contradiction-log` entry produced under the overlap task. This field is optional in the schema but required whenever the parent run manifest has `overlap_plan.overlap_required: true`.
+
+Allowed values:
 
 - confirmed
 - contradicted
@@ -746,12 +850,12 @@ Restart must occur from the last valid gate rather than ad hoc conversational me
 Until replaced by a later schema version, contradiction records must use one of these disposition classes:
 
 - unresolved
-- source-conflict
-- weak-signal-not-confirmed
-- evidence-gap
-- resolved-in-favor-of-primary-source
-- resolved-in-favor-of-cross-validated-source
-- compiler-overreach-corrected
+- source_conflict
+- weak_signal_not_confirmed
+- evidence_gap
+- resolved_in_favor_of_primary_source
+- resolved_in_favor_of_cross_validated_source
+- compiler_overreach_corrected
 
 ### 12.1.6 Environment handoff minimum fields
 
