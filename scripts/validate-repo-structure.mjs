@@ -26,6 +26,13 @@ const requiredPaths = [
   'outputs',
   'scripts',
   'src',
+  'schemas/evidence-log',
+  'schemas/run-log',
+  'schemas/route-log',
+  'schemas/review-log',
+  'schemas/failure-log',
+  'schemas/checksum-ledger',
+  'schemas/handoff-note',
 ];
 
 const missing = requiredPaths.filter((p) => !fs.existsSync(path.resolve(p)));

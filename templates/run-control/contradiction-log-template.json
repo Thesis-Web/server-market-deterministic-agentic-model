@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "artifact_type": "contradiction-log",
-  "contradiction_log_id": "contradiction-log-YYYYMMDD-scope-0001",
-  "run_id": "run-YYYYMMDD-scope-0001",
+  "contradiction_log_id": "contradiction-log-YYYYMMDD-scope-01",
+  "run_id": "run-YYYYMMDD-scope-01",
   "project": "server-market-deterministic-agentic-model",
   "entries": [
     {
@@ -12,6 +12,7 @@
       "contradiction_type": "source_conflict",
       "severity": "medium",
       "disposition": "unresolved",
+      "overlap_result": null,
       "impacted_artifacts": [],
       "notes": ""
     }

@@ -22,6 +22,7 @@ Artifact type: contradiction-log
   - contradiction_type:
   - severity:
   - disposition:
+  - overlap_result: (required when run overlap_plan.overlap_required is true)
   - impacted_artifacts:
     - item:
   - notes:

@@ -39,6 +39,21 @@ for (const file of mdFiles) {
   if (!hasReq) failures.push(`${rel}: missing '## Required Fields' section`);
 }
 
+
+// Validate run-manifest.schema.json has pattern on route_policy_id
+const runManifestSchemaPath = path.resolve('schemas/run-manifest/run-manifest.schema.json');
+if (fs.existsSync(runManifestSchemaPath)) {
+  try {
+    const rms = JSON.parse(fs.readFileSync(runManifestSchemaPath, 'utf8'));
+    const routePolicyProp = rms?.properties?.route_policy_id;
+    if (!routePolicyProp?.pattern) {
+      failures.push('schemas/run-manifest/run-manifest.schema.json: route_policy_id is missing pattern enforcement (§7.3 / §9.3)');
+    }
+  } catch (e) {
+    failures.push('schemas/run-manifest/run-manifest.schema.json: failed to parse JSON for route_policy_id check');
+  }
+}
+
 if (failures.length > 0) {
   console.error('Schema validation failed:');
   for (const f of failures) console.error(`- ${f}`);

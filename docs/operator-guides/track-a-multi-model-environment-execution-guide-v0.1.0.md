@@ -668,15 +668,22 @@ Default contradiction route:
 
 ### 16.3 Contradiction Disposition Classes
 
-Every contradiction should be marked as one of:
+Every contradiction must be marked with exactly one `disposition` value from the canonical set (§12.1.5 of engineering spec):
 
 - unresolved
-- source-conflict
-- weak-signal-not-confirmed
-- evidence-gap
-- resolved-in-favor-of-primary-source
-- resolved-in-favor-of-cross-validated-source
-- compiler-overreach-corrected
+- source_conflict
+- weak_signal_not_confirmed
+- evidence_gap
+- resolved_in_favor_of_primary_source
+- resolved_in_favor_of_cross_validated_source
+- compiler_overreach_corrected
+
+When the run manifest has `overlap_plan.overlap_required: true`, every contradiction entry must also carry an `overlap_result` value from the canonical set (§12.3 of engineering spec):
+
+- confirmed
+- contradicted
+- broadened
+- unresolved
 
 ### 16.4 Recording Rule
 

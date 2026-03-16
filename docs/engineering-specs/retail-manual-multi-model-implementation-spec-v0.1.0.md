@@ -145,7 +145,7 @@ Prompt families remain:
 
 ### 4.4 Schema-pack structure
 
-Schema families remain:
+Primary output artifact schema families:
 
 - `schemas/evidence-ledger/`
 - `schemas/market-segment/`
@@ -157,6 +157,20 @@ Schema families remain:
 - `schemas/shift-signal/`
 - `schemas/run-manifest/`
 - `schemas/contradiction-log/`
+
+### 4.5 Control and log schema-pack structure
+
+Run-control and audit schema families (never primary output artifacts):
+
+- `schemas/evidence-log/`
+- `schemas/run-log/`
+- `schemas/route-log/`
+- `schemas/review-log/`
+- `schemas/failure-log/`
+- `schemas/checksum-ledger/`
+- `schemas/handoff-note/`
+
+These families are required. They support §14.1 logging requirements and gate validation. They must be present in every conforming repository instance.
 
 ## 5. Supported Track A execution modes
 
