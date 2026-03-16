@@ -85,7 +85,7 @@
     },
     "route_policy_id": {
       "type": "string",
-      "minLength": 1
+      "pattern": "^route-policy-[0-9]{8}-[a-z0-9-]+-v\\d+\\.\\d+\\.\\d+$"
     },
     "start_timestamp": {
       "type": "string",
@@ -326,34 +326,13 @@
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "minItems": 1
     },
     "chat_branch_map": {
       "type": "array",
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["branch_id", "objective", "output_targets"],
-        "properties": {
-          "branch_id": {
-            "type": "string",
-            "minLength": 1
-          },
-          "objective": {
-            "type": "string",
-            "minLength": 1
-          },
-          "output_targets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "minItems": 1
-          },
-          "notes": {
-            "type": "string"
-          }
-        }
+        "type": "object"
       }
     },
     "merge_strategy": {
