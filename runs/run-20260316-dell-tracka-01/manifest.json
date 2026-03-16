@@ -1,0 +1,264 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "run-manifest",
+  "run_id": "run-20260316-dell-tracka-01",
+  "objective": "Produce enterprise and near-edge server market recommendation brief for Dell Technologies covering market sizing, competitive vendor landscape, regional requirements, and strategic recommendations across enterprise-general-workload, near-edge, and ai-infrastructure segments.",
+  "operator": "James",
+  "project": "server-market-deterministic-agentic-model",
+  "system_stage": "stage-0-manual-deterministic",
+  "status": "review-pending",
+  "execution_mode": "multi-model-multi-environment",
+  "route_policy_id": "route-policy-20260316-dell-tracka-v0.1.0",
+  "start_timestamp": "2026-03-16T00:00:00Z",
+  "end_timestamp": "2026-03-16T23:59:00Z",
+  "models_used": [
+    "perplexity-pro",
+    "grok-premium",
+    "claude-pro",
+    "chatgpt-plus"
+  ],
+  "model_assignments": [
+    {
+      "platform": "Perplexity Pro",
+      "plan_tier": "pro",
+      "environment": "perplexity-spaces",
+      "task_class": "acquisition",
+      "role_type": "primary",
+      "reason_for_route": "Citation-first web acquisition; strong source tiering; Pro Search for T1/T2 evidence retrieval",
+      "expected_outputs": ["evidence bundle — market sizing, near-edge, vendor landscape, regional requirements"],
+      "overlap_with": "grok-premium",
+      "status": "completed"
+    },
+    {
+      "platform": "Grok Premium",
+      "plan_tier": "premium",
+      "environment": "grok-chat",
+      "task_class": "live-signal acquisition",
+      "role_type": "overlap",
+      "reason_for_route": "Native X/social integration; Reddit signal access; emerging vendor moves and live news 2025-2026",
+      "expected_outputs": ["live signal bundle — E1 through E10 sections"],
+      "overlap_with": "perplexity-pro",
+      "status": "completed"
+    },
+    {
+      "platform": "Claude Pro",
+      "plan_tier": "pro",
+      "environment": "claude-projects",
+      "task_class": "deep-synthesis",
+      "role_type": "primary",
+      "reason_for_route": "Long-document reasoning; contradiction detection; evidence synthesis across 2600+ lines of acquisition output",
+      "expected_outputs": ["recommendation-brief", "vendor-landscape", "region-profile", "contradiction-log"],
+      "overlap_with": null,
+      "status": "completed",
+      "notes": "POC deviation: Claude performed combined normalization + synthesis in single pass. Agent 2 (ChatGPT normalization) was skipped. output_2.txt does not exist for this run. Logged for production correction."
+    },
+    {
+      "platform": "ChatGPT Plus",
+      "plan_tier": "plus",
+      "environment": "chatgpt-projects",
+      "task_class": "compilation",
+      "role_type": "primary",
+      "reason_for_route": "Structured document compilation; professional formatting; handoff generation",
+      "expected_outputs": ["output_4.txt — compiled final recommendation brief"],
+      "overlap_with": null,
+      "status": "completed"
+    }
+  ],
+  "overlap_plan": {
+    "overlap_required": true,
+    "overlap_purpose": "contradiction-detection and evidence breadth",
+    "overlap_pairs": [
+      {
+        "task_class": "acquisition",
+        "model_a": "perplexity-pro",
+        "model_b": "grok-premium",
+        "overlap_result": "broadened",
+        "notes": "Perplexity provided T1/T2 structured evidence; Grok provided T3/T4 live signals including Dell earnings data, HPE Gen12 MWC announcement, Supermicro Nasdaq resolution, Reddit community signals. Together broader than either alone."
+      }
+    ]
+  },
+  "input_bundle_refs": [
+    {
+      "ref_id": "acq-perplexity-01",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-01/evidence/perplexity-output-1.txt",
+      "notes": "Agent 1 acquisition output. 4-prompt structured run. 2425 lines. Perplexity Pro in dell-server-market-tracka-01 Space."
+    },
+    {
+      "ref_id": "acq-grok-01",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-01/evidence/grok-output-1.txt",
+      "notes": "Agent 1b live signal acquisition. 168 lines. E1-E10 sections. Grok Premium."
+    }
+  ],
+  "source_window": "2020-2026 (evidence); 2025-2026 prioritized for live signals",
+  "prompt_pack_version": "v0.1.0",
+  "schema_pack_version": "v0.1.0",
+  "governing_docs_loaded": [
+    "docs/project-constitution/server-market-project-constitution-v0.1.0.md",
+    "docs/project-constitution/server-market-project-instructions-v0.1.0.md",
+    "docs/project-constitution/project-outline-v0.1.0.md",
+    "docs/blueprints/blueprint-outline-v0.1.0.md",
+    "docs/engineering-specs/engineering-specs-outline-v0.1.0.md",
+    "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md",
+    "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md"
+  ],
+  "artifact_outputs": [
+    {
+      "artifact_id": "recommendation-brief-20260316-dell-tracka-01",
+      "artifact_type": "recommendation-brief",
+      "artifact_path": "runs/run-20260316-dell-tracka-01/artifacts/2026-03-16-global-enterprise-recommendation-brief-v0.1.0-in-review.md",
+      "version": "v0.1.0",
+      "status": "in-review",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["perplexity-pro", "grok-premium"],
+      "evidence_refs": ["acq-perplexity-01", "acq-grok-01"],
+      "contradiction_refs": ["contradiction-log-20260316-dell-tracka-01"],
+      "review_status": "operator-signed-off"
+    },
+    {
+      "artifact_id": "vendor-landscape-20260316-dell-tracka-01",
+      "artifact_type": "vendor-landscape",
+      "artifact_path": "runs/run-20260316-dell-tracka-01/artifacts/2026-03-16-global-enterprise-vendor-landscape-v0.1.0-draft.md",
+      "version": "v0.1.0",
+      "status": "draft",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["perplexity-pro", "grok-premium"],
+      "evidence_refs": ["acq-perplexity-01", "acq-grok-01"],
+      "contradiction_refs": ["contradiction-log-20260316-dell-tracka-01"],
+      "review_status": "not-reviewed"
+    },
+    {
+      "artifact_id": "region-profile-20260316-dell-tracka-01",
+      "artifact_type": "region-profile",
+      "artifact_path": "runs/run-20260316-dell-tracka-01/artifacts/2026-03-16-global-enterprise-near-edge-region-profile-v0.1.0-draft.md",
+      "version": "v0.1.0",
+      "status": "draft",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["perplexity-pro", "grok-premium"],
+      "evidence_refs": ["acq-perplexity-01", "acq-grok-01"],
+      "contradiction_refs": [],
+      "review_status": "not-reviewed"
+    },
+    {
+      "artifact_id": "contradiction-log-20260316-dell-tracka-01",
+      "artifact_type": "contradiction-log",
+      "artifact_path": "runs/run-20260316-dell-tracka-01/artifacts/2026-03-16-global-enterprise-contradiction-log-v0.1.0-in-review.md",
+      "version": "v0.1.0",
+      "status": "in-review",
+      "producing_stage": "contradiction-review",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": [],
+      "evidence_refs": ["acq-perplexity-01", "acq-grok-01"],
+      "contradiction_refs": [],
+      "review_status": "operator-signed-off"
+    },
+    {
+      "artifact_id": "output-4-compiled-20260316-dell-tracka-01",
+      "artifact_type": "recommendation-brief",
+      "artifact_path": "runs/run-20260316-dell-tracka-01/handoff/output_4.txt",
+      "version": "v0.1.0",
+      "status": "in-review",
+      "producing_stage": "compilation",
+      "primary_model_origin": "chatgpt-plus",
+      "secondary_model_origins": ["claude-pro", "perplexity-pro", "grok-premium"],
+      "evidence_refs": ["acq-perplexity-01", "acq-grok-01"],
+      "contradiction_refs": ["contradiction-log-20260316-dell-tracka-01"],
+      "review_status": "pending-publish-gate"
+    }
+  ],
+  "gate_results": [
+    {
+      "gate_name": "input-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-16",
+      "notes": "All 7 governing docs confirmed present from repo zip upload. run_id confirmed. execution_mode set to multi-model-multi-environment."
+    },
+    {
+      "gate_name": "evidence-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-16",
+      "notes": "Acquisition evidence bundle received from Perplexity Pro (2425 lines) and Grok Premium (168 lines). Evidence gaps logged in contradiction log. T1/T2 minimum met for all primary claims. T5 inference claims labeled throughout."
+    },
+    {
+      "gate_name": "schema-gate",
+      "status": "passed",
+      "declared_by": "claude-pro",
+      "timestamp": "2026-03-16",
+      "notes": "All artifacts carry required schema_version, artifact_type, status, run_id, model_origin tags. IP-INSERT convention applied. Artifact filenames match §9.1 pattern."
+    },
+    {
+      "gate_name": "reasoning-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-16",
+      "notes": "6 contradictions logged and dispositioned. All claims mapped to evidence tiers. Inferences labeled T5. Overlap result recorded for Perplexity/Grok acquisition pair. Operator signed off on all contradiction resolutions."
+    },
+    {
+      "gate_name": "output-gate",
+      "status": "passed",
+      "declared_by": "claude-pro",
+      "timestamp": "2026-03-16",
+      "notes": "output_4.txt received from ChatGPT Plus Agent 4. Compilation verified: all IP-INSERT blocks preserved, all T5 labels preserved, END-USER IP NOTES section preserved, model_stage_contributions header complete. One minor fix applied: compilation stage label updated from PENDING to chatgpt-plus."
+    },
+    {
+      "gate_name": "publish-gate",
+      "status": "pending",
+      "declared_by": null,
+      "timestamp": null,
+      "notes": "Awaiting operator final review of output_4.txt and SCP+commit to droplet. Three open items before publish: China posture validation, WS2025 compatibility confirmation, memory pricing T2 confirmation. Operator may publish with these noted as open or resolve first."
+    }
+  ],
+  "review_state": "in-review",
+  "handoff_ref": "runs/run-20260316-dell-tracka-01/handoff/output_4.txt",
+  "checksum_ledger_refs": [],
+  "unresolved_items": [
+    "China strategy posture (T5 inference) requires Dell APAC leadership validation before external use",
+    "Windows Server 2025 compatibility on PowerEdge XR5610 with Hyper-V — T4 Reddit signal, not T1/T2 confirmed",
+    "Memory pricing elevated into 2027 — Grok T5 inference, needs T2 confirmation from Dell supply chain",
+    "Agent 2 normalization pass was skipped (POC deviation) — ChatGPT normalization should precede Claude synthesis in production runs",
+    "output_2.txt does not exist for this run due to POC deviation",
+    "IP-INSERT blocks throughout artifacts require Dell internal data injection before production use"
+  ],
+  "primary_model": "claude-pro",
+  "objective_scope": "global enterprise and near-edge server markets, 2024-2026 data window, Dell Technologies strategic planning",
+  "artifact_targets": [
+    "recommendation-brief",
+    "vendor-landscape",
+    "region-profile"
+  ],
+  "transfer_checkpoints": [
+    {
+      "from": "perplexity-pro",
+      "to": "claude-pro",
+      "transfer_type": "file-upload",
+      "files": ["perplexity-output-1.txt"],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "from": "grok-premium",
+      "to": "claude-pro",
+      "transfer_type": "file-upload",
+      "files": ["grok-output-1.txt"],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "from": "claude-pro",
+      "to": "chatgpt-plus",
+      "transfer_type": "file-upload",
+      "files": [
+        "2026-03-16-global-enterprise-recommendation-brief-v0.1.0-in-review.md",
+        "2026-03-16-global-enterprise-vendor-landscape-v0.1.0-draft.md",
+        "2026-03-16-global-enterprise-near-edge-region-profile-v0.1.0-draft.md",
+        "2026-03-16-global-enterprise-contradiction-log-v0.1.0-in-review.md"
+      ],
+      "timestamp": "2026-03-16"
+    }
+  ],
+  "notes": "First live run of run-20260316-dell-tracka-01. POC run — Mode C with Agent 2 normalization deviation noted. IP-INSERT convention introduced this run. 4th segment class (AI Infrastructure / Hyperscale-Adjacent) added beyond standard three-class model. ip-insert-convention-v0.1.0.md added to docs/operator-guides/ this run."
+}
