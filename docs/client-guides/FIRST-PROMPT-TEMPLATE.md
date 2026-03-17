@@ -17,7 +17,7 @@ every new browser session if you have closed Claude and come back.
 
 ---
 
-## FIRST TIME STARTING A NEW PROJECT — COPY FROM HERE:
+## FIRST TIME STARTING A NEW PROJECT — COPY FROM HERE
 
 ---
 
@@ -70,7 +70,7 @@ Please confirm you have what you need and tell me the next step.
 
 ---
 
-## STARTING A COMPLETELY NEW RESEARCH TOPIC — COPY FROM HERE:
+## STARTING A COMPLETELY NEW RESEARCH TOPIC — COPY FROM HERE
 
 ---
 
