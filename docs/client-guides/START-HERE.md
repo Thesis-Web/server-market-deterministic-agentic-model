@@ -1,4 +1,5 @@
 # START HERE
+
 ## AI-First Market Research System — Client Setup Guide
 
 Prepared by: Exnulla (Division of Lake Area LLC)
@@ -17,11 +18,13 @@ If you can copy and paste text and attach a file to a message, you can run
 this system.
 
 **What you received:**
+
 - `server-market-deterministic-agentic-model.zip` — the research engine (you
   never need to open this; it is for the AI)
 - This instructions package
 
 **What you will need:**
+
 - Claude Pro subscription (claude.ai — approximately $20/month)
 - Perplexity Pro subscription (perplexity.ai — approximately $20/month)
 - Grok Premium subscription (grok.com — approximately $30/month)
@@ -39,6 +42,7 @@ complete organized archive of all research data, sources, and working files.
 ## READ FIRST — Important Notices
 
 ### On data security
+
 Before you put any internal company data into these tools, read the file:
 `DATA-SECURITY-NOTICE.md`
 
@@ -47,6 +51,7 @@ feeding proprietary information to AI services, and how to manage those risks.
 It is the most important document in this package.
 
 ### On your deliverable
+
 The final PDF you receive will contain placeholder blocks marked
 `[IP-INSERT: ...]` wherever internal company data would improve the output.
 These are intentional. They show you exactly where your internal data belongs.
@@ -59,12 +64,12 @@ your data in a follow-up research run.
 
 Think of this like a small research firm where each person has a specific job:
 
-| Tool | Role | What it does for you |
-|---|---|---|
-| **Perplexity Pro** | Senior Researcher | Searches the web for published data, analyst reports, and regulatory documents. Cites every source. |
-| **Grok** | Field Intelligence | Searches live social media, Reddit, and current news for what practitioners are actually saying right now. |
-| **Claude** | Lead Analyst | Reads everything the researchers found, synthesizes it, identifies contradictions, and builds your strategy brief. This is your project hub. |
-| **ChatGPT** | Editor | Takes Claude's analysis and compiles it into a clean, polished final document. |
+| Tool               | Role               | What it does for you                                                                                                                         |
+| ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Perplexity Pro** | Senior Researcher  | Searches the web for published data, analyst reports, and regulatory documents. Cites every source.                                          |
+| **Grok**           | Field Intelligence | Searches live social media, Reddit, and current news for what practitioners are actually saying right now.                                   |
+| **Claude**         | Lead Analyst       | Reads everything the researchers found, synthesizes it, identifies contradictions, and builds your strategy brief. This is your project hub. |
+| **ChatGPT**        | Editor             | Takes Claude's analysis and compiles it into a clean, polished final document.                                                               |
 
 You are the **Project Director**. You decide what to research, you move the
 work between tools, and you review the output at the end.
@@ -146,6 +151,7 @@ two days.
 Claude will give you specific prompts to run in Perplexity and Grok.
 
 For each prompt:
+
 1. Go to the named tool (Perplexity or Grok)
 2. Paste the prompt exactly as Claude gives it to you
 3. Wait for the full response
@@ -171,9 +177,10 @@ polishing. Instructions for this step are in `CHATGPT-SETUP.md`.
 
 ### Phase 5 — Your deliverables (5 minutes)
 
-Ask Claude: *"Please build my final PDF and my project archive."*
+Ask Claude: _"Please build my final PDF and my project archive."_
 
 Claude will produce:
+
 - A professional formatted PDF of your research brief
 - A organized `.zip` file containing all research data, sources, and working
   files, named with the date and project name
@@ -200,21 +207,21 @@ explain it to a smart colleague who is new to your industry.
 ## WHAT TO DO WHEN SOMETHING GOES WRONG
 
 **Claude seems confused or off-track:**
-Say: *"Please stop. Re-read the project instructions and the `.zip` file I
+Say: _"Please stop. Re-read the project instructions and the `.zip` file I
 uploaded at the start of this session. Then tell me where we are and what
-the next step is."*
+the next step is."_
 
 **A research output looks wrong or incomplete:**
-Say: *"This output for [section name] looks incomplete. What specifically is
-missing? Do you need me to run another research prompt?"*
+Say: _"This output for [section name] looks incomplete. What specifically is
+missing? Do you need me to run another research prompt?"_
 
 **You are not sure what to do next:**
-Say: *"I'm not sure what to do next. Please give me the next step as a single
-clear instruction."*
+Say: _"I'm not sure what to do next. Please give me the next step as a single
+clear instruction."_
 
 **You need to pick up where you left off:**
-Say: *"I'm returning to this project. Here is where we left off:
-[describe the last thing that happened]. What is the next step?"*
+Say: _"I'm returning to this project. Here is where we left off:
+[describe the last thing that happened]. What is the next step?"_
 
 ---
 

@@ -1,4 +1,5 @@
 # CHATGPT PLUS — Setup and Usage Guide
+
 ## Your Final Compilation Tool
 
 ---
@@ -113,10 +114,10 @@ Occasionally ChatGPT may condense or reword content in ways that lose
 important detail. If you notice the compiled output looks significantly
 shorter than the input, or if labels or placeholder blocks are missing:
 
-Tell ChatGPT: *"Please redo the compilation. You removed some sections
+Tell ChatGPT: _"Please redo the compilation. You removed some sections
 that need to be preserved. Specifically, you must keep all [IP-INSERT: ...]
 blocks, all evidence tier labels, and all sections marked as inference.
-Please include all content from the original."*
+Please include all content from the original."_
 
 If it continues to drop content, return to Claude with what you have and
 Claude will work with it.

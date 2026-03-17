@@ -1,4 +1,5 @@
 # IP-INSERT Placeholder Convention
+
 ## Server Market Deterministic Agentic Model — Template Standard
 
 version: 0.1.0
@@ -139,7 +140,7 @@ At the bottom of every primary output artifact, include this block exactly:
 ```
 ---
 ## END-USER IP NOTES
-<!-- 
+<!--
 This section is reserved for end-user internal data injection.
 Add internal data points below. Tag each with:
 - field_label: (descriptive name)
@@ -164,6 +165,7 @@ every time. It must not be removed by any model at any gate.
 This convention file: `docs/operator-guides/ip-insert-convention-v0.1.0.md`
 
 Template files requiring IP-INSERT block updates:
+
 - templates/output/recommendation-brief-template.md
 - templates/run-control/evidence-ledger-template-v0.1.0.md
 - templates/run-manifest/run-manifest-template-v0.1.0.md

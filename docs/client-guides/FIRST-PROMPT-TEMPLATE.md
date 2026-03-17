@@ -1,4 +1,5 @@
 # FIRST PROMPT TEMPLATE
+
 ## Copy, fill in the blanks, attach the .zip file, and send
 
 ---
@@ -28,6 +29,7 @@ directory structure, and confirm what you find. That system is your operating
 manual for this project.
 
 **Project details:**
+
 - Research target: [THE COMPANY OR MARKET YOU ARE RESEARCHING]
 - Research objective: [WHAT YOU NEED TO KNOW — describe it like you would
   explain it to a smart colleague. Example: "I need to understand the
@@ -39,6 +41,7 @@ manual for this project.
 - Deadline: [DATE YOU NEED THE FINAL BRIEF]
 
 Once you have confirmed the system files, tell me:
+
 1. What you found in the `.zip` and your understanding of the project structure
 2. What information you still need from me before we begin
 3. What the first research step will be
@@ -76,6 +79,7 @@ Hello, I'm [YOUR NAME]. We are starting a new research project.
 I am attaching the system `.zip` file.
 
 **New project details:**
+
 - Previous project completed: [NAME OF LAST PROJECT — example:
   "Dell server market brief, completed March 2026"]
 - New research target: [NEW COMPANY OR MARKET]
@@ -95,11 +99,11 @@ new project. Then tell me what the first research step will be.
 are doing this research and what decisions it will inform, the more targeted
 the output will be.
 
-Good: *"I need to understand where Dell is losing server deals to Lenovo
+Good: _"I need to understand where Dell is losing server deals to Lenovo
 in the mid-market, because we are deciding whether to adjust our pricing
-strategy before Q3."*
+strategy before Q3."_
 
-Less useful: *"Tell me about the server market."*
+Less useful: _"Tell me about the server market."_
 
 **Share what you already know.** If you have existing knowledge about the
 market, share it. The system builds on what you know, it does not replace it.

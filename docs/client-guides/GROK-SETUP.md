@@ -1,4 +1,5 @@
 # GROK — Setup and Usage Guide
+
 ## Your Live Intelligence Tool
 
 ---
@@ -56,8 +57,8 @@ Acknowledge these rules and wait for my research prompt.
 
 ---
 
-Grok will respond with something like *"Rules acknowledged, ready for your
-prompt."*
+Grok will respond with something like _"Rules acknowledged, ready for your
+prompt."_
 
 **Message 2 — Research prompt**
 

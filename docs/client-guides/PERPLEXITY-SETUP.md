@@ -1,4 +1,5 @@
 # PERPLEXITY PRO — Setup Guide
+
 ## Your Research Collection Tool
 
 ---
@@ -102,6 +103,7 @@ When Claude gives you a Perplexity prompt:
 Claude may give you 2-4 prompts to run in Perplexity in sequence.
 Run them one at a time, wait for each to complete, and save each response
 as a separate numbered file:
+
 - `perplexity-output-1.txt`
 - `perplexity-output-2.txt`
 - and so on
@@ -118,8 +120,8 @@ or clearly incomplete:
 
 1. Try running the prompt again — sometimes searches vary
 2. If it continues to return weak results, make a note of it
-3. Tell Claude: *"Perplexity returned limited results on [topic].
-   Here is what I got."* and upload what you have
+3. Tell Claude: _"Perplexity returned limited results on [topic].
+   Here is what I got."_ and upload what you have
 4. Claude will work with what is available and flag the evidence gap
 
 ---

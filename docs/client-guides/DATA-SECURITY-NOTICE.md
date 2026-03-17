@@ -1,4 +1,5 @@
 # DATA SECURITY NOTICE
+
 ## What You Need to Know Before Sharing Company Information with AI Tools
 
 Prepared by: Exnulla (Division of Lake Area LLC)
@@ -40,6 +41,7 @@ Any information you share with these tools should be treated as if you are
 sharing it with an outside vendor under no confidentiality agreement.
 
 **High risk — do not share without legal review:**
+
 - Unreleased product roadmaps or launch dates
 - Non-public financial data, revenue figures, or projections
 - Merger, acquisition, or partnership discussions
@@ -50,6 +52,7 @@ sharing it with an outside vendor under no confidentiality agreement.
 - Information subject to NDA or legal hold
 
 **Lower risk — generally acceptable with care:**
+
 - Publicly available market data you are asking Claude to analyze
 - Research questions about competitors' publicly known products
 - Industry trends and publicly reported news
@@ -60,22 +63,26 @@ sharing it with an outside vendor under no confidentiality agreement.
 ## The specific tools and their data policies
 
 ### Claude (Anthropic)
+
 Claude Pro conversations may be reviewed by Anthropic employees. By default
 on the paid plan, Anthropic states that it does not use your conversations
 to train models, but terms can change. Check: anthropic.com/legal/privacy
 
 ### ChatGPT (OpenAI)
+
 ChatGPT Plus has a setting to opt out of training data use — verify it is
 turned on before use. Find it in Settings → Data Controls → Improve the
 model for everyone → Off.
 Check: openai.com/policies/privacy-policy
 
 ### Perplexity
+
 Perplexity Pro conversations may be stored and used according to their
 privacy policy. Enterprise plans offer stronger protections.
 Check: perplexity.ai/privacy
 
 ### Grok (xAI)
+
 Grok is operated by xAI. Conversations on X/Grok are subject to X's privacy
 terms. This is the tool with the most opaque data handling.
 Check: x.ai/legal/privacy-policy
@@ -156,6 +163,7 @@ Many companies have policies about approved AI tools. Before using this
 system with any company data, check with your IT or legal department.
 
 Questions to ask them:
+
 - Which AI tools are approved for business use?
 - What categories of company information may be shared with external tools?
 - Is there an approved enterprise AI solution (e.g., Microsoft Copilot,
@@ -185,11 +193,11 @@ LakeAreaLLC@gmail.com · 936-239-1100 · www.Exnulla.com
 
 ## Quick reference — what to share and what not to share
 
-| Share freely | Share with caution | Do not share |
-|---|---|---|
-| Your research question | Your company's general market position | Unreleased product details |
-| The company you are researching | Publicly known competitive analysis | Non-public financials |
-| Market segments of interest | General strategic priorities | Customer or partner data |
-| Public news and events | Publicly stated company direction | Anything under NDA |
-| Geographic focus | | Personnel or HR matters |
-| Your professional industry knowledge | | Trade secrets |
+| Share freely                         | Share with caution                     | Do not share               |
+| ------------------------------------ | -------------------------------------- | -------------------------- |
+| Your research question               | Your company's general market position | Unreleased product details |
+| The company you are researching      | Publicly known competitive analysis    | Non-public financials      |
+| Market segments of interest          | General strategic priorities           | Customer or partner data   |
+| Public news and events               | Publicly stated company direction      | Anything under NDA         |
+| Geographic focus                     |                                        | Personnel or HR matters    |
+| Your professional industry knowledge |                                        | Trade secrets              |
