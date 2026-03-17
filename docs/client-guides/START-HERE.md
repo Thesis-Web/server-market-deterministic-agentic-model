@@ -3,7 +3,7 @@
 ## AI-First Market Research System — Client Setup Guide
 
 Prepared by: Exnulla (Division of Lake Area LLC)
-Contact: James Huson · 936-239-1100 · LakeAreaLLC@gmail.com · www.Exnulla.com
+Contact: James Huson · 936-239-1100 · <LakeAreaLLC@gmail.com> · <https://www.Exnulla.com>
 
 ---
 
@@ -233,5 +233,5 @@ James Huson
 Exnulla (Division of Lake Area LLC)
 174 Holiday Lane, Livingston TX 77351
 Phone: 936-239-1100
-Email: LakeAreaLLC@gmail.com
-Website: www.Exnulla.com
+Email: <LakeAreaLLC@gmail.com>
+Website: <https://www.Exnulla.com>

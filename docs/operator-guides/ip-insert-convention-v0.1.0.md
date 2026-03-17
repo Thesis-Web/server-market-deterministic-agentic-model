@@ -24,13 +24,13 @@ for end-user data injection.
 
 ## SYNTAX
 
-```
+````text
 [IP-INSERT: <field_label>
  POC-BEST-GUESS: <best available public or model-derived estimate>
  CONFIDENCE: <high | medium | low>
  SOURCE-TIER: <T1 | T2 | T3 | T4 | T5>
  OVERRIDE: Replace with <description of internal data type> before publish]
-```
+```text
 
 ### Rules
 
@@ -52,7 +52,7 @@ are deterministic across all runs:
 
 ### For Recommendation Brief
 
-```
+```text
 [IP-INSERT: dell_internal_market_share_by_segment
  POC-BEST-GUESS: Dell #1-2 globally, 7.2% total server revenue (IDC Q4 2024)
  CONFIDENCE: medium
@@ -91,11 +91,11 @@ are deterministic across all runs:
  CONFIDENCE: low
  SOURCE-TIER: T5
  OVERRIDE: Replace with Dell's customer NPS / pain point survey data]
-```
+```text
 
 ### For Region Profile
 
-```
+```text
 [IP-INSERT: dell_regional_revenue_split
  POC-BEST-GUESS: North America ~40-45% of Dell server revenue; EMEA ~25-30%;
  APAC ~20-25%; Rest ~5-10%. [T5 inference from IDC regional totals]
@@ -109,11 +109,11 @@ are deterministic across all runs:
  CONFIDENCE: low
  SOURCE-TIER: T5
  OVERRIDE: Replace with Dell APAC enterprise market share data ex-China]
-```
+```text
 
 ### For Vendor Landscape
 
-```
+```text
 [IP-INSERT: dell_vs_hpe_win_rate
  POC-BEST-GUESS: Dell competitive win rate vs HPE likely favorable in
  managed-services accounts where ProSupport vs TechCare is the decision
@@ -129,7 +129,7 @@ are deterministic across all runs:
  CONFIDENCE: low
  SOURCE-TIER: T5
  OVERRIDE: Replace with Dell ISG win/loss vs Supermicro in AI segment]
-```
+```text
 
 ---
 
@@ -137,7 +137,7 @@ are deterministic across all runs:
 
 At the bottom of every primary output artifact, include this block exactly:
 
-```
+```text
 ---
 ## END-USER IP NOTES
 <!--
@@ -153,7 +153,7 @@ Add internal data points below. Tag each with:
 [END-USER-IP-NOTE-1]: _____________________________________________
 [END-USER-IP-NOTE-2]: _____________________________________________
 [END-USER-IP-NOTE-3]: _____________________________________________
-```
+```text
 
 This block is DETERMINISTIC — it appears in every run, every artifact,
 every time. It must not be removed by any model at any gate.
@@ -173,3 +173,4 @@ Template files requiring IP-INSERT block updates:
 Schema files: no changes required — IP-INSERT is a markdown convention,
 not a JSON schema field. The schema additionalProperties: true allows
 custom fields in JSON artifacts.
+````

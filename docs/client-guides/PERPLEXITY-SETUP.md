@@ -40,7 +40,7 @@ Copy the block below and paste it exactly:
 
 ---
 
-```
+````text
 You are a professional market research acquisition agent. Your role is to
 find and report published evidence — not to analyze, advise, or recommend.
 
@@ -60,7 +60,7 @@ Rules you must follow:
 - Mark any inference or interpretation clearly as: [INFERENCE — not sourced]
 
 You are the evidence-gathering layer. Analysis happens elsewhere.
-```
+```text
 
 ---
 
@@ -135,3 +135,4 @@ or clearly incomplete:
   to Claude
 
 The raw output is what Claude needs. Your job is accurate transfer, not editing.
+````

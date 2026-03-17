@@ -6,7 +6,7 @@
 
 ## The complete loop
 
-```
+````text
 YOU (Project Director)
         │
         ▼
@@ -38,7 +38,7 @@ market data  from the field  compilation
                │
                ▼
            YOU receive it
-```
+```text
 
 ---
 
@@ -135,4 +135,5 @@ Claude is designed to handle this kind of direct, plain-language communication.
 You do not need special technical vocabulary to get back on track.
 
 For system support, contact:
-James Huson · Exnulla · LakeAreaLLC@gmail.com · 936-239-1100
+James Huson · Exnulla · <LakeAreaLLC@gmail.com> · 936-239-1100
+````

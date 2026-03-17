@@ -36,7 +36,7 @@ Every Grok session is two messages:
 
 ---
 
-```
+````text
 You are a live signal acquisition agent. Your job is to find what real
 practitioners, professionals, and community members are saying about a
 specific market — in forums, on social media, in recent news, and in
@@ -53,14 +53,14 @@ Rules:
 - Structure your output exactly as the prompt requests.
 
 Acknowledge these rules and wait for my research prompt.
-```
+```text
 
 ---
 
 Grok will respond with something like _"Rules acknowledged, ready for your
 prompt."_
 
-**Message 2 — Research prompt**
+### Message 2 — Research prompt
 
 This is the actual research prompt. Claude will give you the exact text to
 paste here.
@@ -107,3 +107,4 @@ Grok sessions are independent — there is no history to preserve.
 Same as Perplexity: do not filter, summarize, or edit the output.
 Save it exactly as Grok returned it and give it to Claude.
 The raw, unedited text is what the system needs.
+````

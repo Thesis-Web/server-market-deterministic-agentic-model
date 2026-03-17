@@ -3,7 +3,7 @@
 ## What You Need to Know Before Sharing Company Information with AI Tools
 
 Prepared by: Exnulla (Division of Lake Area LLC)
-James Huson · LakeAreaLLC@gmail.com · www.Exnulla.com
+James Huson · <LakeAreaLLC@gmail.com> · <https://www.Exnulla.com>
 
 ---
 
@@ -120,11 +120,11 @@ without going through any AI tool.
 
 Throughout your research brief, you will see blocks like this:
 
-```
+````text
 [IP-INSERT: dell_win_loss_data
  POC-BEST-GUESS: [model inference]
  OVERRIDE: Replace with your internal win/loss data before publish]
-```
+```text
 
 These blocks are specifically designed so you can incorporate internal data
 without sharing it with AI tools. You can:
@@ -187,7 +187,7 @@ If you have questions about data security in the context of this system,
 contact:
 
 James Huson · Exnulla (Division of Lake Area LLC)
-LakeAreaLLC@gmail.com · 936-239-1100 · www.Exnulla.com
+<LakeAreaLLC@gmail.com> · 936-239-1100 · <https://www.Exnulla.com>
 
 ---
 
@@ -201,3 +201,4 @@ LakeAreaLLC@gmail.com · 936-239-1100 · www.Exnulla.com
 | Public news and events               | Publicly stated company direction      | Anything under NDA         |
 | Geographic focus                     |                                        | Personnel or HR matters    |
 | Your professional industry knowledge |                                        | Trade secrets              |
+````

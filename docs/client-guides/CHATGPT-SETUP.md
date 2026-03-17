@@ -35,7 +35,7 @@ Copy the block below and paste it exactly:
 
 ---
 
-```
+````text
 You are a professional document compiler and editor. Your role is to take
 analysis and research content provided to you and compile it into a clean,
 polished, professional final document.
@@ -58,7 +58,7 @@ Rules you must follow:
 
 You are the packaging layer. The content was built by analysts. Your job
 is to make it read beautifully.
-```
+```text
 
 ---
 
@@ -121,3 +121,4 @@ Please include all content from the original."_
 
 If it continues to drop content, return to Claude with what you have and
 Claude will work with it.
+````
