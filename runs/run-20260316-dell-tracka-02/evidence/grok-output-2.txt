@@ -1,0 +1,98 @@
+## F1. WHY BUYERS CHOOSE DELL POWEREDGE — COMMUNITY VOICE
+
+Better iDRAC management and broader parts availability vs HPE (explicit comparison where Dell won on management).
+Source: r/servers “DELL or HPE” thread, Jul 27, 2025.
+ProSupport described as more proactive and reliable than HP service; often the deciding factor for enterprise loyalty.
+Source: r/NavigateTech “Is Dell's ProSupport really better than HP's service for enterprise IT?” thread, Jul 20, 2025.
+iDRAC Enterprise praised for separate management interface and firmware flow; cited as UX advantage over iLO in sysadmin polls.
+Source: r/homelab “What is a good dell server for first home lab?” thread, Jan 23, 2025; and X @edy_werder “How sysadmins actually choose Dell PowerEdge vs HPE ProLiant” post, Oct 24, 2025.
+Repeat-buyer reasoning tied to consistent fleet automation and “Dell fanboy” preference over Supermicro for management sanity.
+Source: r/sysadmin “Are you afraid of Supermicro?” thread (Dell contrast), Jul 29, 2024 (still referenced in 2025 discussions); X @xiongmao_ai “Dell server are so much better than Supermicro” post, Nov 4, 2025.
+
+## F2. WHY BUYERS REJECT OR LEAVE DELL — COMMUNITY VOICE
+
+Price increases (up to 85% YoY on same config) and channel conflict (Dell direct undercutting VARs).
+Source: r/msp “Dell Woes” thread, Jan 23, 2026; r/sysadmin “Just priced out a Dell server I purchased in Jan. 2024…” thread, Jan 4, 2026.
+Switched to Lenovo or HPE after repeated deal-reg friction and quoting opacity.
+Source: r/msp “Dell Deal Reg” thread (explicit “We left Dell for Lenovo last year”), Nov 2025 context; r/sysadmin “Dell has reached out to us” thread (left for HP), 2025.
+Quality and support complaints leading to full fleet switches; one MSP cited “continued price increases, channel conflict… recurring quality issues” in early 2025.
+Source: r/msp “Dell Woes” thread, Jan 23, 2026.
+Long lead times and cancelled orders (e.g., specific HDD SKUs unavailable >1 year).
+Source: r/sysadmin “Dell Price Increases Coming, March 30th” thread comments, Mar 2026 context.
+
+## F3. SUPERMICRO — COMMUNITY SENTIMENT (2025-2026)
+
+Still cautious; buyers note “slightly above white box quality” and prefer Dell ProSupport; no strong “coming back” wave.
+Source: r/msp “Server Costs are nuts spec for spec. Anyone using SuperMicro instead of Dell/Lenovo/HPE?” thread, Mar 15, 2025.
+Quality/support complaints resurfacing: “support became poor” on recent motherboards; rails warping noted in DC use.
+Source: r/supermicro “Supermicro H11DSI-NT hw version 1.01” thread, ~Feb 2026; X @jonathanbourke post referencing Supermicro rails, Jan 23, 2026.
+Supply-chain/lead-time pain: 8-week quotes turning into price hikes and partial shipments.
+Source: r/sysadmin “Trying to buy a server from supermicro.com” thread, Dec 11, 2025.
+Some picking Supermicro purely on cost vs Dell/Lenovo/HPE, but Dell still default for lead times/support.
+Source: r/msp “Server Costs are nuts…” thread, Mar 15, 2025; r/sysadmin “Am I Getting Fucked Friday, February 13th 2026” thread, Feb 13, 2026.
+X sentiment: users replacing older Supermicro with newer Dell 12/13-gen for power efficiency.
+Source: X @bradthx post, Mar 8, 2026.
+
+## F4. HPE GREENLAKE — PRACTITIONER REACTION
+
+No positive adoption stories with specifics found in 2025-2026 threads.
+Complaints: “very costly option”, “shove the GreenLake cloud down your throat”, “greenlake bullshit” tied to forced subscription model vs traditional purchase or Dell APEX.
+Source: r/sysadmin “SAN upgrade options…” thread, Jul 10, 2025; r/storage “Dell PowerStore 500T vs HPE Alletra MP10000” thread, Apr 2, 2025; r/vmware “Dell vs HPE vs Cisco Blade” thread, Sep 2024 (still referenced 2025).
+“GreenLake is not what we thought” implied in cost/complexity pushback; no direct “hidden costs” phrasing but consistent sales-pressure narrative.
+Source: above threads.
+
+## F5. NEAR-EDGE / EDGE SERVER DEPLOYMENT — PRACTITIONER VOICE
+
+No recent community discussions found on specific hardware used at retail backrooms, factory floors, or branch offices (2025-2026).
+One generic “What to do with an Edge Server?” mention in declining PowerEdge thread; no Dell XR-series, Lenovo ThinkEdge, or Supermicro edge mentions.
+Source: r/servers “Dell PowerEdge Servers Declining.” thread, 2025 context.
+No power/thermal/remote-management complaints or deployment headaches surfaced in searched sources.
+
+## F6. WINDOWS SERVER 2025 + DELL POWEREDGE — FIELD STATUS
+
+XR5610 BSOD/WHEA when enabling Hyper-V; multiple reports of OS failing to boot post-Hyper-V activation.
+Source: r/sysadmin “Dell PowerEdge XR5610 BSOD (WHEA) when Hyper-V on (Windows Server 2025)” thread, Mar 7, 2025.
+Other models: install errors (0x80070103), storage/Dell ME5024 cluster issues, driver/boot problems on R420/R630 etc.
+Source: r/sysadmin “Windows Server 2025, Dell Storage and Hyper-V Cluster” thread, Apr 16, 2025; r/Dell “New PowerEdge Server and Windows Server 2025 error” thread, Sep 19, 2025.
+No official Dell fix or response surfaced in community threads; workarounds include BIOS/Lifecycle Controller updates, pausing updates, or avoiding Hyper-V on affected hardware.
+Source: above threads + r/sysadmin “BSOD when upgrading to Server 2025” thread, Dec 2024 (ongoing 2025 references).
+
+## F7. AI SERVER BUDGET DISPLACEMENT — PRACTITIONER VOICE
+
+“AI companies… cannibalized traditional server spend”; prices jumped 85% Jan 2025–Jan 2026 on RAM/NVMe, wrecking refresh cycles.
+Source: r/NetworkGearDeals “Anyone else seeing server hardware prices wreck their refresh cycles?” thread, Feb 2, 2026; r/sysadmin “Just priced out a Dell server…” thread, Jan 4, 2026.
+Delayed general infrastructure refresh explicitly tied to AI/GPU server priority.
+Source: r/sysadmin “New Server Infrastructure” thread, Feb 23, 2026; r/Games “Data centers will consume 70 percent of memory chips…” thread, Jan 19, 2026.
+No formal survey/poll results found, but repeated “AI spending eating our infrastructure budget” narrative.
+
+## F8. DELL SALES AND CHANNEL — FIELD COMPLAINTS
+
+Long lead times (3–6 months typical; specific SKUs cancelled >1 year); quoting with short validity due to volatility.
+Source: r/sysadmin “Dell Price Increases Coming, March 30th” thread, Mar 2026 context; r/msp “Dell Woes” thread, Jan 23, 2026.
+Channel friction: direct sales undercutting VARs, deal-reg described as “complete waste of time”.
+Source: r/msp “Dell ridiculously undercutting channel pricing” thread (ongoing references); r/msp “Dell Deal Reg” thread.
+Account-team/partner issues tied to price hikes and memory allocation favoring new sales over existing customers.
+Source: r/sysadmin “Just priced out a Dell server…” thread, Jan 4, 2026.
+No recent positive “Dell account team” experiences surfaced.
+
+## F9. WHAT SYSADMINS WISH DELL WOULD FIX
+
+No explicit “Dear Dell, please…” or feature-request threads listing product gaps found in 2025-2026 searches.
+Scattered complaints (non-Dell drives performance, iDRAC firmware rollback limitations, fan control) but not aggregated as wish-list posts.
+Source: r/sysadmin threads on HBA/drives and iDRAC (various 2025 dates).
+
+## F10. GROK INFERENCE — PATTERNS NOT YET IN FORMAL REPORTS
+
+AI-driven component scarcity is accelerating Dell price/lead-time pain faster than competitors, pushing more MSPs toward Lenovo on cost while Dell retains on support — [INFERENCE — not sourced].
+Post-2025 Supermicro quality/support noise appears to have stabilized Dell’s position as default “safe” choice even among price-sensitive buyers — [INFERENCE — not sourced].
+WS2025 Hyper-V issues on edge-oriented XR5610 may be quietly slowing near-edge Windows rollouts more than Dell acknowledges — [INFERENCE — not sourced].
+GreenLake subscription fatigue is creating quiet openings for Dell APEX traditional-capex messaging, but practitioners still default to complaining rather than switching — [INFERENCE — not sourced].
+
+## F11. SOURCE LOG
+
+Reddit (r/servers, r/sysadmin, r/msp, r/homelab, r/storage, r/vmware, r/NavigateTech, r/NetworkGearDeals): threads dated Jan 2025–Mar 2026 (specific titles listed above).
+X/Twitter: @edy_werder (Oct 24, 2025), @xiongmao_ai (Nov 4, 2025), @bradthx (Mar 8, 2026), @jonathanbourke (Jan 23, 2026).
+Spiceworks/others: minor WS2025 downgrade references (Sep 2025) but not primary signals.
+No accessible Blind, LinkedIn public posts, or Hacker News threads matched criteria in searches.
+All searches limited to 2025–Mar 2026 content.
+1.8sExpert

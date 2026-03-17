@@ -1,0 +1,272 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "run-manifest",
+  "run_id": "run-20260316-dell-tracka-02",
+  "objective": "Depth layer acquisition — customer pain point intelligence, IT buyer voice, ITIC competitive gap, near-edge market structure, win-loss signals, and community intelligence for Dell PowerEdge. Merge with Run 1 to produce v0.2.0 recommendation brief.",
+  "operator": "James",
+  "project": "server-market-deterministic-agentic-model",
+  "system_stage": "stage-0-manual-deterministic",
+  "status": "published",
+  "execution_mode": "single-model-multi-chat",
+  "route_policy_id": "route-policy-20260316-dell-tracka-v0.1.0",
+  "start_timestamp": "2026-03-17T00:00:00Z",
+  "end_timestamp": "2026-03-17T05:00:00Z",
+  "models_used": ["grok-premium", "perplexity-pro", "claude-pro", "chatgpt-plus"],
+  "model_assignments": [
+    {
+      "platform": "Grok Premium",
+      "plan_tier": "premium",
+      "environment": "grok-chat",
+      "task_class": "live-signal acquisition",
+      "role_type": "primary",
+      "reason_for_route": "T4 community intelligence — Reddit r/sysadmin, r/msp, X practitioner voice. Why buyers choose or leave Dell. WS2025 compatibility field status. Supermicro post-audit sentiment. GreenLake fatigue signals.",
+      "expected_outputs": ["grok-output-2.txt", "grok-output-2b.txt"],
+      "overlap_with": "perplexity-pro",
+      "status": "completed"
+    },
+    {
+      "platform": "Perplexity Pro",
+      "plan_tier": "pro",
+      "environment": "perplexity-spaces",
+      "task_class": "acquisition",
+      "role_type": "supplement",
+      "reason_for_route": "T2 buyer preference surveys, ITIC reliability data, TrustRadius/G2 satisfaction scores, MWC 2026 coverage, Dell power efficiency published data, MSP channel dynamics.",
+      "expected_outputs": ["perplexity-output-2.txt", "perplexity-output-2b.txt"],
+      "overlap_with": "grok-premium",
+      "status": "completed"
+    },
+    {
+      "platform": "Claude Pro",
+      "plan_tier": "pro",
+      "environment": "claude-projects",
+      "task_class": "deep-synthesis",
+      "role_type": "primary",
+      "reason_for_route": "Cross-run synthesis — merge Run 1 market structure with Run 2 community intelligence. Contradiction detection between public evidence and practitioner voice. Customer pain point artifact. Shift signal artifact. Run 2 delta recommendations.",
+      "expected_outputs": [
+        "customer-pain-point-v0.1.0-in-review.md",
+        "recommendation-brief-delta-v0.2.0-in-review.md",
+        "shift-signal-v0.1.0-in-review.md"
+      ],
+      "overlap_with": null,
+      "status": "completed"
+    },
+    {
+      "platform": "ChatGPT Plus",
+      "plan_tier": "plus",
+      "environment": "chatgpt-projects",
+      "task_class": "compilation",
+      "role_type": "primary",
+      "reason_for_route": "Final merge compilation — Run 1 brief + Run 2 delta + shift signal into single v0.2.0 document.",
+      "expected_outputs": ["output_4v2.txt"],
+      "overlap_with": null,
+      "status": "completed"
+    }
+  ],
+  "overlap_plan": {
+    "overlap_required": true,
+    "overlap_purpose": "Cross-validation between T2 published evidence (Perplexity) and T4 community voice (Grok). Surface contradictions between analyst narrative and practitioner reality.",
+    "overlap_pairs": [
+      {
+        "task_class": "acquisition",
+        "model_a": "perplexity-pro",
+        "model_b": "grok-premium",
+        "overlap_result": "contradicted",
+        "notes": "Perplexity TrustRadius data showed Dell winning on supply chain. Grok T4 showed active 2026 lead-time complaints. Both accurate for different buyer segments — enterprise vs MSP."
+      }
+    ]
+  },
+  "input_bundle_refs": [
+    {
+      "ref_id": "run1-brief",
+      "ref_type": "prior-run-artifact",
+      "path_or_location": "runs/run-20260316-dell-tracka-01/artifacts/2026-03-16-global-enterprise-recommendation-brief-v0.1.0-draft.md",
+      "notes": "Run 1 base brief — market structure layer. Merged with Run 2 findings to produce v0.2.0."
+    },
+    {
+      "ref_id": "acq-grok-02",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-02/evidence/grok-output-2.txt",
+      "notes": "Grok first pass — community voice on Dell buying decisions, channel friction, WS2025 status, AI budget displacement."
+    },
+    {
+      "ref_id": "acq-perplexity-02",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-02/evidence/perplexity-output-2.txt",
+      "notes": "Perplexity first pass — ITIC reliability survey data, TrustRadius scores, buyer preference surveys, edge analyst requirements."
+    },
+    {
+      "ref_id": "acq-grok-02b",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-02/evidence/grok-output-2b.txt",
+      "notes": "Grok second pass — near-edge practitioner voice, ITIC competitive use in the wild, Open RAN operator sentiment, power efficiency in practice."
+    },
+    {
+      "ref_id": "acq-perplexity-02b",
+      "ref_type": "agent-output-txt",
+      "path_or_location": "runs/run-20260316-dell-tracka-02/evidence/perplexity-output-2b.txt",
+      "notes": "Perplexity second pass — Dell ITIC counter-narrative search, MWC 2026 edge announcements, Prowess efficiency study, MSP channel data."
+    }
+  ],
+  "source_window": "2024-2026 (published); 2025-2026 prioritized for community signals",
+  "prompt_pack_version": "v0.1.0",
+  "schema_pack_version": "v0.1.0",
+  "governing_docs_loaded": [
+    "docs/project-constitution/server-market-project-constitution-v0.1.0.md",
+    "docs/project-constitution/server-market-project-instructions-v0.1.0.md",
+    "docs/project-constitution/project-outline-v0.1.0.md",
+    "docs/blueprints/blueprint-outline-v0.1.0.md",
+    "docs/engineering-specs/engineering-specs-outline-v0.1.0.md",
+    "docs/blueprints/ai-first-human-interface-market-research-operating-system-blueprint-v0.1.0.md",
+    "docs/engineering-specs/retail-manual-multi-model-implementation-spec-v0.1.0.md"
+  ],
+  "artifact_outputs": [
+    {
+      "artifact_id": "customer-pain-point-20260316-dell-tracka-02",
+      "artifact_type": "customer-pain-point",
+      "artifact_path": "runs/run-20260316-dell-tracka-02/artifacts/2026-03-16-global-enterprise-customer-pain-point-v0.1.0-in-review.md",
+      "version": "v0.1.0",
+      "status": "in-review",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["grok-premium", "perplexity-pro"],
+      "evidence_refs": ["acq-grok-02", "acq-perplexity-02"],
+      "contradiction_refs": [],
+      "review_status": "operator-signed-off"
+    },
+    {
+      "artifact_id": "recommendation-brief-delta-20260316-dell-tracka-02",
+      "artifact_type": "recommendation-brief",
+      "artifact_path": "runs/run-20260316-dell-tracka-02/artifacts/2026-03-16-global-enterprise-recommendation-brief-delta-v0.2.0-in-review.md",
+      "version": "v0.2.0",
+      "status": "in-review",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["grok-premium", "perplexity-pro"],
+      "evidence_refs": ["acq-grok-02", "acq-perplexity-02", "acq-grok-02b", "acq-perplexity-02b"],
+      "contradiction_refs": [],
+      "review_status": "operator-signed-off"
+    },
+    {
+      "artifact_id": "shift-signal-20260316-dell-tracka-02",
+      "artifact_type": "shift-signal-note",
+      "artifact_path": "runs/run-20260316-dell-tracka-02/artifacts/2026-03-16-global-enterprise-shift-signal-v0.1.0-in-review.md",
+      "version": "v0.1.0",
+      "status": "in-review",
+      "producing_stage": "synthesis",
+      "primary_model_origin": "claude-pro",
+      "secondary_model_origins": ["grok-premium", "perplexity-pro"],
+      "evidence_refs": ["acq-grok-02b", "acq-perplexity-02b"],
+      "contradiction_refs": [],
+      "review_status": "operator-signed-off"
+    },
+    {
+      "artifact_id": "compiled-brief-v0.2.0-20260316-dell-tracka-02",
+      "artifact_type": "recommendation-brief",
+      "artifact_path": "runs/run-20260316-dell-tracka-02/handoff/output_4v2.txt",
+      "version": "v0.2.0",
+      "status": "published",
+      "producing_stage": "compilation",
+      "primary_model_origin": "chatgpt-plus",
+      "secondary_model_origins": ["claude-pro", "perplexity-pro", "grok-premium"],
+      "evidence_refs": [
+        "acq-grok-02",
+        "acq-perplexity-02",
+        "acq-grok-02b",
+        "acq-perplexity-02b",
+        "run1-brief"
+      ],
+      "contradiction_refs": [],
+      "review_status": "operator-approved-for-publish"
+    }
+  ],
+  "gate_results": [
+    {
+      "gate_name": "input-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-17",
+      "notes": "Run 1 brief as base. Depth layer objective defined. Grok and Perplexity assigned T4 and T2 acquisition roles respectively."
+    },
+    {
+      "gate_name": "evidence-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-17",
+      "notes": "Four acquisition outputs received: two Grok passes, two Perplexity passes. ITIC data confirmed T2. Community signals confirmed T4. Near-edge practitioner voice confirmed absent — logged as market structure finding not search gap."
+    },
+    {
+      "gate_name": "schema-gate",
+      "status": "passed",
+      "declared_by": "claude-pro",
+      "timestamp": "2026-03-17",
+      "notes": "All artifacts carry required fields, tier labels, IP-INSERT convention, model-origin tags."
+    },
+    {
+      "gate_name": "reasoning-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-17",
+      "notes": "Contradictions between T2 supply-chain strength narrative (TrustRadius) and T4 lead-time complaints (r/msp 2026) resolved as segment-specific: enterprise direct vs MSP channel. ITIC silence confirmed as strategic vulnerability. Open RAN timeline caveat added."
+    },
+    {
+      "gate_name": "output-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-17",
+      "notes": "output_4v2.txt received from ChatGPT Plus. Full merge of Run 1 + Run 2 confirmed. All IP-INSERT blocks, T5 labels, and END-USER IP NOTES preserved."
+    },
+    {
+      "gate_name": "publish-gate",
+      "status": "passed",
+      "declared_by": "operator",
+      "timestamp": "2026-03-17",
+      "notes": "PDF generated: Dell-Server-Portfolio-Strategy-Brief-v0.2.0.pdf. Data package archived. Run committed to repo."
+    }
+  ],
+  "review_state": "approved",
+  "handoff_ref": "runs/run-20260316-dell-tracka-02/handoff/output_4v2.txt",
+  "checksum_ledger_refs": [],
+  "unresolved_items": [
+    "China strategy posture (T5) requires Dell APAC validation before external use",
+    "WS2025 XR5610 Hyper-V — T4 community signal, no official Dell fix found as of run date",
+    "Dell has no public ITIC counter-narrative — flagged as strategic vulnerability in shift-signal artifact",
+    "MSP segment churn quantification requires Dell internal CRM data (IP-INSERT)",
+    "Memory pricing T5 signal needs T2 confirmation from Dell supply chain"
+  ],
+  "primary_model": "claude-pro",
+  "objective_scope": "Depth intelligence layer — community voice, buyer pain points, competitive signals, ITIC gap analysis. Merged with Run 1 to produce v0.2.0 final brief.",
+  "artifact_targets": [
+    "customer-pain-point",
+    "shift-signal-note",
+    "recommendation-brief-v0.2.0-merged"
+  ],
+  "transfer_checkpoints": [
+    {
+      "from": "grok-premium",
+      "to": "claude-pro",
+      "transfer_type": "file-upload",
+      "files": ["grok-output-2.txt", "grok-output-2b.txt"],
+      "timestamp": "2026-03-17"
+    },
+    {
+      "from": "perplexity-pro",
+      "to": "claude-pro",
+      "transfer_type": "file-upload",
+      "files": ["perplexity-output-2.txt", "perplexity-output-2b.txt"],
+      "timestamp": "2026-03-17"
+    },
+    {
+      "from": "claude-pro",
+      "to": "chatgpt-plus",
+      "transfer_type": "file-upload",
+      "files": [
+        "2026-03-16-global-enterprise-recommendation-brief-v0.1.0-in-review.md",
+        "2026-03-16-global-enterprise-recommendation-brief-delta-v0.2.0-in-review.md",
+        "2026-03-16-global-enterprise-shift-signal-v0.1.0-in-review.md",
+        "2026-03-16-global-enterprise-customer-pain-point-v0.1.0-in-review.md"
+      ],
+      "timestamp": "2026-03-17"
+    }
+  ],
+  "notes": "Second live run of server-market-deterministic-agentic-model. Depth/heartbeat layer run. Proved that T4 community acquisition surfaces findings unavailable in T1-T3 public data — specifically MSP pricing churn, WS2025 field status, Lenovo ITIC marketing gap, near-edge closed-channel market structure. v0.2.0 brief is the merged production deliverable."
+}

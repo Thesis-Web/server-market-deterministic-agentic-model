@@ -1,0 +1,509 @@
+Scope note
+Response focuses on identifying and quoting evidence; it does not interpret or synthesize beyond what sources state. All dates and publishers are taken directly from sources where available. [INFERENCE — not sourced] marks any necessary interpretation.
+
+G1. Enterprise server buyer preference surveys (2023–2026)
+General IT / infrastructure buyer behavior
+Forrester – Global B2B buying behavior (all tech, includes infrastructure)
+
+Evidence: Forrester press release on “The State Of Business Buying, 2023,” based on the 2023 Global B2B Buyers’ Journey Survey (18,000+ global business buyers). It states that at least a third of B2B business buyers in North America and Europe, and more than a quarter in Asia Pacific, are “primarily influenced by price when making purchasing decisions,” and notes that budget constraints, information overload, and complexity are protracting buying cycles and that providers must show ROI and price transparency to accelerate decisions.
+​
+
+Publisher: Forrester
+
+Date: 3 October 2023 (press release)
+​
+
+Forrester – Buyers’ Journey Survey, IT infrastructure & operations professionals
+
+Evidence: Forrester research description “2023 Buyer Insights: IT Infrastructure And Operations Professional,” referencing results of Forrester’s Buyers’ Journey Survey, 2023, focused on IT infrastructure and operations professional buyers who have purchased in the last 12 months or will in the next 12 months. It states that the report “reveals the latest business buying preferences and behaviors” for this segment. (full data paywalled).
+​
+
+Publisher: Forrester
+
+Date: 26 October 2023
+​
+
+IDC – Tech Buyer Behavior Survey (cross-technology)
+
+Evidence: IDC “2024 Tech Buyer Behavior Survey Results” (print-friendly login page) notes that it “examines tech buyers’ propensity to switch vendors and the main underlying reasons” and “highlights factors impacting tech buying and tech spending.” (server‑specific breakouts not visible).
+​
+
+Publisher: IDC
+
+Date: 31 December 2023 (document date)
+​
+
+Server/platform reliability & vendor preference (buyer evidence proxies)
+ITIC – 2023 Global Server Hardware, Server OS Reliability Survey
+
+Evidence: ITIC’s 2023 Global Server Hardware, Server OS Reliability Survey (PDF) reports that for the fifteenth year in a row, IBM Z and Power Systems servers “dominated the reliability and security landscape,” and that among x86 vendors Lenovo ThinkSystem servers achieved very high reliability, with 94% of Lenovo ThinkSystem enterprises attaining five–seven nines of reliability. It reports that Dell PowerEdge servers improved reliability to 24 minutes of unplanned per-server annual outage time in the 2023 survey, two minutes better than in 2022. These figures are based on a global survey of corporate respondents (sample size in 2023 report: not fully visible in excerpt; ITIC site indicates its surveys cover hundreds to low-thousands of enterprises).
+
+Publisher: ITIC (Information Technology Intelligence Consulting)
+
+Date: 2023 (report; ITIC reports page lists 2023 surveys).
+
+ITIC – 2024–2025 Global Server Hardware, Server OS Reliability Survey
+
+Evidence: 2024–2025 ITIC report notes that IBM Z, Power Systems and Lenovo ThinkSystem “for the sixteenth consecutive year” dominate reliability and security. The excerpt states that Dell PowerEdge servers improved reliability again, registering 20 minutes of unplanned per-server annual outage time and that this is a reduction of four minutes compared to prior results. This survey polled 1,950 global businesses from February–November 2024, updated April 2025.
+
+Publisher: ITIC
+
+Date: 2024 main fielding; updated April 2025.
+
+[INFERENCE — not sourced] ITIC reliability rankings are widely used by vendors (Lenovo, IBM, etc.) in marketing as evidence of buyer satisfaction with reliability; they are not preference/brand-choice surveys in the strict sense but are a proxy for reliability‑driven preferences.
+
+Peer‑review sites – satisfaction and preference signals
+TrustRadius – Dell PowerEdge satisfaction metrics
+
+Evidence: TrustRadius comparison page for Dell PowerEdge vs VMware vSphere shows TrustRadius scores for “Likelihood to Recommend,” “Usability,” and “Support Rating” for Dell PowerEdge. Dell PowerEdge has “Likelihood to Recommend: 10.0 (23 ratings),” “Usability: 10.0 (16 ratings),” “Support Rating: 10.0 (16 ratings),” based on enterprise and mid-market reviews, with several reviews citing “Good price – Compared to other vendors’ server platforms” and “best price/vCPU and RAM ratio” as reasons for preference.
+​
+
+Publisher: TrustRadius
+
+Date: 3 November 2024 (page metadata)
+​
+
+TrustRadius – Cisco UCS vs Dell PowerEdge
+
+Evidence: TrustRadius “Compare Cisco UCS Series vs Dell PowerEdge” provides side‑by‑side satisfaction metrics. Both have “Score 9.4 out of 10” for enterprises, with “Likelihood to Recommend” 9.4 (65 ratings) for Cisco UCS Series and 10.0 (23 ratings) for Dell PowerEdge; Dell is noted by reviewers for “Better Management, Better ROI, Better Supply Chain System ensures timely delivery” and for price/value relative to competitors.
+​
+
+Publisher: TrustRadius
+
+Date: 11 June 2024 (page metadata)
+​
+
+TrustRadius – Dell PowerEdge vs Oracle Virtualization / Nasuni / Supermicro
+
+Evidence: Additional TrustRadius comparisons show Dell PowerEdge tends to have “Likelihood to Recommend 10.0 (23 ratings)” and high usability/support scores, with repeated reviewer statements that PowerEdge offers the “best price/vCPU and RAM ratio” compared to other server platforms.
+
+Publisher: TrustRadius
+
+Dates: 3 November 2024 (various comparison pages)
+
+G2 – Server hardware and rack/blade server categories
+
+Evidence: G2 “Best Servers Hardware in 2025” and “Best Rack Servers” and “Best Blade Servers” categories aggregate user reviews to rank server vendors and products; these include Dell PowerEdge, HPE Servers, Lenovo ThinkSystem and others, with star ratings and satisfaction metrics derived from verified user reviews. Full vendor‑specific breakdowns require page navigation (not all visible in snippet).
+
+Publisher: G2
+
+Dates: 2 December 2025 (Servers Hardware category), 6 November 2024 (rack/blade server lists).
+
+[INFERENCE — not sourced] These G2/TrustRadius metrics function as crowd‑sourced customer satisfaction and informal NPS‑like indicators for server hardware but are not formally labeled NPS.
+
+G2. Enterprise server customer pain points – published research
+Hardware reliability and MTTR / downtime
+ITIC – 2023 Global Server Hardware, Server OS Reliability Survey
+
+Evidence: The 2023 ITIC report lists per‑platform uptime and annual per-server unplanned downtime; for example, Lenovo ThinkSystem x86 servers have a 94% majority attaining five–seven nines of reliability; Dell PowerEdge servers average 24 minutes of unplanned per server annual outage time in the survey, down from 26 minutes in 2022. ITIC also notes that respondents reported “the most pronounced reliability declines in aged servers over 3½ years old,” and that many firms only upgrade “as needed” when performance degrades, causing freezes and crashes; aged servers are “much more prone to hard drive and component failures.”
+​
+
+Publisher: ITIC
+
+Date: 2023
+
+ITIC – 2024–2025 Global Server Hardware, Server OS Reliability Survey
+
+Evidence: The 2024–2025 ITIC report states that IBM Z, IBM Power Systems and Lenovo ThinkSystem “dominated the reliability and security landscape,” and that Dell PowerEdge servers “also improved their reliability, registering 20 minutes of unplanned per server annual outage time,” four minutes better than before. It attributes downtime causes largely to security incidents and human error (84% cite security as top cause of unplanned downtime; 67% cite human error).
+
+Publisher: ITIC
+
+Date: Survey fielded February–November 2024, updated April 2025.
+
+Lifecycle / refresh and aging hardware issues
+Evidence: ITIC 2023 report notes that respondents commonly retain servers four, five, or even six years, especially SMBs, and that this correlates with “pronounced reliability declines” due to failure to upgrade/retrofit for mission‑critical workloads; aged servers are more prone to hard drive and component failures, and many customers do not right‑size servers for increased, memory‑intensive workloads.
+​
+
+Publisher: ITIC
+
+Date: 2023
+​
+
+Manageability and remote management
+Evidence: While not server‑only, multiple TrustRadius reviews in the Cisco UCS vs Dell PowerEdge comparison cite manageability and administrative tools as key decision criteria and pain‑point mitigators. Cisco UCS is cited for “easy to manage from an admin perspective with easy to use tools, the right diagnostic and alerting and remote administration,” and Dell PowerEdge is described as “Better Management, Better ROI,” and better supply chain.
+​
+
+Publisher: TrustRadius
+
+Date: 11 June 2024
+​
+
+[INFERENCE — not sourced] These review narratives indicate that manageability and remote administration experience are important drivers of satisfaction and sources of pain when weak.
+
+Power and cooling costs / TCO
+Terrazone – On‑prem vs cloud TCO model (example server workload)
+
+Evidence: A 2025 article “On‑Prem vs Cloud TCO: A 5‑Year Cost Breakdown & Analysis” provides a quantified example TCO: for a 4 kW IT load with PUE 1.56 and electricity cost of 0.135 USD/kWh, annual power and cooling costs are estimated at about 7,379 USD, with servers drawing power 24×7 and cooling overhead accounted via PUE. This shows power and cooling as a nontrivial line item in on‑prem server TCO.
+​
+
+Publisher: Terrazone.io
+
+Date: 21 October 2025
+​
+
+[INFERENCE — not sourced] This is a general TCO example, not vendor‑specific; it illustrates the magnitude of power/cooling costs for data‑center server deployments.
+
+Support and service satisfaction by vendor
+TrustRadius – Dell PowerEdge support satisfaction
+
+Evidence: TrustRadius Dell PowerEdge comparison pages consistently show Support Rating 10.0 (16 ratings) and positive comments regarding Dell’s support responsiveness and quality.
+
+Publisher: TrustRadius
+
+Dates: 2024 (various pages)
+
+ITIC – Causes of downtime / support relevance
+
+Evidence: ITIC 2023 report attributes most unplanned outages to security and human error rather than intrinsic server hardware failure and emphasizes that advanced management and security capabilities are important to reduce downtime.
+​
+
+Publisher: ITIC
+
+Date: 2023
+​
+
+G3. Dell‑specific customer satisfaction data
+NPS / CSAT related to Dell
+Comparably – Dell Technologies NPS & Customer Reviews (corporate‑level CSAT)
+
+Evidence: Comparably’s Dell Technologies page reports a Customer Satisfaction (CSAT) score broken down by demographic groups; e.g., it notes that Dell Technologies’ CSAT was rated 77% by Asian or Pacific Islander users/customers and 50% by Native American users/customers, and that CSAT was highest among customers aged 36–40 and lowest among those 66+. It does not provide a single overall NPS figure in the visible excerpt, but is positioned as a brand NPS/CSAT tracker.
+​
+
+Publisher: Comparably
+
+Date: 21 January 2026 (page metadata)
+​
+
+Dell – PowerProtect NPS commentary (data protection, but Dell support example)
+
+Evidence: A Dell corporate blog post “PowerProtect Leads Data Protection, Tops NPS Rankings Again” describes an NPS study of PowerProtect Data Manager, noting it evaluated more than 1,200 respondents and that support responsiveness, management console simplicity, and interoperability are top drivers of NPS scores. It states that customers appreciate Dell’s responsive and knowledgeable support team that “swiftly resolves any operational issues.” This is product‑specific but indicates Dell’s internal NPS emphasis on support and ease‑of‑management.
+​
+
+Publisher: Dell Technologies
+
+Date: 29 April 2024
+​
+
+[INFERENCE — not sourced] No public, numeric NPS figure for Dell ProSupport for servers was located in Tier 1–2 sources; marketing materials reference “tops NPS rankings” without disclosing raw NPS.
+
+Gartner / IDC landscape positioning (server‑relevant)
+Gartner – Magic Quadrant (storage example; no server‑only MQ)
+
+Evidence: A Dell blog “Dell Named a Leader in 2025 Gartner Magic Quadrant for Enterprise Storage Platforms” states that Dell was named a Leader in Gartner’s 2025 MQ for Enterprise Storage Platforms and highlights Dell’s storage portfolio and AI‑related offerings. This is storage, not servers, but is a proxy for infrastructure satisfaction and vendor reputation in adjacent categories.
+​
+
+Publisher: Dell (citing Gartner)
+
+Date: 19 October 2025
+​
+
+[INFERENCE — not sourced] There is no 2023–2025 Gartner Magic Quadrant solely for “enterprise servers”; Gartner restructured compute coverage into other MQ/Market Guides (ex: HCI, cloud compute, x86 servers historically). No direct MQ positioning for Dell servers was found in accessible Tier 1–2 sources.
+
+IDC – Servers Market Insights (market share / positioning)
+
+Evidence: IDC’s Servers Market Insights page describes overall server market growth and notes that server spending grew 97.3% year‑over‑year in 2Q25, driven by GPU servers; it does not in the visible portion provide vendor‑specific satisfaction or positioning metrics, but is the entry point to IDC vendor MarketScapes and share reports.
+​
+
+Publisher: IDC
+
+Date: 20 October 2025 (page date)
+​
+
+[INFERENCE — not sourced] Specific IDC MarketScape documents for “Worldwide x86 Servers,” “Cloud‑Enabled Server Operating Systems,” etc., exist but are paywalled; accessible snippets do not show Dell’s scoring.
+
+Analyst commentary on Dell servers and customer base
+SiliconANGLE – “How Dell is riding the AI wave while serving its massive installed base”
+
+Evidence: A 2025 SiliconANGLE analysis of Dell notes that Dell’s Infrastructure Solutions Group (ISG) is about 45% of revenue and that around 60% of ISG is servers and networking. The article notes that Dell “occupies the far-right position” on an Enterprise Technology Research (ETR) plot, with 323 of 1,859 surveyed enterprises running Dell storage, more than any rival, but with Net Score (spend momentum) below a 40% breakout line, suggesting a large installed base but more muted expansion intent compared to some competitors.
+​
+
+Publisher: SiliconANGLE
+
+Date: 16 May 2025
+​
+
+[INFERENCE — not sourced] This ETR‑based analysis is storage‑centric but implies strong Dell customer penetration and ongoing though not hyper‑aggressive expansion across its base.
+
+G4. Near‑edge / edge server buyer requirements
+Analyst reports – edge platforms and infrastructure
+Gartner – 2024 Market Guide for Edge Computing Platforms (secondary summary)
+
+Evidence: ZPE Systems’ article “Edge Computing Platforms: Insights from Gartner’s 2024 Market Guide” summarizes Gartner guidance that an edge computing platform must provide: (1) edge software infrastructure supporting containers and VMs and being secure by design; (2) edge management and orchestration for centralized management of the full software stack, including orchestration for app onboarding, fleet deployments, storage, updates/rollbacks; and (3) cloud integration and networking ensuring seamless data flow between edge and cloud. Gartner is also said to emphasize scalability, zero‑touch management, and support for evolving workloads.
+​
+
+Publisher: ZPE Systems (citing Gartner)
+
+Date: 10 November 2024
+​
+
+Scale Computing – Representative Vendor citation in 2024 Gartner Market Guide for Edge Computing
+
+Evidence: Scale Computing press release notes that the 2024 Gartner Market Guide for Edge Computing discusses the importance of edge management and orchestration and describes vendor capabilities in that context. (Full Gartner text not visible.)
+​
+
+Publisher: Scale Computing (citing Gartner)
+
+Date: 2 May 2024
+​
+
+IDC – Edge spending and MEC
+IDC – Global edge computing spending forecast
+
+Evidence: IDC forecast (reported via BackendNews) projects worldwide edge computing spending to reach 228 billion USD in 2024, up 14% from 2023. It notes that manufacturing leads edge spending, using AI for real‑time equipment monitoring and predictive maintenance, while utilities and banking are also strong adopters. IDC states that service providers will see the highest CAGR, driven by investments in multi‑access edge computing (MEC), CDNs, and virtual network functions; MEC is described as essential for low‑latency applications relying on 5G and AI.
+​
+
+Publisher: IDC (reported by BackendNews)
+
+Date: 10 September 2024 (article)
+​
+
+IDC – Telecom DX Survey, MEC strategy
+
+Evidence: IDC Survey Spotlight “Will Multi‑Access Edge Computing Solutions Open Doors to …” uses data from IDC’s May 2024 Telecom DX Survey of 100 telco operators worldwide, discussing telcos’ strategies for MEC solutions offered to enterprise customers. While the visible abstract does not list explicit hardware requirements, it frames MEC as a key area of service provider investment.
+​
+
+Publisher: IDC
+
+Date: 31 December 2023 (document date) with survey data from May 2024.
+​
+
+Telecom operator requirements at edge
+STL Partners – Forecasting capacity of network edge computing
+
+Evidence: STL Partners’ “Forecasting capacity of network edge computing” (PDF) analyzes edge server capacity at telco‑owned sites and hyperscalers. It cites a 2021 survey of 150 telecoms operators and notes that 44% of network edge capacity in 2025 will be built with hyperscalers’ support, and that operators estimate about 33% of network edge applications and 25% of distributed core network functions will run on hyperscaler infrastructure. The analysis identifies three main factors driving telco deployment of edge sites: edge computing strategy, 5G deployment speed, and the country’s geographic profile.
+​
+
+Publisher: STL Partners
+
+Date: 2022–2023 timeframe; PDF includes data through 2025 (exact publication date not clearly visible in excerpt).
+​
+
+Industrial / enterprise edge hardware requirements
+ZPE Systems – Industry‑specific edge requirements (based on Gartner framing)
+
+Evidence: The same ZPE article provides examples of industry‑specific requirements: in manufacturing, edge platforms support automated workflows and predictive maintenance; in retail, they enable hyper‑personalization; and the hardware is described as modular to allow hot‑swapping of serial, Ethernet, compute, storage, etc., emphasizing adaptability and vendor‑neutral integration. These are framed as responses to the Gartner‑highlighted need for scalable, remotely manageable edge platforms.
+​
+
+Publisher: ZPE Systems
+
+Date: 10 November 2024
+​
+
+[INFERENCE — not sourced] These sources focus on platform capabilities and deployment models, not on brand‑specific edge server buyer surveys.
+
+G5. Win–loss patterns – published data
+Channel / peer review win–loss narratives
+TrustRadius – Cisco UCS vs Dell PowerEdge (win–loss themes)
+
+Evidence: TrustRadius narratives in the Cisco UCS vs Dell PowerEdge comparison mention why customers chose one vendor over another. Cisco UCS is preferred for “flexibility, efficiency, footprint and converged solution” and has “far fewer hardware issues than the competition,” while Dell PowerEdge is chosen for “Better Management, Better ROI, Better Supply Chain System ensures timely delivery even in recent times where Supply Chain has become a big issue,” and because it helps ensure timely project completion and budget utilization. These comments reflect real‑world win–loss factors (manageability, form factor, reliability, supply chain) but are anecdotal rather than formal win–loss surveys.
+​
+
+Publisher: TrustRadius
+
+Date: 11 June 2024
+​
+
+TrustRadius – Dell PowerEdge vs competitors (price/value)
+
+Evidence: Across multiple TrustRadius comparisons (Dell PowerEdge vs VMware vSphere, vs Oracle Virtualization, vs Nasuni, vs Supermicro), reviewers stress that Dell PowerEdge wins in their scenario due to “Good price – Compared to other vendors’ server platforms” and “best price/vCPU and RAM ratio,” indicating price/performance as a recurring winning factor.
+
+Publisher: TrustRadius
+
+Dates: 3 November 2024 and 11 June 2024
+
+Analyst commentary – competitive positioning
+SiliconANGLE / ETR – Dell’s installed base and spending momentum
+
+Evidence: The SiliconANGLE article on Dell cites Enterprise Technology Research (ETR) data showing Dell storage has the largest share of surveyed enterprises (323 of 1,859) but a Net Score (forward spend intent) below a 40% breakout line, with Pure Storage above that line. The piece interprets this as Dell having a massive installed base but less accelerated expansion relative to some growth vendors.
+​
+
+Publisher: SiliconANGLE (using ETR data)
+
+Date: 16 May 2025
+​
+
+[INFERENCE — not sourced] The ETR data is storage‑oriented and does not provide explicit server win–loss by deal count or region.
+
+Bloomberg Intelligence – Dell, HPE, Lenovo in AI server market
+
+Evidence: Bloomberg article notes that Dell, HPE, and Lenovo are targeting a growing AI‑server market expected to reach 252 billion USD in 2025, growing 55%, and suggests competitive dynamics as they seek larger shares; however, detailed win–loss statistics are not visible in the accessible snippet.
+​
+
+Publisher: Bloomberg
+
+Date: 22 November 2024
+​
+
+[INFERENCE — not sourced] No explicit published, quantitative win–loss breakdown (e.g., “Dell wins X% vs HPE in enterprise deals”) was found at Tier 1–2 level.
+
+G6. Evidence gaps (searched but not found at Tier 1/Tier 2)
+Searched terms are summarized; where partial or no suitable Tier 1/2 results were found, the gap is noted:
+
+Enterprise‑specific server buyer preference surveys (2023–2026) with vendor ranking and reasons for choice (Dell vs HPE vs Lenovo)
+
+Searched: combinations such as “2024 enterprise server buyer preference survey IDC,” “server vendor preference survey 2024,” “x86 server buyer preference Dell HPE Lenovo.”
+
+Gap: No publicly accessible, server‑specific vendor preference rankings were located from IDC, Gartner, Forrester, or similar; available IDC/Forrester buyer behavior documents are paywalled and cross‑technology, with only high‑level preference drivers visible.
+
+Net Promoter Score (NPS) for Dell, HPE, Lenovo server businesses specifically
+
+Searched: “Dell ProSupport NPS 2023,” “HPE server NPS,” “Lenovo server NPS,” “server vendor NPS survey.”
+
+Gap: Only marketing‑style statements (e.g., Dell PowerProtect “tops NPS rankings”) were found; no Tier 1/2 source disclosed actual NPS figures specifically for server lines or ProSupport for servers.
+​
+
+Gartner Peer Insights or Voice of the Customer documents specifically for servers (rack/blade) including Dell, HPE, Lenovo
+
+Searched: “Gartner Peer Insights servers Dell HPE Lenovo,” “Gartner Voice of the Customer servers,” “Gartner Peer Insights data center hardware.”
+
+Gap: Publicly visible Peer Insights and “Voice of the Customer” docs are for categories like CCaaS; no server‑category “Voice of the Customer” report including Dell/HPE/Lenovo was found in accessible content.
+
+IDC / Forrester buyer journey studies focused specifically on server procurement (not generic IT infrastructure)
+
+Searched: “IDC IT Procurement Trends servers,” “IDC server procurement survey,” “Forrester buyer journey servers,” “Forrester ‘State of Servers’ buyer.”
+
+Gap: IDC and Forrester offer paywalled reports; accessible abstracts do not confirm server‑specific breakouts.
+
+Quantified, vendor‑specific remote management/management tool satisfaction data for servers
+
+Searched: “remote management satisfaction Dell iDRAC survey,” “HPE iLO customer satisfaction survey,” “server management tools satisfaction 2023 report.”
+
+Gap: No Tier 1/2 quantitative survey comparing manageability satisfaction across server vendors was found; only qualitative peer‑review comments (TrustRadius, etc.).
+​
+
+Power and cooling costs as a procurement driver, quantified by survey and broken out by server vendor
+
+Searched: “power cooling cost server procurement driver survey,” “IDC survey power cooling primary driver servers,” “Forrester TCO server power cooling 2023.”
+
+Gap: TCO models and datacenter studies quantify cost impact but do not link directly to server vendor selection surveys in accessible Tier 1/2 data.
+
+Support and service satisfaction scored by vendor for enterprise servers
+
+Searched: “support satisfaction Dell ProSupport servers survey 2023,” “HPE support satisfaction servers IDC,” “Lenovo server support satisfaction survey.”
+
+Gap: No public Tier 1/2 multi‑vendor survey specifically scoring server support (e.g., IDC or Gartner numeric ratings by brand) was found; only product‑specific or brand‑level CSAT/NPS (e.g., Dell PowerProtect, Dell Technologies overall) and user reviews.
+
+Gartner Magic Quadrant or IDC MarketScape documents specifically labeled for ‘enterprise servers’ with public positioning of Dell
+
+Searched: “Gartner Magic Quadrant x86 servers 2023,” “Gartner Magic Quadrant modular server,” “IDC MarketScape worldwide x86 server vendors Dell.”
+
+Gap: MQs for servers appear discontinued or paywalled; accessible Dell content references Gartner MQ for Enterprise Storage Platforms, not servers. IDC MarketScape content remains behind paywalls.
+​
+
+Published quantitative win–loss statistics (e.g., share of deals won/lost) for Dell vs HPE vs Lenovo in servers
+
+Searched: “server win loss analysis Dell HPE Lenovo,” “channel partner survey server win loss 2023,” “IDC server vendor displacement study.”
+​
+
+Gap: No rigorous, numeric win–loss data were accessible at Tier 1/2 level; only qualitative analyst commentary and peer reviews.
+
+G7. Source log
+Title	Publisher	Date	URL	Tier
+Title	Publisher	Date	URL	Tier
+2024 Tech Buyer Behavior Survey Results	IDC	31 Dec 2023	
+https://my.idc.com/getdoc.jsp?containerId=US51757224&pageType=PRINTFRIENDLY
+T1
+Servers Market Insights	IDC	20 Oct 2025	
+https://www.idc.com/promo/servers/
+T1
+Ten Trends That Shaped the Cloud Market in 2024	IDC	4 Feb 2025	
+https://www.idc.com/resource-center/blog/ten-trends-that-shaped-the-cloud-market-in-2024/
+T1
+Enterprise Storage Systems Market Insights	IDC	20 Oct 2025	
+https://www.idc.com/promo/enterprise-storage-systems/
+T1
+2023 Buyer Insights: IT Infrastructure And Operations Professional	Forrester	26 Oct 2023	
+https://www.forrester.com/report/2023-buyer-insights-it-infrastructure-and-operations-professional/RES179996
+T1
+Forrester’s 2023 Global B2B Buyers’ Journey Survey / The State Of Business Buying, 2023 (press release)	Forrester	3 Oct 2023	
+https://www.forrester.com/press-newsroom/2023-forrester-b2b-buyers-journey/
+T1
+ITIC 2023 Global Server Hardware, Server OS Reliability Report (PDF excerpt)	ITIC	2023	
+https://astecno.com.br/wp-content/uploads/2023/09/ITIC-2023-Global-Server-Hardware-Server-OS-Reliability-Report.pdf
+T2
+ITIC Reports & Survey Results index	ITIC	9 Sep 2024	
+https://itic-corp.com/itic-reports-surveys/
+T2
+ITIC 2024 Global Server Hardware, Server OS Reliability Report (PDF excerpt)	ITIC	2024–2025	https://www.lenovo.com/content/dam/lenovo/dcg/global/en/products/servers/itic-2024-global-server-hardware-server-os-reliability-	T2
+ITIC 2024–2025 Global Server Hardware, Server OS Reliability (PDF listing)	ITIC	Updated Apr 2025	https://media.bitpipe.com/io_33x/io_332819/item_2931418/ITIC%202024-2025%20Global%20Server%20Hardware%20Server%20OS%20Reliabilit	T2
+Server Reliability Survey: IBM, Lenovo, Cisco Top ITIC’s List	TechChannel (summarizing ITIC)	26 Nov 2024	
+https://techchannel.com/industry-news/server-reliability-survey-2024/
+T3
+ITIC 2022 Global Server Hardware, Server OS Reliability Report (for historical context)	ITIC	2022	
+https://www.meridianit.co.uk/wp-content/uploads/2024/01/ITIC_2022_Global_Server_Hardware_Server_OS_Reliability_Report.pdf
+T2
+ITIC Reliability Study (LenovoPress summary)	Lenovo / ITIC	1 Mar 2026	
+https://lenovopress.lenovo.com/lp1117-itic-reliability-study
+T2
+Best Servers Hardware in 2025	G2	2 Dec 2025	
+https://www.g2.com/categories/servers
+T3
+Best Rack Servers: User Reviews from January 2026	G2	6 Nov 2024	
+https://www.g2.com/categories/rack-servers
+T3
+Best Blade Servers: User Reviews from January 2026	G2	6 Nov 2024	
+https://www.g2.com/categories/blade-servers
+T3
+HPE Servers Reviews	G2	18 Feb 2026	
+https://www.g2.com/products/hpe-servers/reviews
+T3
+Top 10 PowerEdge Rack Servers Alternatives & Competitors in 2026	G2	6 Nov 2024	
+https://www.g2.com/products/poweredge-rack-servers/competitors/alternatives
+T3
+Compare Dell PowerEdge vs VMware vSphere	TrustRadius	3 Nov 2024	https://www.trustradius.com/compare-products/dell-poweredge-r-vs-vmware-vsphere	T3
+Dell PowerEdge vs Oracle Virtualization	TrustRadius	3 Nov 2024	
+https://www.trustradius.com/compare-products/dell-poweredge-vs-oracle-virtualization
+T3
+Compare Cisco UCS Series vs Dell PowerEdge	TrustRadius	11 Jun 2024	
+https://www.trustradius.com/compare-products/cisco-ucs-b-series-vs-dell-poweredge
+T3
+Dell PowerEdge vs Nasuni	TrustRadius	3 Nov 2024	
+https://www.trustradius.com/compare-products/dell-poweredge-vs-nasuni
+T3
+Dell PowerEdge vs Supermicro SuperBlade	TrustRadius	3 Nov 2024	
+https://www.trustradius.com/compare-products/dell-poweredge-r-vs-supermicro-superblade
+T3
+Server news roundup from Supermicro, Dell, Intel and Lenovo	NetworkWorld	3 Mar 2024	
+https://www.networkworld.com/article/1311414/server-news-roundup-from-supermicro-dell-intel-and-lenovo.html
+T3
+Dell, HPE, Lenovo look to AI in $252 billion server market	Bloomberg	22 Nov 2024	
+https://www.bloomberg.com/professional/insights/artificial-intelligence/dell-hpe-lenovo-look-to-ai-in-252-billion-server-market/
+T3
+How Dell is riding the AI wave while serving its massive installed base	SiliconANGLE	16 May 2025	
+https://siliconangle.com/2025/05/17/dell-riding-ai-wave-serving-massive-installed-base/
+T3
+Telco AI: State of the Market, Q2 2024 (PDF)	GSMA Intelligence	2024	
+https://gsmaintelligence.com/research/research-file-download?id=88244468&file=060924-Telco-AI.pdf
+T2
+Forecasting capacity of network edge computing (PDF)	STL Partners	c. 2022–2023	
+https://stlpartners.com/wp-content/documents/reports/Forecasting%20capacity%20of%20network%20edge%20computing.pdf
+T2
+Will Multi-Access Edge Computing Solutions Open Doors to … (IDC Survey Spotlight)	IDC	31 Dec 2023 (survey May 2024)	
+https://my.idc.com/getdoc.jsp?containerId=US52437822
+T1
+IDC: Global edge computing spending to reach $228 billion in 2024	IDC via BackendNews	10 Sep 2024	
+https://backendnews.net/idc-global-edge-computing-spending-to-reach-228-billion-in-2024/
+T1
+Edge Computing Platforms: Insights from Gartner’s 2024 Market Guide	ZPE Systems (citing Gartner)	10 Nov 2024	
+https://zpesystems.com/edge-computing-platforms-insights-from-gartners-2024-market-guide/
+T3
+Scale Computing Recognized as a Representative Vendor in the 2024 Gartner Market Guide for Edge Computing	Scale Computing (citing Gartner)	2 May 2024	https://www.scalecomputing.com/press-releases/scale-computing-recognized-as-a-representative-vendor-in-the-2024-gartner-market-g	T3
+On-Prem vs Cloud TCO: A 5-Year Cost Breakdown & Analysis	Terrazone.io	21 Oct 2025	
+https://terrazone.io/on-prem-vs-cloud-tco/
+T3
+Rearchitecting Datacenter Lifecycle for AI: A TCO-Driven Framework (arXiv)	Academic (arXiv)	29 Sep 2025	
+https://arxiv.org/html/2509.26534v1
+T2
+Dell Named a Leader in 2025 Gartner Magic Quadrant for Enterprise Storage Platforms	Dell Technologies (citing Gartner)	19 Oct 2025	
+https://www.dell.com/en-us/blog/dell-named-a-leader-in-2025-gartner-magic-quadrant-for-enterprise-storage-platforms/
+T3
+PowerProtect Leads Data Protection, Tops NPS Rankings Again	Dell Technologies	29 Apr 2024	
+https://www.dell.com/en-us/blog/powerprotect-leads-data-protection-tops-nps-rankings-again/
+T3
+Dell Technologies NPS & Customer Reviews	Comparably	21 Jan 2026	
+https://www.comparably.com/brands/dell-technologies
+T3
+ITIC 2022 Global Server Hardware, Server OS Reliability Report (historical baseline)	ITIC	2022	
+https://www.scribd.com/document/679648841/itic-2022-global-server-hardware-server-os-reliability-report-feb-2023
+T2
+Are there any specific segments (e.g., Fortune 500 enterprise IT vs mid‑market, or telecom vs general enterprise) where you want deeper evidence next?
